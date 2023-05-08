@@ -176,10 +176,10 @@ function CatCatogriesMedia() {
             <img  onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
-                "typeCatagoryy":"TOY"
+                "typeCatagoryy":"TREAT"
               })
             }}  src={catpc4} alt="" />
-          <div className='cardtitle'>Toys</div>
+          <div className='cardtitle'>Treats</div>
             </div>
           
           </SwiperSlide>

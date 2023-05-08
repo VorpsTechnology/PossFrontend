@@ -26,8 +26,8 @@ function handleProduct(data){
  }
   return (
     
-    <div className='MediaNavbar'>
-  <div style={{display:'flex',justifyContent:'space-between',width:'100%',padding:'10px 5px 5px 5px'}}>
+    <div className='MediaNavbar' style={{padding:'10px'}}>
+  <div style={{display:'flex',justifyContent:'space-between',width:'100%',padding:'10px 20px 10px 20px'}}>
     <div style={{justifyContent:'left'}}>
 
     <>
@@ -44,7 +44,7 @@ function handleProduct(data){
              onClick={()=>{handleSearch()}}
             
             type="text"  style={{width:'80%'}} placeholder="Search.." name="search" />  
-      <span> <button type="submit" style={{marginLeft:"5px",backgroundColor:'transparent',borderColor:'transparent',marginLeft:"-1rem"}}><i class="fa fa-search" aria-hidden="true"></i></button>
+      <span>
 </span>
 </div>
     </form>
@@ -373,14 +373,6 @@ function handleProduct(data){
   </li>
     </div>
   </div>
-
- 
-
-
-  
-
-   
-
     </div>
         
   )

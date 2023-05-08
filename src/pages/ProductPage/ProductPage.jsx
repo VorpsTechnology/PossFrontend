@@ -1032,7 +1032,57 @@ const handleSearchInput=async(e)=>{
   <div className='flexco' style={{justifyContent:"space-between"}} >
     <div className='flexit1'>
       <div style={{display:'flex'}}>
-      <div><select  className='selectbox' 
+      <div>
+      <a   href='/' className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Pet Catogory
+              </a>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a className="dropdown-item"     onClick={()=>{
+                handleProduct({
+                  "petCategoryy":"BIRD",
+                  "typeCatagoryy":"FOOD"
+                })
+              }}>BIRD </a>
+                <a className="dropdown-item"   onClick={()=>{
+                handleProduct({
+                  "petCategoryy":"TURTLE",
+                  "typeCatagoryy":"FOOD"
+                })
+              }} >TURTLE</a>
+                <a className="dropdown-item"   onClick={()=>{
+                handleProduct({
+                  "petCategoryy":"FISH",
+                  "typeCatagoryy":"FOOD"
+                })
+              }} >FISH </a>
+                
+                <a className="dropdown-item" 
+                  onClick={()=>{
+                    handleProduct({
+                      "petCategoryy":"GUINEA PIG",
+                      "typeCatagoryy":"FOOD"
+                    })
+                  }}
+                >GUINEA PIG</a>
+                <a className="dropdown-item"   onClick={()=>{
+                handleProduct({
+                  "petCategoryy":"HAMSTER",
+                  "typeCatagoryy":"FOOD"
+                })
+              }} >HAMSTER</a>
+                <a className="dropdown-item" 
+                  onClick={()=>{
+                    handleProduct({
+                      "petCategoryy":"RABBIT",
+                      "typeCatagoryy":"FOOD"
+                    })
+                  }}
+                >RABBIT </a>
+               
+               
+              
+              </div>
+      {/* <select  className='selectbox' 
         style={{width:"100%"}}
       onChange={handlePetSelect} 
       id="">
@@ -1046,8 +1096,59 @@ const handleSearchInput=async(e)=>{
          <option value="BIRD">BIRD</option>
          <option value="GUINEA PIG">GUINEA PIG</option>
          <option value="DOG">All</option>
-        </select></div>
-      <div style={{marginLeft:'10px'}}><select  
+        </select> */}
+        </div>
+      <div style={{marginLeft:'10px'}}>
+               <a   href='/' className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Catogory Type
+              </a>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a className="dropdown-item"     onClick={()=>{
+                handleProduct({
+                  "petCategoryy":"BIRD",
+                  "typeCatagoryy":"FOOD"
+                })
+              }}>BIRD </a>
+                <a className="dropdown-item"   onClick={()=>{
+                handleProduct({
+                  "petCategoryy":"TURTLE",
+                  "typeCatagoryy":"FOOD"
+                })
+              }} >TURTLE</a>
+                <a className="dropdown-item"   onClick={()=>{
+                handleProduct({
+                  "petCategoryy":"FISH",
+                  "typeCatagoryy":"FOOD"
+                })
+              }} >FISH </a>
+                
+                <a className="dropdown-item" 
+                  onClick={()=>{
+                    handleProduct({
+                      "petCategoryy":"GUINEA PIG",
+                      "typeCatagoryy":"FOOD"
+                    })
+                  }}
+                >GUINEA PIG</a>
+                <a className="dropdown-item"   onClick={()=>{
+                handleProduct({
+                  "petCategoryy":"HAMSTER",
+                  "typeCatagoryy":"FOOD"
+                })
+              }} >HAMSTER</a>
+                <a className="dropdown-item" 
+                  onClick={()=>{
+                    handleProduct({
+                      "petCategoryy":"RABBIT",
+                      "typeCatagoryy":"FOOD"
+                    })
+                  }}
+                >RABBIT </a>
+               
+               
+              
+              </div>
+      {/* <select  
       onChange={handleTypeSelect} 
       style={{width:"100%"}}
       className='selectbox' name="" id="">
@@ -1061,7 +1162,8 @@ const handleSearchInput=async(e)=>{
         <option value="HEALTH & HYGIENE">HEALTH & HYGIENE</option>
         <option value="DOG">All</option>
 
-        </select></div>
+        </select> */}
+        </div>
       </div>
      <div style={{display:"block"}}>
      <div style={{marginTop:"10px"}}>
@@ -1174,7 +1276,75 @@ const handleSearchInput=async(e)=>{
     </div>{" "}
     {/* card-body.// */}
   </div>
-    <header className="card-header" style={{backgroundColor:'transparent'}}>
+  <header className="card-header" style={{backgroundColor:'transparent'}}>
+    <a
+      href
+      data-toggle="collapse"
+      data-target="#collapse_13"
+      aria-expanded="false"
+      className="anchor"
+    >
+      <h6 className="title"><span>Brand</span> <i className="icon-control fa fa-chevron-down" /></h6>
+  
+    </a>
+  </header>
+  <div className="filter-content collapse show" id="collapse_13" >
+    <div className="card-body">
+    
+      <ul align='left' className="list-menu">
+      <li>
+          <a onClick={()=>{
+            handlePet("DOG")
+          }}>All</a>
+        </li>
+        <li>
+          <a onClick={()=>{
+             handlePet("DOG")
+          }}>Dogs</a>
+        </li>
+        <li>
+          <a onClick={()=>{
+             handlePet("CAT")
+          }}>Cats </a>
+        </li>
+        <li>
+          <a onClick={()=>{
+           handlePet("RABBIT")
+          }}>Rabbit</a>
+        </li>
+        <li>
+          <a onClick={()=>{
+            handlePet("TURTLE")
+          }}>Turtle</a>
+        </li>
+
+        <li>
+          <a onClick={()=>{
+            handlePet("GUINEA PIG")
+          }}>Guinea Pigs</a>
+        </li>
+        <li>
+          <a onClick={()=>{
+           handlePet("BIRD")
+          }}>Birds</a>
+        </li>
+        <li>
+          <a onClick={()=>{
+          handlePet("FISH")
+          }}>Fish</a>
+        </li>
+        <li>
+          <a onClick={()=>{
+         handlePet("HAMSTER")
+          }}>Hamster</a>
+        </li>
+        
+      
+      </ul>
+    </div>{" "}
+    {/* card-body.// */}
+  </div>
+    {/* <header className="card-header" style={{backgroundColor:'transparent'}}>
     <a
       href
       data-toggle="collapse"
@@ -1185,63 +1355,11 @@ const handleSearchInput=async(e)=>{
       <h6 className="title"><span>Brands</span> <i className="icon-control fa fa-chevron-down" /></h6>
   
     </a>
-  </header>
+  </header> */}
   <div className="filter-content collapse show" id="collapse_90" >
   <div >
             <div className="card-body">
-              {/* <label className="custom-control custom-checkbox">
-                <input
-                  type="checkbox"
-                  defaultChecked=""
-                  className="custom-control-input"
-                />
-                <div className="custom-control-label">
-                Pedigree
-                  <b className="badge badge-pill badge-light float-right">120</b>
-                </div>
-              </label>
-              <label className="custom-control custom-checkbox">
-                <input
-                  type="checkbox"
-                  defaultChecked=""
-                  className="custom-control-input"
-                />
-                <div className="custom-control-label">
-                Royal Canin
-                  <b className="badge badge-pill badge-light float-right">15</b>
-                </div>
-              </label>
-              <label className="custom-control custom-checkbox">
-                <input
-                  type="checkbox"
-                  defaultChecked=""
-                  className="custom-control-input"
-                />
-                <div className="custom-control-label">
-                  Orijen
-                  <b className="badge badge-pill badge-light float-right">35</b>{" "}
-                </div>
-              </label>
-              <label className="custom-control custom-checkbox">
-                <input
-                  type="checkbox"
-                  defaultChecked=""
-                  className="custom-control-input"
-                />
-                <div className="custom-control-label">
-                Wiskas
-                  <b className="badge badge-pill badge-light float-right">89</b>{" "}
-                </div>
-              </label>
-              <label className="custom-control custom-checkbox">
-                <input type="checkbox" className="custom-control-input" />
-                <div className="custom-control-label">
-                Farmina
-                  <b className="badge badge-pill badge-light float-right">30</b>
-                </div>
-              </label> */}
-
-  <select  className='inputbox' name='brandCategory' 
+  {/* <select  className='inputbox' name='brandCategory' 
  onChange={handleBrandSelect} 
    id="">                             <option value="SMARTY PET">BRANDS</option>
                                       <option value="SMARTY PET">SMARTY PET</option>
@@ -1350,7 +1468,7 @@ const handleSearchInput=async(e)=>{
                                       <option value="BARK BONE">BARK BONE</option>
                                       
 
-                                  </select>
+                                  </select> */}
             </div>{" "}
             {/* card-body.// */}
           </div>
@@ -1452,7 +1570,8 @@ const handleSearchInput=async(e)=>{
   visible={loading}
 />
 
-          
+
+
           </div>
          </div>
           {loading?<></>:<div align='center' id='procardlw'  className="row g-0">
