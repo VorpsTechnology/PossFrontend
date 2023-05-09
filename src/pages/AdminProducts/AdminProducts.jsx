@@ -100,9 +100,7 @@ const AdminProducts = () => {
               <button className='button' style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
                 onClick={  ()=>{navigate(`/AllProducts/edit/${row._id}`)}}
                 >Edit</button>
-                 <button className='button' style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
-                onClick={  ()=>{alert()}}
-                >Add variant</button>
+               
                   <button className='button' style={{background:"red",color:"white",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
                 onClick={  ()=>{ handledelete(row._id)}}
                 >Delete</button>

@@ -43,7 +43,7 @@ const ImageSlider = () => {
          
           </div>
           <div className="carousel-item" >
-            <img className="d-block"  style={{width:'100%',borderRadius:'20px'}}  src={slidethree} alt="Third slide" />
+          <a href='#priceContainer' >    <img className="d-block"  style={{width:'100%',borderRadius:'20px'}}  src={slidethree} alt="Third slide" /></a>
            
           </div>
         </div>

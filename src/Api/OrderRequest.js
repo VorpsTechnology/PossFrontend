@@ -1,6 +1,6 @@
 import axios from "axios";
-const API=axios.create({baseURL:"https://server.possindia.in"})
-//const API=axios.create({baseURL:"http://localhost:5005"})
+//const API=axios.create({baseURL:"https://server.possindia.in"})
+const API=axios.create({baseURL:"http://localhost:5005"})
 
 export const createOrder=(data)=>API.post("/order/create",data)
 

@@ -50,18 +50,13 @@ function Returns() {
   
   }
   
-  const [status,setStatus]=useState({
-    status:"RETURN",
-    
-  })
 
-  const handleChange = (e) => {
-    setStatus({ status: e });
-  };
 
-  const handleStatus=async(ID)=>{
+ 
+
+  const handleStatus=async(ID,status)=>{
      const ata={
-        status:status.status,
+        status:status,
         orderID:ID 
      }
    
@@ -81,7 +76,7 @@ function Returns() {
           // ...
         }
         fetchData();
-      }, [status,handleStatus]); // Or [] if effect doesn't need props or state
+      }, [handleStatus]); // Or [] if effect doesn't need props or state
       useEffect(()=>{
         const result=users.filter((user)=>{
             return user.firstname.toLowerCase().match(search.toLowerCase());
@@ -148,38 +143,9 @@ function Returns() {
           {<>
         
            <div>
-           <div style={{marginLeft:'10px'}}>
-            <a  onClick={()=>{
-            handleChange(row.OrderStatus)}}   className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {row.OrderStatus}
-           </a>
-           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-           
           
            
-           {
-         row.OrderStatus=="RETURN" &&<>
-           <a className="dropdown-item"     onClick={()=>{
-            handleChange("ACCEPTRETURN")
-           }}>ACCEPTRETURN</a>
-            <a className="dropdown-item"     onClick={()=>{
-            handleChange("CANCELRETURN")
-           }}>CANCELRETURN</a>
-           
-           
-         </>
-         
-       }
-        
-        
-      
-            
-          
-            
-            </div>
-   
-     
-   </div>
+       {row.OrderStatus}
            </div>
            
           </>
@@ -195,10 +161,10 @@ function Returns() {
           
               {row.OrderStatus=="RETURN" ?<>
                 <button className='button' style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
-                onClick={  ()=>{handleStatus(row._id)}}
+                onClick={  ()=>{handleStatus(row._id,"ACCEPTRETURN")}}
                 >Confirm</button>
                   <button className='button' style={{background:"red",color:"white",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
-                onClick={  ()=>{ alert()}}
+                onClick={  ()=>{handleStatus(row._id,"CANCELRETURN") }}
                 >Decline</button>
                  
               </>:  <button className='button' style={{background:"red",color:"white",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}

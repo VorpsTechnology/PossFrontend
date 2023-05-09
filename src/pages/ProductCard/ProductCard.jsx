@@ -113,14 +113,18 @@ return `https://drive.google.com/uc?id=${images[0]}`
             products.map((ele) => (
               
                 <div  className='col-md-2'  id='kil'   >
-                <div  id="Productcard30" className='card'  onClick={()=>{
-                      navigate(`/ProductPurchase/${ele._id}`)
-                    }} >
+                <div  id="Productcard30" className='card'  >
+                  <div  onClick={()=>{
+                   navigate(`/ProductPurchase/${ele._id}`)
+                  window.location.reload()
+                     
+                    }}>
                     <div className='Productimg' style={{borderRadius:'20px'}} align="center"><img src={src(ele.uploadImages)} alt=""  /></div>
                     
                     <div  style={{paddingTop:'20px'}} align="center" >
                         <b >{ele.name.slice(0,10)+'....'}</b>
                         <h6 style={{paddingTop:'10px',fontSize:'15px'}}><s>₹ {ele.maxPrice} </s>  - <b>  ₹{ele.price}</b> </h6>
+                    </div>
                     </div>
                     <div style={{paddingTop:'10px',borderRadius:'20px'}} align="center">
                     <button  onClick={handleProductPurchase} className='button30'><img style={{backgroundColor:'#FFFFFF',margin:'5px',}} src={ele.uploadImages} alt="" /><span style={{backgroundColor:'#FFFFFF'}}>Add to cart</span></button></div>

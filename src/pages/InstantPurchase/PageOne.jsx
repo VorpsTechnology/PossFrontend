@@ -239,14 +239,7 @@ setEstimate(response)
       <form action="" onSubmit={order}>
    {visible ?
    <>
-   {billingaddress &&
-                                <div onClick={handleAddress} style={{width:"20rem",height:"auto",padding:"5px",backgroundColor:"#F2C879",borderRadius:"20px"}}>
-                                 <input type="radio" name="" id="" /> Select
-                                 <p> Address : { billingaddress.address1}, {billingaddress.city}, {billingaddress.state}, {billingaddress.post}, {billingaddress.country}
-                                
-                                </p>
-                                </div>
-                           } 
+  
     <div>
 
       
@@ -283,6 +276,14 @@ setEstimate(response)
         </div>
           </div>
         <div align='center'><h4 className='header'>Contact Information</h4></div>
+        {billingaddress &&
+                                <div onClick={handleAddress} style={{width:"auto",height:"auto",padding:"5px",backgroundColor:"#F2C879",borderRadius:"20px"}}>
+                                 <h6><b>○ Use default address</b></h6>
+                                 <p> Address : { billingaddress.address1}, {billingaddress.city}, {billingaddress.state}, {billingaddress.post}, {billingaddress.country}
+                                
+                                </p>
+                                </div>
+                           } 
        <div align='left'  style={{height:'0px'}} className='mediay' ><img src={mediay} alt="" /></div>
   <div align='right' style={{height:'0px'}} className='imghim'><img src={pandit} alt="" /></div>
      

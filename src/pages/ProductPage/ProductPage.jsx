@@ -1080,9 +1080,9 @@ const handleSearchInput=async(e)=>{
   <div className='flexco' style={{justifyContent:"space-between"}} >
     <div className='flexit1'>
       <div style={{display:'flex'}}>
-      <div>
-      <a    className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Pet Category
+      <div >
+      <a  style={{width:"auto",height:"2rem"}}  className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Pet
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
              
@@ -1125,9 +1125,9 @@ const handleSearchInput=async(e)=>{
               </div>
     
         </div>
-      <div style={{marginLeft:'10px'}}>
-               <a    className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 Type Category
+      <div style={{marginLeft:"1rem"}}>
+               <a  style={{width:"auto",height:"2rem"}}     className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Type
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               
@@ -1551,17 +1551,20 @@ const handleSearchInput=async(e)=>{
         <div  className='col-sm-4'  id='kil'   >
 
         <div  id="Productcard30" className='card' >
-    
-            <div className='Productimg' style={{borderRadius:'20px'}} align="center"   >
-              <img onClick={()=>{
+      <div  onClick={()=>{
               navigate(`/ProductPurchase/${ele._id}`)
-            }}
+            }}>
+            <div className='Productimg' style={{borderRadius:'20px'}} align="center"   >
+              <img
             src={src(ele.uploadImages)} alt=""  /></div>
             
             <div  style={{paddingTop:'4px'}} align="center" >
             <p className='brand'>{ele.brandCategory}</p>
                <b><p style={{fontSize:'12px'}} >{ele.name.slice(0,30)+'....'}</p></b> 
                 <h6 style={{paddingTop:'2px',fontSize:'15px'}}><s>₹ {ele.maxPrice} </s>  - <b>  ₹{ele.price}</b> </h6>
+            </div>
+
+
             </div>
             <div style={{paddingTop:'5px',borderRadius:'20px'}} align="center">
             <button   className='button30' onClick={()=>{

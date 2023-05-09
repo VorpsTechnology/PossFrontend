@@ -151,11 +151,11 @@ function CatCatogriesMedia() {
             <img  onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
-                "typeCatagoryy":"ACCESSORIES"
+                "typeCatagoryy":"HEALTH & HYGIENE"
               })
             }}
               src={catpc2} alt="" />
-          <div className='cardtitle'>Litter</div>
+          <div className='cardtitle'>HEALTH & HYGIENE</div>
             </div>
           
           </SwiperSlide>
@@ -164,10 +164,10 @@ function CatCatogriesMedia() {
             <img    onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
-                "typeCatagoryy":"HEALTH & HYGIENE"
+                "typeCatagoryy":"ACCESSORIES"
               })
             }}  src={catpc3} alt="" />
-            <div className='cardtitle'>Carriers</div>
+            <div className='cardtitle'>ACCESSORIES</div>
             </div>
            
           </SwiperSlide>

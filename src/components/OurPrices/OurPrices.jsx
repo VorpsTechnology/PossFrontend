@@ -16,7 +16,7 @@ function OurPrices() {
    
   return (
 <>
-<div align='center' style={{margin:' 0px 0px 40px 0px'}} className='serviceheader'><h4>Our Services</h4></div>
+<div align='center' id='priceContainer' style={{margin:' 0px 0px 40px 0px'}} className='serviceheader'><h4>Our Services</h4></div>
 
 <div className='container-fluid' id='layout'>
 <div  align='center'  id='layout' >

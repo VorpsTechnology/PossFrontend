@@ -30,7 +30,7 @@ const Home = () => {
   
     <MediaNavbar />
     <Navbar />
-    <ImageSlider />
+    <ImageSlider/>
     <MediaImageSlider />
     <br />
     

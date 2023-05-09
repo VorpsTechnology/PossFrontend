@@ -17,7 +17,7 @@ function Navbar() {
 
     navigate('/Signin');
   }
-
+const adminData=localStorage.getItem("AdminId")
  const userInfo=localStorage.getItem("userInfo")
 const handleSearch=()=>{
 
@@ -42,7 +42,12 @@ const handleSearch=()=>{
         <a    className="navbar-brand"  >
     <>
    <img onClick={()=>{
-    navigate("/")
+    if(adminData){
+      navigate("/Anlyists")
+    }else{
+      navigate("/")
+    }
+   
    }} src={posslogogif } style={{width:"70px",height:'70px',borderRadius:'40px'}} alt="" />
     </>
 
@@ -52,7 +57,7 @@ const handleSearch=()=>{
           <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul id='liskmit'  className="navbar-nav mr-auto">
+         {!adminData &&  <ul id='liskmit'  className="navbar-nav mr-auto">
             <li className="nav-item dropdown">
               <a   className="nav-link dropdown-toggle" data-toggle="dropdown"  href='/' id="navbarDropdown" role="button"   aria-haspopup="true" aria-expanded="false">
                 Dogs
@@ -233,28 +238,28 @@ const handleSearch=()=>{
        
            
             
-          </ul>
-          <form id='serachbar' className="form-inline my-2 my-lg-0">
+          </ul>}
+        {!adminData &&   <form id='serachbar' className="form-inline my-2 my-lg-0">
            <div > 
             <input 
           onClick={()=>{handleSearch()}}
           style={{width:'240px',padding:'20px',backgroundColor:'white',fontSize:'15px'}} className="form-control mr-sm-2" type="search" placeholder='Search Products Here' aria-label="Search" /><span>
 </span>
 </div>
-          </form>
+          </form>}
           <ul  className='liskmin'>
-          <li   className="nav-item">
+         {!adminData &&  <li   className="nav-item">
               <a  id="navlinka" className="nav-link active" > <img onClick={()=>{
                 navigate("/storeCart")
               }} src={shopingcart} style={{width:"20px"}} alt="" /></a>
-            </li>
+            </li>}
            
             <li  className="nav-item dropdown">
-              <a href='/'  className="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <a   className="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src={user} alt="" />
               </a>
               <div className="dropdown-menu" style={{marginLeft:'-80px'}} aria-labelledby="navbarDropdown">
-            {userInfo ? <>
+            {userInfo  &&<>
               <a  className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}} onClick={()=>{
              
               navigate("/Account")
@@ -267,11 +272,27 @@ const handleSearch=()=>{
               localStorage.removeItem("userId")
               navigate("/")
             }}> LOGOUT </button> </a></>
-             : <>
-            <a  className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}} onClick={handleClick}> Sign Up </button> </a>
-                <a  className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}}  onClick={handleLogin} >Login</button> </a>
+             }
 
-            </>}
+             {
+              adminData && <>
+<a  className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}} onClick={()=>{
+              swal("Do You Want To Logout")
+              
+              localStorage.removeItem("AdminId")
+              localStorage.removeItem("AdminInfo")
+              navigate("/Adminlogin")
+            }}> LOGOUT </button> </a></>
+             }
+
+
+             {
+              !userInfo && <>
+              <a  className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}} onClick={handleClick}> Sign Up </button> </a>
+                  <a  className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}}  onClick={handleLogin} >Login</button> </a>
+  
+              </>
+             }
               </div>
             </li>
            

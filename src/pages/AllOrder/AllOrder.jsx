@@ -21,6 +21,11 @@ function AllOrder() {
           navigate("/Adminlogin")
         }
       },[])
+
+      const [status,setStatus]=useState({
+        status:"",
+        
+      })
       const fn=(data)=>{
     
         const images=[]
@@ -34,7 +39,7 @@ function AllOrder() {
   if(str_array[i]!==""){
   const url=new URL(str_array[i])  
   
-  
+
   
   images.push(url.searchParams.get('id'))
   
@@ -50,19 +55,17 @@ function AllOrder() {
   
   
   }
-  const handleStatus=async(ID)=>{
+  const handleStatus=async(ID,status)=>{
     const ata={
-       status:status.status,
+       status:status,
        orderID:ID 
     }
     console.log(ata);
     const {data}=await AdminChangeOrderstatus(ata)
-    alert("status changed")
- }
-  const [status,setStatus]=useState({
-    status:"ORDERED",
+    setStatus({status:""})
     
-  })
+ }
+ 
       useEffect(() => {
         async function fetchData() {
           // You can await here
@@ -150,11 +153,11 @@ function AllOrder() {
       
           {<>
           <div >
-         
+      
             <div style={{marginLeft:'10px'}}>
-               <a   onClick={()=>{
-            handleChange(row.OrderStatus)}}  className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               {row.OrderStatus}
+               <a   
+                 className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   {row.OrderStatus}
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               
@@ -163,13 +166,13 @@ function AllOrder() {
               {
             row.OrderStatus=="ORDERED" &&<>
               <a className="dropdown-item"     onClick={()=>{
-               handleChange("DISPATCHED")
+               handleStatus(row._id,"DISPATCHED")
               }}>DISPATCHED</a>
                <a className="dropdown-item"     onClick={()=>{
-             handleChange("DELIVERED")
+           handleStatus(row._id,"DELIVERED")
               }}>DELIVERED</a>
                <a className="dropdown-item"     onClick={()=>{
-              handleChange("CANCELLED")
+              handleStatus(row._id,"CANCELLED")
               }}>CANCELLED</a>
             </>
             
@@ -177,7 +180,7 @@ function AllOrder() {
            {
             row.OrderStatus=="DISPATCHED" &&<>
             <a className="dropdown-item"     onClick={()=>{
-             handleChange("DELIVERED")
+            handleStatus(row._id,"DELIVERED")
               }}>DELIVERED</a>
           
             </>
@@ -186,7 +189,7 @@ function AllOrder() {
           {
             row.OrderStatus=="DELIVERED" &&<>
              <a className="dropdown-item"     onClick={()=>{
-             handleChange("DELIVERED")
+             handleStatus(row._id,"DELIVERED")
               }}>DELIVERED</a></>
           }
                
@@ -196,27 +199,7 @@ function AllOrder() {
       
         
       </div>
-          {/* <select name="status" onChange={handleChange} id=""  style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}>
-           
-          {
-            row.OrderStatus=="ORDERED" &&<>
-
-            <option value="DISPATCHED">DISPATCHED</option>
-           <option value="DELIVERED">DELIVERED</option>
-           <option value="CANCELLED">CANCELLED</option>
-            </>
-          }
-           {
-            row.OrderStatus=="DISPATCHED" &&<>
-           
-           <option value="DELIVERED">DELIVERED</option>
-            </>
-          }
-           
-          {
-            row.OrderStatus=="DELIVERED" &&<></>
-          }
-           </select> */}
+          
            </div>
           </>}
                   
@@ -232,12 +215,7 @@ function AllOrder() {
 
               {row.OrderStatus=="DELIVERED"  ?  
               <>
-                {/* <button className='button' style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
-                onClick={  ()=>{handleStatus(row._id)}}
-                >Confirm</button>
-                  <button className='button' style={{background:"red",color:"white",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
-                onClick={  ()=>{ alert()}}
-                >Decline</button> */}
+                
 
 <button className='button' style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
               onClick={  ()=>{navigate(`/orderInvoice/${row._id}`)}}
@@ -249,7 +227,27 @@ function AllOrder() {
                 onClick={  ()=>{handleStatus(row._id)}}
                 >Confirm</button>
                   <button className='button' style={{background:"red",color:"white",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
-                onClick={  ()=>{ alert()}}
+                onClick={  async ()=>{
+                  if(row.OrderStatus==="ORDERED"){
+                    const ata={
+                      status:"ORDERED",
+                      orderID:row._id 
+                   }
+                   console.log(ata);
+                   const {data}=await AdminChangeOrderstatus(ata)
+                   alert("Changed to previous state")
+                   setStatus({status:""})
+                  }else if(row.OrderStatus==="DISPATCHED"){
+                    const ata={
+                      status:"ORDERED",
+                      orderID:row._id 
+                   }
+                   console.log(ata);
+                   const {data}=await AdminChangeOrderstatus(ata)
+                   alert("Changed to previous state")
+                   setStatus({status:""})
+                  }
+                }}
                 >Decline</button>
               </>
               

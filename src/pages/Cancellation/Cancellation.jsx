@@ -4,9 +4,17 @@ import Navbar from '../../components/Navbar/Navbar'
 import DataTable from 'react-data-table-component';
 import { Footer } from '../../components/Footer/Footer'
 import { useNavigate } from 'react-router-dom';
-import { AdminChangeOrderstatus, getAdminCancelledOrder, getAdminOrder } from '../../Api/OrderRequest';
+import { AdminChangeOrderstatus, getAdminCancelledOrder, getAdminOrder, removeOrder } from '../../Api/OrderRequest';
+import swal from 'sweetalert';
 
 function Cancellation() {
+  const handleRemove=async(e)=>{
+    const ata={orderId:e}
+    const {data}=await removeOrder(ata)
+    if(data){
+     swal("REMOVED ...!")
+    }
+ }
   const[users,setUsers]=useState([]);
   const [search,setSearch]=useState("");
   const [filterUsers,setFilteredUsers]=useState([]);
@@ -58,9 +66,9 @@ const handleChange = (e) => {
   setStatus({  status: e });
 };
 
-const handleStatus=async(ID)=>{
+const handleStatus=async(ID,status)=>{
    const ata={
-      status:status.status,
+      status:status,
       orderID:ID 
    }
 
@@ -146,35 +154,7 @@ const handleStatus=async(ID)=>{
       <div style={{display:"flex" }}>
 
          
-         <div style={{marginLeft:'10px'}}>
-            <a   onClick={()=>{
-            handleChange(row.OrderStatus)}}  className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {row.OrderStatus}
-           </a>
-           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-           
-          
-           
-           {
-         row.OrderStatus=="CANCELLED" &&<>
-           <a className="dropdown-item"     onClick={()=>{
-            handleChange("CANCELLED")
-           }}>REMOVE</a>
-           
-           
-         </>
-         
-       }
-        
-        
-      
-            
-          
-            
-            </div>
-   
-     
-   </div>
+      {row.OrderStatus}
                 
                
            </div>
@@ -184,14 +164,39 @@ const handleStatus=async(ID)=>{
           {name:"ACTION ",selector:(row)=>
           <div style={{display:"flex" }}>
         
-            {<>
+            {row.OrderStatus=="CANCELLED"?<>
               <button className='button' style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
-              onClick={  ()=>{handleStatus(row._id)}}
-              >Confirm</button>
+              onClick={  ()=>{
+                handleStatus(row._id,"CANCELACCEPTED")
+              }}
+              >Accept</button>
                 <button className='button' style={{background:"red",color:"white",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
-              onClick={  ()=>{ alert()}}
+              onClick={  async()=>{ 
+
+                if(row.OrderStatus==="CANCELLED"){
+                  const ata={
+                    status:"ORDERED",
+                    orderID:row._id 
+                 }
+                 console.log(ata);
+                 const {data}=await AdminChangeOrderstatus(ata)
+                 alert("Changed to previous state")
+                 
+                }
+              }}
               >Decline</button>
                
+            </>:<>
+            <button className='button' style={{background:"red",color:"white",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
+              onClick={ async ()=>{
+                
+                const ata={orderId:row._id}
+                const {data}=await removeOrder(ata)
+                if(data){
+                 swal("REMOVED ...!")
+                }
+              }}
+              >Remove</button>
             </>}
                     
                    

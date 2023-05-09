@@ -192,6 +192,18 @@ return `https://drive.google.com/uc?id=${images[0]}`
      
   
   </>
+
+          }
+
+          {
+            row.OrderStatus=="CANCELACCEPTED" &&   <>
+          
+           <button className='button' style={{background:"red",color:"white",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
+             onClick={  ()=>{handleRemove(row._id)}}
+             >Remove</button>
+              
+           
+           </>
           }
 
           {

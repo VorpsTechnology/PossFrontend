@@ -42,10 +42,10 @@ function ProductPurchase() {
     const userInfo =localStorage.getItem("userInfo")
 
     const navigate = useNavigate();
-
-    
-    const [post ,setPost]=useState({})
     const params =useParams()
+    const [param,setParam]=useState(params.id)
+    const [post ,setPost]=useState({})
+
     const value = 3.5;
     const [petCategory, setPCategory] = useState("");
     const [typeCategory, setTCategory] = useState("");
@@ -82,11 +82,13 @@ for(var i = 0; i < str_array.length; i++) {
 
         
           fn(data)
+          console.log(data);
           // ...
         }
         fetchData();
          
-      }, [images,fn]);
+      }, [params]);
+      
       function InstantPurchase(event) {
   
         navigate(`/InstantPurchase/${post._id}/${quant}`);
@@ -177,14 +179,16 @@ const [quant,setQuant]= useState(1)
                   <ul align='center' class="preview-thumbnail nav nav-tabs" >
                            <li class="active"><a href data-target="#pic-1" data-toggle="tab"><div className='card' style={{padding:'20px'}}><img onClick={()=>{
                             setPreview(1)
-                           }} src={`https://drive.google.com/uc?id=${images[1]}`} /></div></a></li>
+                           }} src={`https://drive.google.com/uc?id=${images[1]}`} style={{width:"6rem",height:"3rem"}} /></div></a></li>
                            <li><a href data-target="#pic-2" data-toggle="tab"> <div className='card' style={{padding:'20px'}}><img onClick={()=>{
                             setPreview(2)
-                           }}src={`https://drive.google.com/uc?id=${images[2]}`} /></div> </a></li>
+                           }}src={`https://drive.google.com/uc?id=${images[2]}`} style={{width:"6rem",height:"3rem"}}/></div> </a></li>
                            <li><a href data-target="#pic-3" data-toggle="tab"><div className='card' style={{padding:'20px'}}><img onClick={()=>{
                             setPreview(3)
-                           }}src={`https://drive.google.com/uc?id=${images[3]}`} /></div></a></li>
-                           <li className='onelistotem' ><a href data-target="#pic-4" data-toggle="tab"><div className='card' style={{padding:'20px'}}><img onClick={()=>{
+                           }}src={`https://drive.google.com/uc?id=${images[3]}`} style={{width:"6rem",height:"3rem"}} /></div></a></li>
+                           <li className='onelistotem' ><a href data-target="#pic-4" data-toggle="tab"><div className='card' style={{padding:'20px'}}><img
+                           style={{width:"6rem",height:"3rem"}}
+                           onClick={()=>{
                             setPreview(4)
                            }} src={`https://drive.google.com/uc?id=${images[4]}`} /></div></a></li>
                          

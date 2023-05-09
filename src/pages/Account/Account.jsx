@@ -41,8 +41,8 @@ const Account = () => {
                 <p className='para'>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.
                 Select a link below to view or edit information.</p>
                 <div style={{padding:'10px'}}>
-                    <div className='row' >
-                        <div className='col-4'>
+                    <div className='' >
+                        <div className=''>
                             <div className='card' id='accountcard'>
                                 <h4 className='headeraccount'>PERSONAL PROFILE</h4>
                                 <div>
@@ -53,8 +53,9 @@ const Account = () => {
 
                                 </div>
                             </div>
+                            <br />
                         </div>
-                        <div className='col-4'>
+                        <div className=''>
                         <div className='card'  id='accountcard'>
                             <h4 className='headeraccount'>ADDRESS BOOK</h4>
                             {address && address.length>0 && address.map((e)=>(
@@ -67,7 +68,8 @@ const Account = () => {
                             ))}
                         </div>
                         </div>
-                        <div className='col-4'>
+                        <br />
+                        <div className=''>
                         <div className='card' id='accountcard'>
                             <h4 className='headeraccount'>BILLING ADDRESS</h4>
                             {billingaddress &&

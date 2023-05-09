@@ -150,13 +150,13 @@ export default function CatCatogries() {
             onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
-                "typeCatagoryy":"ACCESSORIES"
+                "typeCatagoryy":"HEALTH & HYGIENE"
               })
             }}
             
           />
           </Card>
-          <div className='cardtitle'>Litter</div>
+          <div className='cardtitle'>HEALTH & HYGIENE</div>
         </div>
         <div>
         <Card sx={{ maxWidth: 200 }}>
@@ -166,12 +166,12 @@ export default function CatCatogries() {
             onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
-                "typeCatagoryy":"HEALTH & HYGIENE"
+                "typeCatagoryy":"ACCESSORIES"
               })
             }}
           />
         </Card>
-        <div className='cardtitle'>Carriers</div>
+        <div className='cardtitle'>ACCESSORIES</div>
         </div>
         <div>
         <Card sx={{ maxWidth: 200 }}>
