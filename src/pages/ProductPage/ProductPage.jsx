@@ -35,6 +35,7 @@ const[petCatagoryy,setpetCatagoryy]=useState([])
 const[typeCatagoryy,settypeCatagoryy]=useState([])
 const[brandCatagoryy,setbrandCatagoryy]=useState([])
 const [loading,setLoading]=useState(false)
+const [limit,setLimit]=useState(20)
 const brand=[
   'SMARTY PET',
 'LAL PET',
@@ -143,7 +144,28 @@ const brand=[
 ]
     const [category, setCategory] = useState("");
     // const [products, setProduct] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-  
+  const handleLoadMore=async()=>{
+    try {
+      setLoading(true)
+      // setpetCatagoryy(beta)
+    
+      const ata={
+        typeCatagoryy:typeCatagoryy,
+    
+        petCatagoryy:petCatagoryy,
+        brandCatagoryy:brandCatagoryy,
+        limit:limit
+       }
+      
+      // You can await here
+      
+      const {data}=await getAllProducts(ata)
+      setLoading(false)
+      setProduct(data)
+    } catch (error) {
+      console.log(error)
+    }
+  }
   const handlePet=async(e)=>{
     if(petCatagoryy.includes(e)){
       return
@@ -1588,11 +1610,19 @@ const handleSearchInput=async(e)=>{
           </div>
         </div>
 
-
+        <div>
+      <button className='button30' style={{backgroundColor:'#F2C879',color:'black'}} onClick={()=>{
+        let limits=limit+20
+        setLimit(limits)
+        handleLoadMore()
+      }}>Load more ...</button>
+    </div>
         </div>
 
     </div>
+ 
     </div>
+   
     <Footer />
     
     <MediaFooter />
