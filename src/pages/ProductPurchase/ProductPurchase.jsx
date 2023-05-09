@@ -102,10 +102,10 @@ const [quant,setQuant]= useState(1)
           const ata={
             productId:data,
             userId:userData,
-            quantity:1,
+            quantity:quant,
             name:post.name,
             uploadImages:post.uploadImages,
-            price:post.price
+            price:post.price*quant
           }
          const tata= await addToWishlist(ata)
          if(tata){

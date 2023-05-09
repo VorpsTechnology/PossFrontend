@@ -4,8 +4,59 @@ import Navbar from '../../components/Navbar/Navbar'
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar'
 import MediaFooter from '../../components/Footer/MediaFooter'
 import './ChangePassword.css'
+import { updateUserInfo } from '../../Api/UserRequest'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const ChangePassword = () => {
+    const navigate=useNavigate()
+    const [error,setError]=useState(false)
+    const [error2,setError2]=useState(false)
+    const [error3,setError3]=useState(false)
+    const userId=localStorage.getItem("userId")
+    const userInfo=localStorage.getItem("userInfo")
+    const [passwordChange,setPasswordChange]=useState({
+        oldPass:"",
+        _id:userId,
+        password:"",
+        conPass:""
+
+    })
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+         if(passwordChange.password !==passwordChange.conPass){
+          setError3(true)
+        } else {
+          try {
+            const { data } = await updateUserInfo(passwordChange);
+            if(data){
+                alert("Password changed succefully")
+                localStorage.removeItem("userId")
+                localStorage.removeItem("userInfo")
+                resetForm();
+                navigate("/");
+            }
+          } catch (error) {
+            console.log(error);
+            setError(true);
+          }
+        }
+      };
+    
+    const handleChange = (e) => {
+        setPasswordChange({ ...passwordChange, [e.target.name]: e.target.value });
+      };
+
+      const resetForm = () => {
+       
+        setPasswordChange({
+            oldPass:"",
+            _id:userId,
+            password:"",
+            conPass:""
+
+        })
+      };
   return (
     <>
         <div className='container-fluid'>
@@ -18,17 +69,20 @@ const ChangePassword = () => {
         </div>
         <div className='col-10'  id='colid2'>
             <div className='container' id='container'>
+                {error && <><h6 style={{color:"red"}}>Old password didn't match..!</h6></>}
+                {error2 && <><h6 style={{color:"red"}}>Field can't be empty..!</h6></>}
+                {error3 && <><h6 style={{color:"red"}}>Confirm password & password didn't match..!</h6></>}
                 <div><h4 className='passwordlabel'>Change Password</h4></div>
                 <hr />
                 <div>
-                    <form action="">
+                    <form onSubmit={handleSubmit}>
                         <div>
                             <div className='formlabel'><label htmlFor="">Old Password</label></div>
-                            <div><input className='inputbox' type="text" required /></div>
+                            <div><input className='inputbox' onChange={handleChange} name='oldPass' value={passwordChange.oldPass} type="password"  /></div>
                         </div>
                         <div>
                             <div className='formlabel'><label htmlFor="">New Password</label></div>
-                            <div><input className='inputbox' type="password" required />
+                            <div><input className='inputbox' onChange={handleChange} name='password' value={passwordChange.password} type="password"  />
                             <div style={{padding:'10px'}}>
                                 <li>Your password must contain at least 8 characters.</li>
                                 <li>Your password can’t be a commonly used password.</li>
@@ -37,12 +91,12 @@ const ChangePassword = () => {
                             </div>
                             </div>
                             <div>
-                            <div className='formlabel'><label>Conferm Password</label></div>
-                            <div><input  className='inputbox' type="password" required /></div>
+                            <div className='formlabel'><label>Confirm Password</label></div>
+                            <div><input  className='inputbox' onChange={handleChange} name='conPass' value={passwordChange.conPass} type="password"  /></div>
                             </div>
                             
                         </div>
-                        <div className='button'><button>Request Change Password</button></div>
+                        <div className='button'><button type='submit'>Request Change Password</button></div>
                     </form>
                 </div>
             </div>

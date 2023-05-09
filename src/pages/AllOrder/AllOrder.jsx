@@ -50,6 +50,19 @@ function AllOrder() {
   
   
   }
+  const handleStatus=async(ID)=>{
+    const ata={
+       status:status.status,
+       orderID:ID 
+    }
+    console.log(ata);
+    const {data}=await AdminChangeOrderstatus(ata)
+    alert("status changed")
+ }
+  const [status,setStatus]=useState({
+    status:"ORDERED",
+    
+  })
       useEffect(() => {
         async function fetchData() {
           // You can await here
@@ -59,12 +72,12 @@ function AllOrder() {
           console.log(data); 
           setUsers(data)
           setFilteredUsers(data.orderlist)
-          console.log(userData);
-          console.log(data.orderlist);
+   
+         
           // ...
         }
         fetchData();
-      }, []); // Or [] if effect doesn't need props or state
+      }, [status,handleStatus]); // Or [] if effect doesn't need props or state
       useEffect(()=>{
         const result=users.filter((user)=>{
             return user.firstname.toLowerCase().match(search.toLowerCase());
@@ -87,34 +100,45 @@ function AllOrder() {
       }, []);
 
 
-      const [status,setStatus]=useState({
-        status:"",
-        
-      })
-   console.log("sts",status);
+ 
       const handleChange = (e) => {
-        setStatus({  [e.target.name]: e.target.value });
+        setStatus({ status: e});
       };
 
-      const handleStatus=async(ID)=>{
-         const ata={
-            status:status.status,
-            orderID:ID 
-         }
-         console.log(ata);
-         const {data}=await AdminChangeOrderstatus(ata)
-         alert("status changed")
-      }
+      
       const coloumn=[
         {name:"Image",selector:(row)=><>
         <img src={fn(row.uploadImages)} style={{width:"80px",height:"80px ",margin:"20px", border: "2px solid #F3CA6D"}}  alt=""  />
         </>},
-        {name:"Id",selector:(row)=>row._id,style: {
-            color: "gray",
-            }},
+       
         {name:"Price",selector:(row)=>`₹ ${row.price}`,style: {
             color: "gray",
             }},
+            {name:"Id",selector:(row)=>row._id,style: {
+              color: "gray",
+              }},
+              {name:"Address",selector:(row)=><>
+              <div>
+              {row.deliveryAddress.firstName}
+              </div>
+              <div>
+              {row.deliveryAddress.address1}
+             
+              </div>
+              <div>
+              {row.deliveryAddress.city}
+              </div>
+              <div>
+              {row.deliveryAddress.state}
+
+              </div>
+              <div>
+              {row.deliveryAddress.post}
+              </div>
+              </>,style: {
+                color: "gray",
+                }},
+
             {name:"Product",selector:(row)=>row.name,style: {
                 color: "gray",
                 }},
@@ -126,10 +150,57 @@ function AllOrder() {
       
           {<>
           <div >
-          <select name="status" onChange={handleChange} id=""  style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}>
-           <option value="">{row.OrderStatus}</option>
+         
+            <div style={{marginLeft:'10px'}}>
+               <a   onClick={()=>{
+            handleChange(row.OrderStatus)}}  className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               {row.OrderStatus}
+              </a>
+              <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+              
+             
+              
+              {
+            row.OrderStatus=="ORDERED" &&<>
+              <a className="dropdown-item"     onClick={()=>{
+               handleChange("DISPATCHED")
+              }}>DISPATCHED</a>
+               <a className="dropdown-item"     onClick={()=>{
+             handleChange("DELIVERED")
+              }}>DELIVERED</a>
+               <a className="dropdown-item"     onClick={()=>{
+              handleChange("CANCELLED")
+              }}>CANCELLED</a>
+            </>
+            
+          }
+           {
+            row.OrderStatus=="DISPATCHED" &&<>
+            <a className="dropdown-item"     onClick={()=>{
+             handleChange("DELIVERED")
+              }}>DELIVERED</a>
+          
+            </>
+          }
+           
+          {
+            row.OrderStatus=="DELIVERED" &&<>
+             <a className="dropdown-item"     onClick={()=>{
+             handleChange("DELIVERED")
+              }}>DELIVERED</a></>
+          }
+               
+             
+               
+               </div>
+      
+        
+      </div>
+          {/* <select name="status" onChange={handleChange} id=""  style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}>
+           
           {
             row.OrderStatus=="ORDERED" &&<>
+
             <option value="DISPATCHED">DISPATCHED</option>
            <option value="DELIVERED">DELIVERED</option>
            <option value="CANCELLED">CANCELLED</option>
@@ -145,7 +216,7 @@ function AllOrder() {
           {
             row.OrderStatus=="DELIVERED" &&<></>
           }
-           </select>
+           </select> */}
            </div>
           </>}
                   

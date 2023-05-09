@@ -5,31 +5,39 @@ import Navbar from '../../components/Navbar/Navbar'
 import AccountSidebar from '../Account/AccountSidebar'
 import MediaFooter from '../../components/Footer/MediaFooter'
 
-import { getWishlist } from '../../Api/WishlistRoute';
+import { getWishlist, removeFromWishlist } from '../../Api/WishlistRoute';
 import DataTable from 'react-data-table-component';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 const Wishlist = () => {
+
+  const userId=localStorage.getItem("userId")
     const[users,setUsers]=useState([]);
 const [search,setSearch]=useState("");
 const [filterUsers,setFilteredUsers]=useState([]);
   const userData=localStorage.getItem('userId')
 const navigate=useNavigate()
+const handleRemove=async (row)=>{
+
+  const {data}=await removeFromWishlist({userId:userId,productId:row})
+  if(data){
+    alert("deleted successfully")
+  }
+}
   useEffect(() => {
     async function fetchData() {
       // You can await here
       // alert()
       const beta={userId:userData}
       const {data}=await getWishlist(beta)
-      console.log(data); 
+   
       setUsers(data)
       setFilteredUsers(data.Wishlist.products.reverse())
-      console.log(userData);
-      console.log(data.Wishlist.products);
+   
       // ...
     }
     fetchData();
-  }, []); // Or [] if effect doesn't need props or state
+  }, [handleRemove]); // Or [] if effect doesn't need props or state
   useEffect(()=>{
     const result=users.filter((user)=>{
         return user.firstname.toLowerCase().match(search.toLowerCase());
@@ -43,7 +51,7 @@ const navigate=useNavigate()
     
     const images=[]
     var str_array =data.split(',');
-console.log("str",str_array);
+
 for(var i = 0; i < str_array.length; i++) {
 // Trim the excess whitespace.
 str_array[i] = str_array[i].replace(/^\s*/, "").replace(/\s*$/, "");
@@ -101,8 +109,13 @@ return `https://drive.google.com/uc?id=${"10uk_BvFXN-tHCfAQNYeNDUg4cNaM5SaX"}`
         onClick={  ()=>{navigate(`/Productpurchase/${row.product}`)}}
         >View </button>
          <button className='button' style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
-        onClick={  ()=>{navigate(`/Instantpurchase/${row.product}/1`)}}
+        onClick={  ()=>{navigate(`/Instantpurchase/${row.product}/${row.quantity}`)}}
         >Buy now</button>
+            <button className='button' style={{background:"red",color:"white",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
+        onClick={()=>{
+          handleRemove(row.product)
+        }}
+        >Remove</button>
       </>}
               
              

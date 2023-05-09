@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar/Navbar'
 import { Footer } from '../Footer/Footer'
 import './Invoice.css'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { getOrd } from '../../Api/OrderRequest'
 import logo from "../../assets/logo.png"
 import { getProduct } from '../../Api/ProductRequest'
@@ -39,6 +39,8 @@ for(var i = 0; i < str_array.length; i++) {
 
 }
     }
+
+	const navigate=useNavigate()
     useEffect(() => {
         async function fetchData() {
         
@@ -61,7 +63,7 @@ for(var i = 0; i < str_array.length; i++) {
 						<table>
 							<tr>
 								<td className="title">
-									<img src={logo} style={{width:"70px" , maxWidth: "60px"}} />
+									<img onClick={()=>{navigate(-1)}} src={logo} style={{width:"70px" , maxWidth: "60px"}} />
 								</td>
 
 								<td>

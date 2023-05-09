@@ -25,9 +25,25 @@ import flying from '../../assets/flying.png'
 import back from '../../assets/back.png'
 import crip from '../../assets/crip.png'
 import umi from '../../assets/umi.png'
+import { getUser } from '../../Api/UserRequest';
 
 const PageOne = () => {
   const navigate = useNavigate();
+  const [user,setUser]=useState({})
+    const [billingaddress,setbillingaddress]=useState()
+    const userId=localStorage.getItem("userId")
+    useEffect(()=>{
+        async function fetchData() {
+          // You can await here
+            const {data}=await getUser(userId)
+            // ...
+            setUser(data)
+            setAddress(data.address)
+            const length=data.address.length
+            setbillingaddress(data.address[length-1])
+          }
+          fetchData();
+    },[])
   const userData =localStorage.getItem("userId")
   const userInfo =localStorage.getItem("userInfo")
    const [text,setText]=useState("Pay now") 
@@ -65,6 +81,19 @@ const PageOne = () => {
     
 
   });
+
+  const handleAddress=()=>{
+    setAddress({
+      city:billingaddress.city,
+      DAddress:billingaddress.address1,
+      state:billingaddress.state,
+      zip:billingaddress.post,
+      firstName:user.firstName,
+      lastName:user.lastName,
+      email:user.email,
+      mobile:user.mobile
+    })
+  }
 
   const customStyles = {
     content: {
@@ -141,7 +170,7 @@ setimages(arrz)
        name:post.name,
        uploadImages:post.uploadImages,
        quantity:params.quantity,
-       price:post.price,
+       price:post.price *params.quantity,
        deliveryAddress:{
           firstName:address.firstName,
           lastName:address.lastName,
@@ -210,8 +239,17 @@ setEstimate(response)
       <form action="" onSubmit={order}>
    {visible ?
    <>
-    
+   {billingaddress &&
+                                <div onClick={handleAddress} style={{width:"20rem",height:"auto",padding:"5px",backgroundColor:"#F2C879",borderRadius:"20px"}}>
+                                 <input type="radio" name="" id="" /> Select
+                                 <p> Address : { billingaddress.address1}, {billingaddress.city}, {billingaddress.state}, {billingaddress.post}, {billingaddress.country}
+                                
+                                </p>
+                                </div>
+                           } 
     <div>
+
+      
     <div className='per'><img src={per} alt="" /></div>
       <div className='flex-contianer' >
         <div className='flex-item-left' >
@@ -229,14 +267,14 @@ setEstimate(response)
                       <div className='container-fluid'>
                 <div style={{display:'flex',margin:'20px',justifyContent:'space-between'}}>
                       <div>price Subtotal : </div>
-                      <div> ₹ {post.price}</div>
+                      <div> ₹ {post.price * params.quantity}</div>
                   </div>
                   <div style={{display:'flex',margin:'20px',justifyContent:'space-between'}}>
                       <div>Shipping Charges</div>
                       <div> ₹ {shippingCost}</div>
                   </div>
                   <div >
-                      <div align='center'><button className='totalbutton'>Total Amount :   ₹ {post.price + shippingCost}</button></div>
+                      <div align='center'><button className='totalbutton'>Total Amount :   ₹ {(post.price * params.quantity) + shippingCost}</button></div>
                       
                   </div>
                 </div>
@@ -357,7 +395,7 @@ setEstimate(response)
                 </div>
                 <hr />
                 <div style={{marginTop:'20px'}}>
-                <h4 className='priceheado'>TOTAL PRICE ₹{post.price} </h4>
+                <h4 className='priceheado'>TOTAL PRICE ₹{post.price *params.quantity} </h4>
                 </div>
                 
                 {/* <div align="right" >
@@ -458,7 +496,7 @@ setEstimate(response)
                      <div  align='center'><h4> <b>{post.name}</b> </h4></div>
                        <div align='center'  style={{display:'flex',justifyContent:'space-between',padding:'20px'}}>
                        <div>Price</div>
-                        <div>₹ {post.price + shippingCost}</div>
+                        <div>₹ {(post.price *params.quantity)+ shippingCost}</div>
                        </div>
                      </div>
                     </div>
@@ -519,14 +557,14 @@ setEstimate(response)
                       <div className='container'>
                 <div style={{display:'flex',margin:'20px',justifyContent:'space-between'}}>
                       <div>price Subtotal :</div>
-                      <div> ₹ {post.price}</div>
+                      <div> ₹ {post.price *params.quantity}</div>
                   </div>
                   <div style={{display:'flex',margin:'20px',justifyContent:'space-between'}}>
                       <div>Shipping Charges </div>
                       <div> ₹ {shippingCost} </div>
                   </div>
                   <div >
-                      <div align='center'><button className='totalbutton'>Total Amount : ₹ {post.price + shippingCost} </button></div>
+                      <div align='center'><button className='totalbutton'>Total Amount : ₹ {(post.price*params.quantity) + shippingCost} </button></div>
                       
                   </div>
                 </div>
@@ -603,14 +641,14 @@ setEstimate(response)
               <div className='container'>
               <div style={{display:'flex',margin:'20px',justifyContent:'space-between'}}>
                     <div>product Subtotal :</div>
-                    <div> {post.price}</div>
+                    <div> {post.price * params.quantity}</div>
                 </div>
                 <div style={{display:'flex',margin:'20px',justifyContent:'space-between'}}>
                     <div>Shipping Charge </div>
                     <div>₹ {shippingCost}</div>
                 </div>
                 <div >
-                    <div align='center'><button className='priceheado'>Total :₹{post.price + shippingCost}</button></div>
+                    <div align='center'><button className='priceheado'>Total :₹{(post.price* params.quantity) + shippingCost}</button></div>
                     
                 </div>
               </div>

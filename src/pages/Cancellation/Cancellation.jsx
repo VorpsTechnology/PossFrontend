@@ -49,21 +49,38 @@ return `https://drive.google.com/uc?id=${images[0]}`
 
 
 }
+const [status,setStatus]=useState({
+  status:"CANCELLED",
+  
+})
+
+const handleChange = (e) => {
+  setStatus({  status: e });
+};
+
+const handleStatus=async(ID)=>{
+   const ata={
+      status:status.status,
+      orderID:ID 
+   }
+
+   const {data}=await AdminChangeOrderstatus(ata)
+   alert("status changed")
+}
     useEffect(() => {
       async function fetchData() {
         // You can await here
         // alert()
         
         const {data}=await getAdminCancelledOrder()
-        console.log(data); 
+       
         setUsers(data)
         setFilteredUsers(data.orderlist)
-        console.log(userData);
-        console.log(data.orderlist);
+     
         // ...
       }
       fetchData();
-    }, []); // Or [] if effect doesn't need props or state
+    }, [status,handleStatus]); // Or [] if effect doesn't need props or state
     useEffect(()=>{
       const result=users.filter((user)=>{
           return user.firstname.toLowerCase().match(search.toLowerCase());
@@ -86,24 +103,7 @@ return `https://drive.google.com/uc?id=${images[0]}`
     }, []);
 
 
-    const [status,setStatus]=useState({
-      status:"",
-      
-    })
- console.log("sts",status);
-    const handleChange = (e) => {
-      setStatus({  [e.target.name]: e.target.value });
-    };
 
-    const handleStatus=async(ID)=>{
-       const ata={
-          status:status.status,
-          orderID:ID 
-       }
-       console.log(ata);
-       const {data}=await AdminChangeOrderstatus(ata)
-       alert("status changed")
-    }
     const coloumn=[
       {name:"Image",selector:(row)=><>
       <img src={fn(row.uploadImages)} style={{width:"80px",height:"80px ",margin:"20px", border: "2px solid #F3CA6D"}}  alt=""  />
@@ -117,22 +117,64 @@ return `https://drive.google.com/uc?id=${images[0]}`
           {name:"Product",selector:(row)=>row.name,style: {
               color: "gray",
               }},
+              ,
+              {name:"Address",selector:(row)=><>
+              <div>
+              {row.deliveryAddress.firstName}
+              </div>
+              <div>
+              {row.deliveryAddress.address1}
+             
+              </div>
+              <div>
+              {row.deliveryAddress.city}
+              </div>
+              <div>
+              {row.deliveryAddress.state}
+
+              </div>
+              <div>
+              {row.deliveryAddress.post}
+              </div>
+              </>,style: {
+                color: "gray",
+                }},
               {name:"PaymentMod",selector:(row)=>row.paymentMod,style: {
                   color: "gray",
                   }},
       {name:"Status",selector:(row)=>
       <div style={{display:"flex" }}>
-    
-        {<>
-        <div >
-        <select name="status" onChange={handleChange} id=""  style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}>
-         <option value="">{row.OrderStatus}</option>
-        
-         <option value="REMOVE">REMOVE</option>
+
          
-         </select>
-         </div>
-        </>}
+         <div style={{marginLeft:'10px'}}>
+            <a   onClick={()=>{
+            handleChange(row.OrderStatus)}}  className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {row.OrderStatus}
+           </a>
+           <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+           
+          
+           
+           {
+         row.OrderStatus=="CANCELLED" &&<>
+           <a className="dropdown-item"     onClick={()=>{
+            handleChange("CANCELLED")
+           }}>REMOVE</a>
+           
+           
+         </>
+         
+       }
+        
+        
+      
+            
+          
+            
+            </div>
+   
+     
+   </div>
                 
                
            </div>

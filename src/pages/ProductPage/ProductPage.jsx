@@ -31,11 +31,116 @@ const ProductPage = () => {
     window.scrollTo(0, 0)
   }, [])
   const  [isMobile,setIsMobile] = useState(false);
-const[petCatagoryy,setpetCatagoryy]=useState([params.id])
-const[typeCatagoryy,settypeCatagoryy]=useState([params.type])
+const[petCatagoryy,setpetCatagoryy]=useState([])
+const[typeCatagoryy,settypeCatagoryy]=useState([])
 const[brandCatagoryy,setbrandCatagoryy]=useState([])
 const [loading,setLoading]=useState(false)
-
+const brand=[
+  'SMARTY PET',
+'LAL PET',
+'DROOLS',
+'ACANA',
+'AQUA DOG',
+'ARDEN GRANGE',
+'SAVIC',
+'DOGFEST',
+'BARK N BONE',
+'BARK BUTLER',
+'BASIL',
+'ALL4PETS',
+'CANOPUS',
+'CATFEST',
+'DOG',
+'PAWSH',
+'TRUELOVE',
+'WAGGY ZONE',
+'WHOOF WHOOF',
+'BEAPHAR',
+'BEEPS',
+'BENNY’S',
+'BIO PET ACTIVE',
+'BIOLINE',
+'TRIXIE',
+'BRAVECTO',
+'FIFOZONE',
+'CANINE CREEK',
+'VIRBAC',
+'SAVAVET',
+'INTERSAND',
+'ODOURLOCK',
+'SIMPLE SOLUTION',
+'CATSAN',
+'CHAPPI',
+'RENA',
+'CHIP CHOP',
+'CHIPSI',
+'CAPTAIN ZACK',
+'TEA TREE OIL',
+'DIBAQ',
+'POSS',
+'TRIXIE',
+'BAYER',
+'BIO GROOM',
+'FARMINA',
+'FIDELE',
+'FOODIE PUPPIES',
+'PETFROLICS',
+'FIRST BARK',
+'FIRST MEOW',
+'FONDAPET',
+'VENKY’S',
+'TROPICLEAN',
+'OUTWARD HOUND',
+'GNAWLERS',
+'gnawlers puppy snack strip123',
+'GOODIES',
+'H.P.',
+'HELLO PET',
+'HAPPY DOG',
+'HELLOFEED',
+'HIMALAYA',
+'PETSTAGES',
+'IAMS',
+'iams pug123',
+'FREEDOM',
+'JERHIGH',
+'KILTIX',
+'KISKIN',
+'KENNEL KITCHEN',
+'BIO-GROOM',
+'KRYPTO',
+'ME-O',
+'MY BEAU',
+'FARMINA',
+'PET CARE',
+'VETOQUINOL',
+'PETKIN',
+'ORIJEN',
+'OUT PETCARE',
+'PEDIGREE',
+'DOG LOVERS',
+'INTAS',
+'PURINA',
+'HOLY PAWS',
+'ROYAL CANIN',
+'RUFFWEAR',
+'SCOOBEE',
+'SHEBA',
+'SIMPARICA',
+'SMARTHEART',
+'SKY EC',
+'TAIYO',
+'TASTE OF THE WILD',
+'TEMPTATION',
+'TWISTIX',
+'VITAPOL',
+'WHISKAS',
+'WOREX',
+'YOUR BUDDY',
+'ZOOMIES',
+'ZUPREEM',
+'BARK BONE'
+]
     const [category, setCategory] = useState("");
     // const [products, setProduct] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
   
@@ -43,9 +148,33 @@ const [loading,setLoading]=useState(false)
     if(petCatagoryy.includes(e)){
       return
     }else{
-    const beta=[...petCatagoryy,e]
+    // const beta=[...petCatagoryy,e]
     setLoading(true)
-    setpetCatagoryy(beta)
+    // setpetCatagoryy(beta)
+    petCatagoryy.push(e)
+    const ata={
+      typeCatagoryy:typeCatagoryy,
+  
+      petCatagoryy:petCatagoryy,
+      brandCatagoryy:brandCatagoryy
+     }
+    
+    // You can await here
+    
+    const {data}=await getAllProducts(ata)
+    setLoading(false)
+    setProduct(data)
+    }
+    // ...
+  }
+  const handleBrand=async(e)=>{
+    if(brandCatagoryy.includes(e)){
+      return
+    }else{
+    // const beta=[...petCatagoryy,e]
+    setLoading(true)
+    // setpetCatagoryy(beta)
+    brandCatagoryy.push(e)
     const ata={
       typeCatagoryy:typeCatagoryy,
   
@@ -66,9 +195,11 @@ const [loading,setLoading]=useState(false)
   if(typeCatagoryy.includes(e)){
     return
   }else{
-    setLoading(true)
-  const beta=[...typeCatagoryy,e]
-  settypeCatagoryy(beta)
+    
+  // const beta=[...typeCatagoryy,e]
+ setLoading(true)
+  // settypeCatagoryy(beta)
+  typeCatagoryy.push(e)
   const ata={
     typeCatagoryy:typeCatagoryy,
 
@@ -87,78 +218,7 @@ const [loading,setLoading]=useState(false)
 
 
   
- const handlePetSelect=async(e)=>{
-  if(petCatagoryy.includes(e.target.value)){
-    return
-  }else{
-    
-    setLoading(true)
-    const beta=[...petCatagoryy,e.target.value]
-   
-    setpetCatagoryy(beta)
-    const ata={
-      typeCatagoryy:typeCatagoryy,
-  
-      petCatagoryy:petCatagoryy,
-      brandCatagoryy:brandCatagoryy
-     }
-    
-    // You can await here
-    
-    const {data}=await getAllProducts(ata)
-    setLoading(false)
-    setProduct(data)
- }
-    // ...
- }
-
-const handleTypeSelect=async(e)=>{
  
-  if(typeCatagoryy.includes(e.target.value)){
-    return
-  }else{
-    setLoading(true)
-    const beta=[...typeCatagoryy,e.target.value]
-    settypeCatagoryy(beta)
-    const ata={
-      typeCatagoryy:typeCatagoryy,
-  
-      petCatagoryy:petCatagoryy,
-      brandCatagoryy:brandCatagoryy
-     }
-    
-    // You can await here
-    
-    const {data}=await getAllProducts(ata)
-    setLoading(false)
-    setProduct(data)
-  
-    // ...
-  }
-}
-
-const handleBrandSelect=async(e)=>{
-  if(brandCatagoryy.includes(e.target.value)){
-    return
-  }else{
-    setLoading(true)
-  const beta=[...brandCatagoryy,e.target.value]
-  setbrandCatagoryy(beta)
-  const ata={
-    typeCatagoryy:typeCatagoryy,
-
-    petCatagoryy:petCatagoryy,
-    brandCatagoryy:brandCatagoryy
-   }
-  
-  // You can await here
-  
-  const {data}=await getAllProducts(ata)
-  setLoading(false)
-  setProduct(data)
-  }
-  // ...
-}
     const navigate =useNavigate()
     function handleProductPurchase(event){
       navigate('/ProductPurchase');
@@ -274,10 +334,10 @@ if (index > -1) { // only splice array when item is found
         setLoading(true)
         
         const ata={
-          typeCatagoryy:typeCatagoryy,
+          typeCatagoryy:[params.type],
       
-          petCatagoryy:petCatagoryy,
-          brandCatagoryy:brandCatagoryy
+          petCatagoryy:[params.id],
+          brandCatagoryy:[]
          }
         
         // You can await here
@@ -289,22 +349,10 @@ if (index > -1) { // only splice array when item is found
         // ...
       }
       fetchData();
-    }, [params,typeCatagoryy,petCatagoryy,brandCatagoryy]); // Or [] if effect doesn't need props or state
+    }, [params]); // Or [] if effect doesn't need props or state
 
 
-    // useEffect(() => {
-    //   async function fetchData() {
-    //     // You can await here
-    //     const beta={userId:userData}
-    //     const {data}=await getWishlist(beta)
-    //     setUsers(data)
-    //     setFilteredUsers(data.Wishlist.products)
-    //     console.log(userData);
-    //     console.log(data.Wishlist.products);
-    //     // ...
-    //   }
-    //   fetchData();
-    // }, []);
+   
     const src=(data)=>{
     
       const images=[]
@@ -1033,136 +1081,87 @@ const handleSearchInput=async(e)=>{
     <div className='flexit1'>
       <div style={{display:'flex'}}>
       <div>
-      <a   href='/' className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Pet Catogory
+      <a    className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Pet Category
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+             
               <a className="dropdown-item"     onClick={()=>{
-                handleProduct({
-                  "petCategoryy":"BIRD",
-                  "typeCatagoryy":"FOOD"
-                })
+                handlePet( "DOG")
+              }}>DOG</a>
+               <a className="dropdown-item"     onClick={()=>{
+                handlePet( "CAT")
+              }}>CAT</a>
+              <a className="dropdown-item"     onClick={()=>{
+                handlePet( "BIRD")
               }}>BIRD </a>
                 <a className="dropdown-item"   onClick={()=>{
-                handleProduct({
-                  "petCategoryy":"TURTLE",
-                  "typeCatagoryy":"FOOD"
-                })
+                  handlePet( "TURTLE")
+              
               }} >TURTLE</a>
                 <a className="dropdown-item"   onClick={()=>{
-                handleProduct({
-                  "petCategoryy":"FISH",
-                  "typeCatagoryy":"FOOD"
-                })
+                  handlePet( "FISH")
               }} >FISH </a>
                 
                 <a className="dropdown-item" 
                   onClick={()=>{
-                    handleProduct({
-                      "petCategoryy":"GUINEA PIG",
-                      "typeCatagoryy":"FOOD"
-                    })
+                    handlePet( "GUINEA PIG")
+                   
                   }}
                 >GUINEA PIG</a>
                 <a className="dropdown-item"   onClick={()=>{
-                handleProduct({
-                  "petCategoryy":"HAMSTER",
-                  "typeCatagoryy":"FOOD"
-                })
+                  handlePet( "HAMSTER")
+              
               }} >HAMSTER</a>
                 <a className="dropdown-item" 
                   onClick={()=>{
-                    handleProduct({
-                      "petCategoryy":"RABBIT",
-                      "typeCatagoryy":"FOOD"
-                    })
+                    handlePet( "RABBIT")
+                   
                   }}
                 >RABBIT </a>
                
                
               
               </div>
-      {/* <select  className='selectbox' 
-        style={{width:"100%"}}
-      onChange={handlePetSelect} 
-      id="">
-        <option value={params.id}>PET CATEGORY</option>
-        <option value="DOG">DOG</option>
-         <option value="CAT">CAT</option>
-         <option value="HAMSTER">HAMSTER</option>
-         <option value="RABBIT">RABBIT</option>
-         <option value="FISH">FISH</option>
-         <option value="TURTLE">TURTLE</option>
-         <option value="BIRD">BIRD</option>
-         <option value="GUINEA PIG">GUINEA PIG</option>
-         <option value="DOG">All</option>
-        </select> */}
+    
         </div>
       <div style={{marginLeft:'10px'}}>
-               <a   href='/' className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Catogory Type
+               <a    className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Type Category
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item"     onClick={()=>{
-                handleProduct({
-                  "petCategoryy":"BIRD",
-                  "typeCatagoryy":"FOOD"
-                })
-              }}>BIRD </a>
+              
+               <a className="dropdown-item"     onClick={()=>{
+               handletype("FOOD")
+              }}>FOOD </a>
                 <a className="dropdown-item"   onClick={()=>{
-                handleProduct({
-                  "petCategoryy":"TURTLE",
-                  "typeCatagoryy":"FOOD"
-                })
-              }} >TURTLE</a>
+                 handletype("TOY")
+              }} >TOY</a>
                 <a className="dropdown-item"   onClick={()=>{
-                handleProduct({
-                  "petCategoryy":"FISH",
-                  "typeCatagoryy":"FOOD"
-                })
-              }} >FISH </a>
+                  handletype("TREAT")
+              }} >TREAT</a>
                 
                 <a className="dropdown-item" 
                   onClick={()=>{
-                    handleProduct({
-                      "petCategoryy":"GUINEA PIG",
-                      "typeCatagoryy":"FOOD"
-                    })
+                    handletype("APPARELS")
                   }}
-                >GUINEA PIG</a>
+                >APPARELS</a>
                 <a className="dropdown-item"   onClick={()=>{
-                handleProduct({
-                  "petCategoryy":"HAMSTER",
-                  "typeCatagoryy":"FOOD"
-                })
-              }} >HAMSTER</a>
+                 handletype("ACCESSORIES")
+              }} >ACCESSORIES</a>
                 <a className="dropdown-item" 
                   onClick={()=>{
-                    handleProduct({
-                      "petCategoryy":"RABBIT",
-                      "typeCatagoryy":"FOOD"
-                    })
+                    handletype("HEALTH & HYGIENE")
                   }}
-                >RABBIT </a>
+                >HEALTH & HYGIENE </a>
+                 <a className="dropdown-item" 
+                  onClick={()=>{
+                    handletype("BEDS")
+                  }}
+                >BEDS & MATS </a>
                
-               
-              
-              </div>
-      {/* <select  
-      onChange={handleTypeSelect} 
-      style={{width:"100%"}}
-      className='selectbox' name="" id="">
-        <option value={params.type}>TYPE CATEGORY</option>
-        <option value="FOOD">FOOD </option>
-        <option value="TOY">TOY</option>
-        <option value="ACCESSORIES">ACCESSORIES</option>
-        <option value="TREAT">TREAT</option>
-        <option value="MAT">BEDS & MAT</option>
-        <option value="APPARELS">APPARELS</option>
-        <option value="HEALTH & HYGIENE">HEALTH & HYGIENE</option>
-        <option value="DOG">All</option>
-
-        </select> */}
+               </div>
+      
         </div>
       </div>
      <div style={{display:"block"}}>
@@ -1224,11 +1223,7 @@ const handleSearchInput=async(e)=>{
     <div className="card-body">
     
       <ul align='left' className="list-menu">
-      <li>
-          <a onClick={()=>{
-            handlePet("DOG")
-          }}>All</a>
-        </li>
+    
         <li>
           <a onClick={()=>{
              handlePet("DOG")
@@ -1284,6 +1279,9 @@ const handleSearchInput=async(e)=>{
       aria-expanded="false"
       className="anchor"
     >
+
+{/* 
+      brnad starts here */}
       <h6 className="title"><span>Brand</span> <i className="icon-control fa fa-chevron-down" /></h6>
   
     </a>
@@ -1292,58 +1290,28 @@ const handleSearchInput=async(e)=>{
     <div className="card-body">
     
       <ul align='left' className="list-menu">
-      <li>
-          <a onClick={()=>{
-            handlePet("DOG")
-          }}>All</a>
-        </li>
-        <li>
-          <a onClick={()=>{
-             handlePet("DOG")
-          }}>Dogs</a>
-        </li>
-        <li>
-          <a onClick={()=>{
-             handlePet("CAT")
-          }}>Cats </a>
-        </li>
-        <li>
-          <a onClick={()=>{
-           handlePet("RABBIT")
-          }}>Rabbit</a>
-        </li>
-        <li>
-          <a onClick={()=>{
-            handlePet("TURTLE")
-          }}>Turtle</a>
-        </li>
+    {brand &&brand .length>0 && brand.map((e)=>(
+   <li>
+   <a onClick={()=>{
+      handleBrand(e)
+   }}>{e}</a>
+ </li>
+    )
 
-        <li>
-          <a onClick={()=>{
-            handlePet("GUINEA PIG")
-          }}>Guinea Pigs</a>
-        </li>
-        <li>
-          <a onClick={()=>{
-           handlePet("BIRD")
-          }}>Birds</a>
-        </li>
-        <li>
-          <a onClick={()=>{
-          handlePet("FISH")
-          }}>Fish</a>
-        </li>
-        <li>
-          <a onClick={()=>{
-         handlePet("HAMSTER")
-          }}>Hamster</a>
-        </li>
+    ) }
+       
+       
+       
+
+      
         
       
       </ul>
     </div>{" "}
     {/* card-body.// */}
   </div>
+
+  {/* brand ends here */}
     {/* <header className="card-header" style={{backgroundColor:'transparent'}}>
     <a
       href

@@ -1,12 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AccountSidebar from './AccountSidebar'
 import Navbar from '../../components/Navbar/Navbar'
 import './Account.css'
 import MediaFooter from '../../components/Footer/MediaFooter'
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar'
+import { getUser } from '../../Api/UserRequest'
 
 
 const Account = () => {
+    const [address,setAddress]=useState([])
+    const [user,setUser]=useState({})
+    const [billingaddress,setbillingaddress]=useState()
+    const userId=localStorage.getItem("userId")
+    useEffect(()=>{
+        async function fetchData() {
+          // You can await here
+            const {data}=await getUser(userId)
+            // ...
+            setUser(data)
+            setAddress(data.address)
+            const length=data.address.length
+            setbillingaddress(data.address[length-1])
+          }
+          fetchData();
+    },[]
+    )
   return (
     <>
     <div className='container-fluid'>
@@ -27,16 +45,36 @@ const Account = () => {
                         <div className='col-4'>
                             <div className='card' id='accountcard'>
                                 <h4 className='headeraccount'>PERSONAL PROFILE</h4>
+                                <div>
+                                <h6><b>First name :</b> {user.firstName?user.firstName: " +"}</h6>
+                                <h6><b>Last name :</b> {user.lastName?user.lastName:" +"} </h6>
+                                <h6><b>Phone :</b> {user.mobile?user.mobile:" +"}</h6>
+                                <h6><b>Email :</b> { user.email?user.email:" +"} </h6>
+
+                                </div>
                             </div>
                         </div>
                         <div className='col-4'>
                         <div className='card'  id='accountcard'>
                             <h4 className='headeraccount'>ADDRESS BOOK</h4>
+                            {address && address.length>0 && address.map((e)=>(
+                                <>
+                                <div>
+                               Address : { e.address1}, {e.city}, {e.state}, {e.post}, {e.country}
+                                 </div>
+                                 <hr />
+                                 </>
+                            ))}
                         </div>
                         </div>
                         <div className='col-4'>
                         <div className='card' id='accountcard'>
                             <h4 className='headeraccount'>BILLING ADDRESS</h4>
+                            {billingaddress &&
+                                <div>
+                                Address : { billingaddress.address1}, {billingaddress.city}, {billingaddress.state}, {billingaddress.post}, {billingaddress.country}
+                                </div>
+                           }
                         </div>
                         </div>
                     </div>

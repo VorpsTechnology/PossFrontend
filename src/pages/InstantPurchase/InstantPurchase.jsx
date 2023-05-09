@@ -6,6 +6,7 @@ const InstantPurchase = () => {
   return (
     <div>
       <Navbar />
+      
       <PageOne />
       
       

@@ -6,14 +6,20 @@ import MediaFooter from '../../components/Footer/MediaFooter'
 import './StoreOrder.css'
 import DataTable from 'react-data-table-component';
 import { useNavigate } from 'react-router-dom'
-import { cancelOrder, getOrder, returnOrder } from '../../Api/OrderRequest';
+import { cancelOrder, getOrder, removeOrder, returnOrder } from '../../Api/OrderRequest';
 import swal from 'sweetalert'
 function StoreOrder() {
     const[users,setUsers]=useState([]);
     const [search,setSearch]=useState("");
     const [filterUsers,setFilteredUsers]=useState([]);
   
-
+const handleRemove=async(e)=>{
+   const ata={orderId:e}
+   const {data}=await removeOrder(ata)
+   if(data){
+    swal("REMOVED ...!")
+   }
+}
     const fn=(data)=>{
     
       const images=[]
@@ -63,7 +69,7 @@ return `https://drive.google.com/uc?id=${images[0]}`
       const {data}=await returnOrder(beta)
       
       if(data){
-        swal("Order cancelled")
+        swal("Requested to return ..!")
       }else{
         swal("Error occured !")
       }
@@ -83,7 +89,7 @@ return `https://drive.google.com/uc?id=${images[0]}`
 
         fetchData();
 
-      }, [handleCancelReq]); // Or [] if effect doesn't need props or state
+      }, [handleCancelReq,handleRemove]); // Or [] if effect doesn't need props or state
       useEffect(()=>{
         const result=users.filter((user)=>{
             return user.firstname.toLowerCase().match(search.toLowerCase());
@@ -181,7 +187,7 @@ return `https://drive.google.com/uc?id=${images[0]}`
     onClick={  ()=>{ navigate("/ContactUs")}}
     >Contact us</button>
   <button className='button' style={{background:"red",color:"white",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
-    onClick={  ()=>{swal("Will be removed after 7 days")}}
+    onClick={  ()=>{handleRemove(row._id)}}
     >Remove</button>
      
   
@@ -194,7 +200,7 @@ return `https://drive.google.com/uc?id=${images[0]}`
               onClick={  ()=>{ navigate("/ContactUs")}}
               >Contact us</button>
                 <button className='button' style={{background:"red",color:"white",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}
-              onClick={  ()=>{ handleCancelReq(row._id)}}
+              onClick={  ()=>{handleRemove(row._id)}}
               >Remove</button>
                
             

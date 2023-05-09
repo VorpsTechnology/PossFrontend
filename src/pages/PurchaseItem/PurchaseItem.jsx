@@ -44,8 +44,8 @@ function PurchaseItem() {
       lastName: "",
       mobile:"",
      bookingType:params.id,
-     state:"KERALA",
-     city:"KONGAD",
+     state:"",
+     city:"",
      zip:"",
      Daddress:""
       
@@ -106,8 +106,8 @@ function PurchaseItem() {
         lastName: "",
         mobile:"",
        bookingType:"PETS BATHING",
-       state:"KERALA",
-       city:"KONGAD",
+       state:"",
+       city:"",
        zip:"",
        Daddress:""
 
