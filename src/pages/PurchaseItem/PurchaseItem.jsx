@@ -79,12 +79,12 @@ function PurchaseItem() {
         // swal("Thank you for reaching out, We will get back to you Shortly !")
 
         swal({
-          title: "Hurry!",
-          text: "Thank you for reaching out, We will get back to you Shortly !",
+          title: "We will contact you shortly",
+          text: "Thank you for reaching out, you can also chat with us through whatsapp !",
           type: "success",
           Background: "#F9C058"
         });
-        navigate('/ContactUs')
+       
         reset()
        }
       }else{
@@ -272,7 +272,16 @@ function PurchaseItem() {
         </div>
       
         <div >
-                <button className='paybtn2' id='paybtn2'> <span style={{marginRight:'15px'}}><i class="fa fa-phone" aria-hidden="true"></i></span>Request Callback</button>
+        <a 
+        href="https://api.whatsapp.com/send?phone=+91-9811041767&text=Contacting to you in regards of this page https://www.possIndia.in/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+    <button className='paybtn2' id='paybtn2' 
+               
+               > <span style={{marginRight:'15px'}}>  <i class="fa fa-phone" aria-hidden="true"></i></span>Request Callback</button>
+      </a>
+                
 
                 </div>
         

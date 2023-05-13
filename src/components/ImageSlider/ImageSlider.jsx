@@ -38,7 +38,9 @@ const ImageSlider = () => {
                 
           </div>
           <div className="carousel-item"  >
-           <a href='#priceContainer' ><img className="d-block "  style={{width:'100%',borderRadius:'20px'}}  src={slide2} alt="Second slide" /></a>
+           <a  href="https://api.whatsapp.com/send?phone=+91 83680 29076&text=Contacting to you in regards with pet boarding service "
+        target="_blank"
+        rel="noopener noreferrer" ><img className="d-block "  style={{width:'100%',borderRadius:'20px'}}  src={slide2} alt="Second slide" /></a>
 
          
           </div>

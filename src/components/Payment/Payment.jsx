@@ -58,7 +58,7 @@ function Payment() {
             </div>
             <div align='left' className='card' style={{marginTop:'20px'}} id='card10'>
                 <h4 className='shiphead' >Method</h4>
-                <h6>Shiiping Charge fixed 0.00</h6>
+                <h6>Shipping Charge fixed 0.00</h6>
             </div>
             <div align='left' style={{height:'0px'}} className='umi'><img src={umi} alt="" /></div>
             <div align='right' style={{height:'0px'}} className='cripimg'><img src={crip} alt="" /></div>

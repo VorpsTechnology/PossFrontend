@@ -144,28 +144,28 @@ const brand=[
 ]
     const [category, setCategory] = useState("");
     // const [products, setProduct] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-  const handleLoadMore=async()=>{
-    try {
-      setLoading(true)
-      // setpetCatagoryy(beta)
+  // const handleLoadMore=async()=>{
+  //   try {
+  //     setLoading(true)
+  //     // setpetCatagoryy(beta)
     
-      const ata={
-        typeCatagoryy:typeCatagoryy,
+  //     const ata={
+  //       typeCatagoryy:typeCatagoryy,
     
-        petCatagoryy:petCatagoryy,
-        brandCatagoryy:brandCatagoryy,
-        limit:limit
-       }
+  //       petCatagoryy:petCatagoryy,
+  //       brandCatagoryy:brandCatagoryy,
+  //       limit:limit
+  //      }
       
-      // You can await here
+  //     // You can await here
       
-      const {data}=await getAllProducts(ata)
-      setLoading(false)
-      setProduct(data)
-    } catch (error) {
-      console.log(error)
-    }
-  }
+  //     const {data}=await getAllProducts(ata)
+  //     setLoading(false)
+  //     setProduct(data)
+  //   } catch (error) {
+  //     console.log(error)
+  //   }
+  // }
   const handlePet=async(e)=>{
     if(petCatagoryy.includes(e)){
       return
@@ -1147,7 +1147,7 @@ const handleSearchInput=async(e)=>{
               </div>
     
         </div>
-      <div style={{marginLeft:"1rem"}}>
+      <div className='commm'>
                <a  style={{width:"auto",height:"2rem"}}     className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  Type
               </a>
@@ -1591,7 +1591,7 @@ const handleSearchInput=async(e)=>{
             <div style={{paddingTop:'5px',borderRadius:'20px'}} align="center">
             <button   className='button30' onClick={()=>{
                         wishlist(ele)
-            }} ><img style={{backgroundColor:'#FFFFFF',margin:'5px',}} src={ele.uploadImages} alt="" /><span style={{backgroundColor:'#FFFFFF'}}>ADD TO CART</span></button></div>
+            }} ><img style={{backgroundColor:'#F4F7EE',margin:'5px',}} src={ele.uploadImages} alt="" /><span style={{backgroundColor:"#F4F7EE"}}>ADD TO CART</span></button></div>
             <div style={{borderRadius:'20px',paddingTop:'5px',paddingBottom:'5px'}} align="center">
             <button   className='button30' style={{backgroundColor:'#F2C879',color:'black'}} onClick={()=>{
               navigate(`/InstantPurchase/${ele._id}/1`)
@@ -1610,13 +1610,13 @@ const handleSearchInput=async(e)=>{
           </div>
         </div>
 
-        <div>
-      <button className='button30' style={{backgroundColor:'#F2C879',color:'black'}} onClick={()=>{
+        {/* <div>
+     <button className='button30' style={{backgroundColor:'#F2C879',color:'black'}} onClick={()=>{
         let limits=limit+20
         setLimit(limits)
         handleLoadMore()
-      }}>Load more ...</button>
-    </div>
+      }}>Load more ...</button> 
+    </div> */}
         </div>
 
     </div>

@@ -3,6 +3,7 @@ import './MediaFooter.css'
 import facebooklink from '../../assets/facebooklink.png'
 import instalink from '../../assets/instalink.png'
 import poss_two from '../../assets/poss_two.png'
+import whatsupicon from '../../assets/whatsupicon.png'
 
 function MediaFooter() {
   return (
@@ -42,6 +43,17 @@ function MediaFooter() {
 
         </div>
    </div>
+   <div align='right' style={{zIndex:'100',marginRight:'80px'}}>
+     <div>
+       <a style={{position:'fixed',bottom:'40px',color:'#FFF',borderRadius:'50px',textAlign:'center',fontSize:'30px',zIndex:'100',right:'30px'}}
+        href="https://api.whatsapp.com/send?phone=+91 83680 29076&text=Contacting to you in regards of this page https://www.possIndia.in/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+    <img src={whatsupicon} />
+      </a>
+    </div>
+ </div>
       
     </div>
   )

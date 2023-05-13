@@ -3,6 +3,7 @@ import facebooklink from '../../assets/facebooklink.png'
 import instalink from '../../assets/instalink.png'
 
 import poss_two from '../../assets/poss_two.png'
+import whatsupicon from '../../assets/whatsupicon.png'
 import './Footer.css'
 
 
@@ -10,7 +11,8 @@ import './Footer.css'
 export const Footer = () => {
   
   return (
- <div className='container-fluid' id='desktop'>
+ <>
+  <div className='container-fluid' id='desktop'>
      <div style={{marginTop:'10px',backgrounColor:'#F4F7EE'}}>
         
         <footer className="bg-white text-center text-black" style={{width:'100%',backgroundColor:'#F4F7EE'}}>
@@ -81,6 +83,20 @@ export const Footer = () => {
           
         </footer>
       </div>
+     <div align='right' style={{zIndex:'100',marginRight:'80px'}}>
+     <div>
+       <a style={{position:'fixed',bottom:'40px',color:'#FFF',borderRadius:'50px',textAlign:'center',fontSize:'30px',zIndex:'100',right:'50px'}}
+        href="https://api.whatsapp.com/send?phone=+91 83680 29076&text=Contacting to you in regards of this page https://www.possIndia.in/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+    <img src={whatsupicon} />
+      </a>
+    </div>
  </div>
+  </div>
+ 
+      
+ </>
   )
 }
