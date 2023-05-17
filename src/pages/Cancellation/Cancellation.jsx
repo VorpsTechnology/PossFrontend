@@ -113,8 +113,13 @@ const handleStatus=async(ID,status)=>{
 
 
     const coloumn=[
-      {name:"Image",selector:(row)=><>
-      <img src={fn(row.uploadImages)} style={{width:"80px",height:"80px ",margin:"20px", border: "2px solid #F3CA6D"}}  alt=""  />
+
+      
+      {name:"Sl",selector:(row,index)=>index+1,style: {
+        color: "gray",
+        }},
+      {name:"Image",selector:(row,index)=><>
+         <img src={fn(row.uploadImages)} style={{width:"80px",height:"80px ",margin:"20px", border: "2px solid #F3CA6D"}}  alt=""  />
       </>},
       {name:"Id",selector:(row)=>row._id,style: {
           color: "gray",

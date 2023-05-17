@@ -31,11 +31,12 @@ const ProductPage = () => {
     window.scrollTo(0, 0)
   }, [])
   const  [isMobile,setIsMobile] = useState(false);
-const[petCatagoryy,setpetCatagoryy]=useState([])
-const[typeCatagoryy,settypeCatagoryy]=useState([])
-const[brandCatagoryy,setbrandCatagoryy]=useState([])
+const[petCatagoryy,setpetCatagoryy]=useState(JSON.parse(localStorage.getItem("pet"))||[])
+const[typeCatagoryy,settypeCatagoryy]=useState(JSON.parse(localStorage.getItem("type"))||[])
+const[brandCatagoryy,setbrandCatagoryy]=useState(JSON.parse(localStorage.getItem("brand"))||[])
 const [loading,setLoading]=useState(false)
 const [limit,setLimit]=useState(20)
+
 const brand=[
   'SMARTY PET',
 'LAL PET',
@@ -238,7 +239,47 @@ const brand=[
   // ...
  }
 
+ const frback=async()=>{
+  const pet=JSON.parse(localStorage.getItem("pet"))
+  const type=JSON.parse(localStorage.getItem("type"))
+  const brand=JSON.parse(localStorage.getItem("brand"))
+  if(pet || brand || type ){
+   setLoading(true)
+   setpetCatagoryy(pet)
+   const ata={
+     typeCatagoryy:typeCatagoryy,
+ 
+     petCatagoryy:petCatagoryy,
+     brandCatagoryy:brandCatagoryy
+    }
+   
+   // You can await here
+   
+   const {data}=await getAllProducts(ata)
+   setLoading(false)
+   setProduct(data)
+  }
+ }
 
+ 
+// useEffect(async()=>{
+//  const pet=JSON.parse(localStorage.getItem("pet"))
+//  if(pet){
+//   setLoading(true)
+//   const ata={
+//     typeCatagoryy:typeCatagoryy,
+
+//     petCatagoryy:petCatagoryy,
+//     brandCatagoryy:brandCatagoryy
+//    }
+  
+//   // You can await here
+  
+//   const {data}=await getAllProducts(ata)
+//   setLoading(false)
+//   setProduct(data)
+//  }
+// },[petCatagoryy])
   
  
     const navigate =useNavigate()
@@ -270,10 +311,12 @@ const brand=[
     const removePet=async(e)=>{
       console.log(e);
       const index = petCatagoryy.indexOf(e);
+      
     if (index > -1) { // only splice array when item is found
       setLoading(true)
       petCatagoryy.splice(index, 1); // 2nd parameter means remove one item only
       setpetCatagoryy(petCatagoryy)
+      localStorage.setItem("pet",JSON.stringify(petCatagoryy))
       console.log(petCatagoryy);
       const ata={
         typeCatagoryy:typeCatagoryy,
@@ -301,6 +344,7 @@ if (index > -1) { // only splice array when item is found
   setLoading(true)
   typeCatagoryy.splice(index, 1); // 2nd parameter means remove one item only
   settypeCatagoryy(typeCatagoryy)
+  localStorage.setItem("type",JSON.stringify(typeCatagoryy))
   console.log(petCatagoryy);
   const ata={
     typeCatagoryy:typeCatagoryy,
@@ -327,6 +371,7 @@ if (index > -1) { // only splice array when item is found
   setLoading(true)
   brandCatagoryy.splice(index, 1); // 2nd parameter means remove one item only
   setbrandCatagoryy(brandCatagoryy)
+  localStorage.setItem("brand",JSON.stringify(brandCatagoryy))
   const ata={
     typeCatagoryy:typeCatagoryy,
 
@@ -355,6 +400,7 @@ if (index > -1) { // only splice array when item is found
       
         setLoading(true)
         
+        
         const ata={
           typeCatagoryy:[params.type],
       
@@ -369,8 +415,14 @@ if (index > -1) { // only splice array when item is found
         setProduct(data)
         
         // ...
-      }
-      fetchData();
+      
+      
+    }
+    if(petCatagoryy.length>0 || typeCatagoryy.length>0 || brandCatagoryy.length>0){
+      
+      frback()
+     }else{
+    fetchData();}
     }, [params]); // Or [] if effect doesn't need props or state
 
 
@@ -699,7 +751,7 @@ const handleSearchInput=async(e)=>{
         <form id='serachbar' className="form-inline my-2 my-lg-0" onSubmit={handleSearchInput}>
          <div > <input value={searchText } onChange={handleChange} style={{width:'240px',padding:'20px',backgroundColor:'white',fontSize:'15px'}} className="form-control mr-sm-2" type="text" placeholder="Search your query here" name='searchText' aria-label="Search" /><span>
           
-          <button type="submit" style={{backgroundColor:'transparent',borderColor:'transparent',marginLeft:"-1rem"}}><i class="fa fa-search" aria-hidden="true"></i></button></span>
+          <button type="submit" style={{backgroundColor:'transparent',borderColor:'transparent',marginLeft:"5px"}}><i class="fa fa-search" aria-hidden="true"></i></button></span>
 </div>
         </form>
         <ul  className='liskmin'>
@@ -758,7 +810,7 @@ const handleSearchInput=async(e)=>{
      
       
      <div> <input  name='searchText'  type="text"  style={{width:'80%'}} placeholder="Search.." value={searchText } onChange={handleChange}  />  
-      <span> <button type="submit" style={{marginLeft:"5px",backgroundColor:'transparent',borderColor:'transparent',marginLeft:"-1rem"}}><i class="fa fa-search" aria-hidden="true"></i></button>
+      <span> <button type="submit" style={{marginLeft:"5px",backgroundColor:'transparent',borderColor:'transparent',marginLeft:"2px"}}><i class="fa fa-search" aria-hidden="true"></i></button>
 </span>
 </div>
     </form>
@@ -1574,6 +1626,9 @@ const handleSearchInput=async(e)=>{
 
         <div  id="Productcard30" className='card' >
       <div  onClick={()=>{
+                      localStorage.setItem("pet",JSON.stringify(petCatagoryy))
+                      localStorage.setItem("type",JSON.stringify(typeCatagoryy))
+                      localStorage.setItem("brand",JSON.stringify(brandCatagoryy))
               navigate(`/ProductPurchase/${ele._id}`)
             }}>
             <div className='Productimg' style={{borderRadius:'20px'}} align="center"   >
@@ -1590,10 +1645,16 @@ const handleSearchInput=async(e)=>{
             </div>
             <div style={{paddingTop:'5px',borderRadius:'20px'}} align="center">
             <button   className='button30' onClick={()=>{
+                            localStorage.setItem("pet",JSON.stringify(petCatagoryy))
+                            localStorage.setItem("type",JSON.stringify(typeCatagoryy))
+                            localStorage.setItem("brand",JSON.stringify(brandCatagoryy))
                         wishlist(ele)
             }} ><img style={{backgroundColor:'#F4F7EE',margin:'5px',}} src={ele.uploadImages} alt="" /><span style={{backgroundColor:"#F4F7EE"}}>ADD TO CART</span></button></div>
             <div style={{borderRadius:'20px',paddingTop:'5px',paddingBottom:'5px'}} align="center">
             <button   className='button30' style={{backgroundColor:'#F2C879',color:'black'}} onClick={()=>{
+              localStorage.setItem("pet",JSON.stringify(petCatagoryy))
+              localStorage.setItem("type",JSON.stringify(typeCatagoryy))
+              localStorage.setItem("brand",JSON.stringify(brandCatagoryy))
               navigate(`/InstantPurchase/${ele._id}/1`)
             }}><span >
           <img style={{width:'20px',height:'20px'}} src={print}/>

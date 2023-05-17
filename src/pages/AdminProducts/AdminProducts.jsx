@@ -81,14 +81,44 @@ const AdminProducts = () => {
       
       }
         const coloumn=[
+          {name:"Sl",selector:(row,index)=>index+1,style: {
+            color: "gray",
+            }},
             {name:"Image",selector:(row)=><>
             <img src={fn(row.uploadImages)} style={{width:"80px",height:"80px ",margin:"20px", border: "2px solid #F3CA6D"}}  alt=""  />
             </>},
-           
+            {name:"Pet Type",selector:(row)=>` ${row.petCategory}`,style: {
+              color: "gray",
+              }},
+              {name:"Product Type",selector:(row)=>` ${row.typeCatagory}`,style: {
+                color: "gray",
+                }},
             {name:"Price",selector:(row)=>`₹ ${row.price}`,style: {
                 color: "gray",
                 }},
-                {name:"Product",selector:(row)=>row.name,style: {
+                {name:"Quantity",selector:(row)=>`${row.quantity}`,style: {
+                  color: "gray",
+                  }},
+                {name:"Product Name",selector:(row)=>(
+                  <>  
+             
+                <div style={{whiteSpace:"unset"}}  >
+                {row.name && (()=>{
+                  const set=row.name.split(" ")
+                  console.log("set",set);
+                return  <>
+                {set.length>0 && set.map((ele)=>(
+                  <div>{ele}</div>
+                ))}
+                  </>
+                })()
+                
+                }
+                {/* {row.name} */}
+                </div>
+                 
+                  </>
+                ),style: {
                     color: "gray",
                     }},
                     
@@ -119,7 +149,7 @@ const AdminProducts = () => {
         name:"",
     
         desc: "",
-    
+        weight:"",
         maxPrice: "",
         price:"",
         quantity:"",
@@ -161,7 +191,7 @@ const AdminProducts = () => {
             name:product.name,
     
             desc:product.desc,
-        
+            weight:product.weight,
             maxPrice:product.maxPrice,
             price:product.price,
             quantity:product.quantity,
@@ -192,7 +222,7 @@ const resetForm=()=>{
         name:"",
     
         desc: "",
-    
+        weight:"",
         maxPrice: "",
         price:"",
         quantity:"",
@@ -255,12 +285,16 @@ console.log("filter",filterUsers);
                            <div><input className='inputbox' type="text"  onChange={handleChange} name='quantity' value={product.quantity}  /></div>
                        </div>
                        <div>
-                           <div className='formlabel'> <label htmlFor="">Price</label> </div>
+                           <div className='formlabel'> <label htmlFor="">Discounted Price</label> </div>
                            <div><input className='inputbox' type="text"   onChange={handleChange} name='price' value={product.price} /></div>
                        </div>
                        <div>
-                           <div className='formlabel'> <label htmlFor="">Discount Price</label> </div>
+                           <div className='formlabel'> <label htmlFor="">Maximum Price</label> </div>
                            <div><input className='inputbox' type="text"  onChange={handleChange} name='maxPrice' value={product.maxPrice} /></div>
+                       </div>
+                       <div>
+                           <div className='formlabel'> <label htmlFor="">Weight</label> </div>
+                           <div><input className='inputbox' type="text"  onChange={handleChange} name='weight' value={product.weight} /></div>
                        </div>
                        <div>
                        <div className='formlabel'> <label htmlFor="">Add Image</label> </div>

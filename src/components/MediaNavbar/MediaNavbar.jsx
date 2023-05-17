@@ -5,9 +5,28 @@ import './MediaNavbar.css'
 import posslogogif from '../../assets/posslogogif.gif'
 import { Link, useNavigate } from 'react-router-dom'
 import shopingcart from '../../assets/shopingcart.png'
+import { Badge } from '@mui/material'
+import { useEffect } from 'react'
+import { getWishlist } from '../../Api/WishlistRoute'
 
 
 function MediaNavbar() {
+  const [cartNumber,setCartNumber]=useState(0)
+  const userId=localStorage.getItem("userId")
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      // alert()
+      const beta={userId:userId}
+      const {data}=await getWishlist(beta)
+   
+      console.log("data",data);
+   setCartNumber(data?.Wishlist?.products?.length)
+   
+      // ...
+    }
+    fetchData();
+  }, []); 
 const  [isMobile,setIsMobile] = useState(false);
 const navigate = useNavigate();
 const userInfo=localStorage.getItem("userInfo")
@@ -64,8 +83,13 @@ function handleProduct(data){
   <li className={isMobile?'nav-links-mobile':'nav-links'}  onClick={()=> setIsMobile(false)}>
         
        <ul  style={{display:'flex',textDecoration:'none',padding:'10px'}}>
-        <li style={{listStyle:'none'}}><Link to="/login" className='home'><img src={shopingcart} style={{width:"20px"}} alt="" />
-          </Link>
+        <li style={{listStyle:'none'}}>
+        <Badge badgeContent={cartNumber} color="primary">
+     <img onClick={()=>{
+                navigate("/storeCart")
+              }} src={shopingcart} style={{width:"20px"}} alt="" />
+</Badge>
+          
         </li>
    
         <li style={{ listStyle:'none'}}><Link to="/login" className='home'><i className="fa fa-heart"></i>

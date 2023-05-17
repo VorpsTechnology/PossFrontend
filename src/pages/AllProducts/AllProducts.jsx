@@ -121,7 +121,7 @@ function AllProducts() {
         name:"",
     
         desc: "",
-    
+        weight:"",
         maxPrice: "",
         price:"",
         quantity:"",
@@ -151,7 +151,7 @@ function AllProducts() {
             name:product.name,
     
             desc:product.desc,
-        
+            weight:product.weight,
             maxPrice:product.maxPrice,
             price:product.price,
             quantity:product.quantity,
@@ -185,6 +185,7 @@ const resetForm=()=>{
     
         maxPrice: "",
         price:"",
+        weight:"",
         quantity:"",
         skuId:"",
         variantType:"SINGLE PRODUCT",
@@ -248,6 +249,10 @@ const handledelete=async(id)=>{
                         <div>
                             <div className='formlabel'> <label htmlFor="">Discount Price</label> </div>
                             <div><input className='inputbox' type="text"  onChange={handleChange} name='maxPrice' value={product.maxPrice} /></div>
+                        </div>
+                        <div>
+                            <div className='formlabel'> <label htmlFor="">Weight</label> </div>
+                            <div><input className='inputbox' type="text"  onChange={handleChange} name='weight' value={product.weight} /></div>
                         </div>
                         <div>
                         <div className='formlabel'> <label htmlFor="">Add Image</label> </div>

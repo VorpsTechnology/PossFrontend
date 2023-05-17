@@ -3,7 +3,7 @@ import React from 'react'
 import contactusslide from '../../assets/contactusslide.png'
 import mediafoot from '../../assets/mediafoot.png'
 import secmediafoot from '../../assets/secmediafoot.png'
-
+import phone from "../../assets/phone.png"
 import float from '../../assets/float.png'
 import './Contact.css'
 import { useNavigate } from 'react-router-dom'
@@ -83,7 +83,7 @@ const navigate=useNavigate()
       <div className='flexp'><img src={mediafoot} alt="" /></div>
       <div className='flexr'><img src={secmediafoot} alt="" /></div>
     </div>
-   <div align="center" className='Conatctheader' style={{marginTop:'30px'}}><h4>Contact US</h4> </div>
+   <div align="center" className='Conatctheader' style={{marginTop:'30px'}}><h4>Contact Us</h4> </div>
   
    <div align="center" className='Conatctheader'><h2 style={{paddingBottom:'30px'}}>Any questions, get in touch with our team</h2></div>
   <div className='floatimg' ><img src={float} alt="" /></div>
@@ -101,7 +101,7 @@ const navigate=useNavigate()
                   21@gmail.com
                 </li>
                 <li className="mb-4 ">
-                  <span className="position-absolute"><i className="fas fa-phone" /></span> +91 99996 95078
+                  <span className="position-absolute"> <img src={phone} alt="" /></span> +91 99996 95078
                 </li>
                 <li className="mb-4 ">
                   <span className="position-absolute"><i className="fas fa-map-marker-alt" /></span> 38A Jacaranda  
@@ -116,7 +116,7 @@ const navigate=useNavigate()
                 
               </figure>
             </div>
-            <div className="col-lg-7 contact-form__wrapper p-3 order-lg-1"  id='looloo'>
+            <div className="col-lg-7 contact-form__wrapper p-3 order-lg-1"  id='looloo' >
               <form action="#" onSubmit={contact} className="contact-form form-validate" noValidate="novalidate" >
                 <div className="row" style={{backgroundColor:'white'}} >
                   <div className="col-sm-6 mb-3" style={{backgroundColor:'white'}}>
@@ -146,7 +146,7 @@ const navigate=useNavigate()
                   <div className="col-sm-12 mb-3" style={{backgroundColor:'white'}}>
                     <div className="form-group" style={{backgroundColor:'white'}}>
                       <label className="required-field" htmlFor="message" style={{backgroundColor:'white',fontWeight:'800',fontSize:'15px'}}>How can we help? </label>
-                      <textarea style={{backgroundColor:'white'}} className="form-control" id="message"  onChange={handleChange} name='message' value={address.message} rows={4} placeholder="Your Query" defaultValue={""} />
+                      <textarea style={{backgroundColor:'white',resize: "none "}} className="form-control" id="message"  onChange={handleChange} name='message' value={address.message} rows={4} placeholder="Your Query" defaultValue={""} />
                     </div>
                   </div>
                   <div className="col-sm-12 mb-3" style={{backgroundColor:'white'}}>

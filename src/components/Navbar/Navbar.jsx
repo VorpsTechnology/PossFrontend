@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import user from '../../assets/user.png'
 import shopingcart from '../../assets/shopingcart.png'
 import logo from '../../assets/logo.png'
@@ -7,10 +7,14 @@ import { useNavigate }  from 'react-router-dom';
 import './Navbar.css'
 import swal from 'sweetalert'
 import { searchInput } from '../../Api/ProductRequest'
+import { getWishlist } from '../../Api/WishlistRoute'
+import { Badge, IconButton } from '@mui/material'
 
 
 
 function Navbar() {
+
+  const [cartNumber,setCartNumber]=useState(0)
   const navigate = useNavigate();
 
   function handleClick(event) {
@@ -33,7 +37,21 @@ const handleSearch=()=>{
     navigate('/Login');
   }
 
-
+  const userId=localStorage.getItem("userId")
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      // alert()
+      const beta={userId:userId}
+      const {data}=await getWishlist(beta)
+   
+      console.log("data",data);
+   setCartNumber(data?.Wishlist?.products?.length)
+   
+      // ...
+    }
+    fetchData();
+  }, []); 
 
   return (
     <div className='desktopnavbar' style={{margin:'10px'}}>
@@ -249,11 +267,17 @@ const handleSearch=()=>{
           </form>}
           <ul  className='liskmin'>
          {!adminData &&  <li   className="nav-item">
-              <a  id="navlinka" className="nav-link active" > <img onClick={()=>{
+              <a  id="navlinka" className="nav-link active" >    <Badge badgeContent={cartNumber} color="primary">
+     <img onClick={()=>{
                 navigate("/storeCart")
-              }} src={shopingcart} style={{width:"20px"}} alt="" /></a>
+              }} src={shopingcart} style={{width:"20px"}} alt="" />
+</Badge></a>
+  
+            
             </li>}
+            {!adminData && <>
            
+            </> }
             <li  className="nav-item dropdown">
               <a   className="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <img src={user} alt="" />

@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import Navbar from '../Navbar/Navbar'
 import { Footer } from '../Footer/Footer'
 import './Invoice.css'
+import ReactToPrint from "react-to-print";
+
 import { useNavigate, useParams } from 'react-router-dom'
 import { getOrd } from '../../Api/OrderRequest'
 import logo from "../../assets/logo.png"
 import { getProduct } from '../../Api/ProductRequest'
 function Invoice() {
+	let componentRef = useRef();
     const [order,setOrder]=useState([])
     const [product,setProduct]=useState([])
     const params=useParams()
@@ -57,11 +60,14 @@ for(var i = 0; i < str_array.length; i++) {
       <Navbar/>
       <div>
       <div className="invoice-box">
-			<table cellpadding="0" cellspacing="0">
+		<h2 onClick={()=>{navigate(-1)}}>
+		 <b>⇐</b> </h2>
+			<table cellpadding="0" cellspacing="0" ref={(el) => (componentRef = el)} >
 				<tr className="top">
 					<td colspan="2">
 						<table>
 							<tr>
+							
 								<td className="title">
 									<img onClick={()=>{navigate(-1)}} src={logo} style={{width:"70px" , maxWidth: "60px"}} />
 								</td>
@@ -181,7 +187,13 @@ for(var i = 0; i < str_array.length; i++) {
 					<td>Total :₹{order.price +100}</td>
 				</tr>
 			</table>
-		</div>
+			<ReactToPrint
+          trigger={() => <button className='button' style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}>Print</button>
+		}
+          content={() => componentRef}
+        />
+				</div>
+		
       </div>
 
       <Footer/>

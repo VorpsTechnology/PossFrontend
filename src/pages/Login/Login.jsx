@@ -117,11 +117,14 @@ onChange={handleChange}
       
         
         <div><button  className='Accountbtn'>Login</button> </div>
-  
+       
       
         <div className="flexcontainer3" style={{display:'flex',justifyContent:'center',padding:'40px'}}>
-          <div className='flexleft'>
 
+          <div className='flexleft'>
+         <a style={{color:"red",cursor:"pointer"}} onClick={()=>{
+          navigate()
+         }}>Forgot Password ?</a>
           <LoginSocialFacebook
                                appId='716781016838370'
                                onResolve={(response)=>{
@@ -140,8 +143,10 @@ onChange={handleChange}
                                <FacebookLoginButton  style={{height:"36px"}}/>
                                </LoginSocialFacebook>
           </div>
-          <div className='flexright'>
-
+          <div style={{marginTop:"3px"}} className='flexright'>
+          <a style={{cursor:"pointer"}} onClick={()=>{
+            navigate("/Signin")
+          }}>Sign Up ? </a>
           <GoogleOAuthProvider clientId="820965083830-suli7t5b5bul27109gngq9i9ks8fsv9e.apps.googleusercontent.com">
                                   
                                   <GoogleLogin 

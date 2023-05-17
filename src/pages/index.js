@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar/Navbar'
 import SuperDeals from '../components/SuperDeals/SuperDeals'
 import ImageSlider from '../components/ImageSlider/ImageSlider'
@@ -25,6 +25,11 @@ import OurPricesMedia from '../components/OurPrices/OurPricesMedia'
 
 
 const Home = () => {
+  useEffect(()=>{
+   localStorage.removeItem("pet")
+   localStorage.removeItem("type")
+   localStorage.removeItem("brand")
+  },[])
   return (
   <div >
   

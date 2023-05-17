@@ -8,7 +8,7 @@ import './PurchaseItem.css'
 import swal from 'sweetalert';
 import {Footer } from '../../components/Footer/Footer'
 import { useNavigate, useParams} from "react-router-dom";
-
+import phone from "../../assets/phone.png"
 import back from '../../assets/back.png'
 import MediaFooter from '../../components/Footer/MediaFooter';
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar';
@@ -279,7 +279,7 @@ function PurchaseItem() {
       >
     <button className='paybtn2' id='paybtn2' 
                
-               > <span style={{marginRight:'15px'}}>  <i class="fa fa-phone" aria-hidden="true"></i></span>Request Callback</button>
+               > <span style={{marginRight:'15px'}}> <img src={phone} alt="" /> </span>Request Callback</button>
       </a>
                 
 
@@ -427,7 +427,7 @@ function PurchaseItem() {
         
         </form>
         <div  >
-                <button className='paybtn2' id='paybtn2'> <span style={{marginRight:'15px'}}><i class="fa fa-phone" aria-hidden="true"></i></span>Request Callback</button>
+                <button className='paybtn2' id='paybtn2'> <span style={{marginRight:'15px'}}><img src={phone} alt="" /></span>Request Callback</button>
 
                 </div>
        
