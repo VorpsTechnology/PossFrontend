@@ -108,7 +108,7 @@ const navigate=useNavigate()
                   <br /> Marg DLF Phase 2,
                   <br /> Gurugram (Haryana) 122022
                   <div className="mt-3">
-                    <a href="/https://www.google.com/maps" target="_blank" className="text-link link--right-icon" style={{color:'#F3CA6D'}}>Get directions <i className="link__icon fa fa-directions" /></a>
+                    <a href="https://www.google.com/maps" target="_blank" className="text-link link--right-icon" style={{color:'#F3CA6D'}}>Get directions <i className="link__icon fa fa-directions" /></a>
                   </div>
                 </li>
               </ul>
