@@ -22,13 +22,15 @@ import { Link, useNavigate, useParams }  from 'react-router-dom';
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar';
 
 import MediaFooter from '../../components/Footer/MediaFooter';
-import { addToWishlist } from '../../Api/WishlistRoute';
+import { addToWishlist, getWishlist } from '../../Api/WishlistRoute';
 import swal from 'sweetalert';
+import { Badge } from '@mui/material'
 
 const ProductPage = () => {
   const params=useParams()
   useEffect(() => {
     window.scrollTo(0, 0)
+    cart()
   }, [])
   const  [isMobile,setIsMobile] = useState(false);
 const[petCatagoryy,setpetCatagoryy]=useState(JSON.parse(localStorage.getItem("pet"))||[])
@@ -469,8 +471,8 @@ const wishlist=async(data)=>{
    }
    const tata= await addToWishlist(ata)
    if(tata){
-    swal("Added to Cart")
-    navigate("/storeCart")
+    cart()
+   swal("Added to cart")
     
    }
   }else{
@@ -549,6 +551,22 @@ const handleSearchInput=async(e)=>{
  
   
 }
+const [cartNumber,setCartNumber]=useState(0)
+const userId=localStorage.getItem("userId")
+const cart=() => {
+  async function fetchData() {
+    // You can await here
+    // alert()
+    const beta={userId:userId}
+    const {data}=await getWishlist(beta)
+ 
+    console.log("data",data);
+ setCartNumber(data?.Wishlist?.products?.length)
+ 
+    // ...
+  }
+  fetchData();
+}; 
   return (
     <>
     <div>
@@ -756,9 +774,12 @@ const handleSearchInput=async(e)=>{
         </form>
         <ul  className='liskmin'>
         <li   className="nav-item">
-            <a  id="navlinka" className="nav-link active" > <img onClick={()=>{
-              navigate("/storeCart")
-            }} src={shopingcart} style={{width:"20px"}} alt="" /></a>
+      <a > <Badge badgeContent={cartNumber} color="primary">
+     <img onClick={()=>{
+                navigate("/storeCart")
+              }} src={shopingcart} style={{width:"20px"}} alt="" />
+</Badge></a>
+  
           </li>
          
           <li  className="nav-item dropdown">
@@ -830,8 +851,11 @@ const handleSearchInput=async(e)=>{
   <li className={isMobile?'nav-links-mobile':'nav-links'}  onClick={()=> setIsMobile(false)}>
         
        <ul  style={{display:'flex',textDecoration:'none',padding:'10px'}}>
-        <li style={{listStyle:'none'}}><Link to="/login" className='home'><img src={shopingcart} style={{width:"20px"}} alt="" />
-          </Link>
+        <li style={{listStyle:'none'}}>  <a > <Badge badgeContent={cartNumber} color="primary">
+     <img onClick={()=>{
+                navigate("/storeCart")
+              }} src={shopingcart} style={{width:"20px"}} alt="" />
+</Badge></a>
         </li>
    
         <li style={{ listStyle:'none'}}><Link to="/login" className='home'><i className="fa fa-heart"></i>

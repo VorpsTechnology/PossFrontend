@@ -36,8 +36,8 @@ import { addToWishlist } from '../../Api/WishlistRoute'
 
 
 function ProductPurchase() {
-
-     
+  const [quant,setQuant]= useState(1)
+  const [cartNumber,setCartNumber]=useState(false)
     const userData =localStorage.getItem("userId")
     const userInfo =localStorage.getItem("userInfo")
 
@@ -52,6 +52,30 @@ function ProductPurchase() {
     const [products, setProduct] = useState([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
     const [images,setimages]=useState(["1ADhSsnjla2m9Ru6cb3Kmu6PFsm3NZEKp"])
     const [preview,setPreview]=useState(1)
+    const wishlist=async(data)=>{
+      if(userData && userInfo){
+        const ata={
+          productId:data,
+          userId:userData,
+          quantity:quant,
+          name:post.name,
+          uploadImages:post.uploadImages,
+          price:post.price*quant
+        }
+       const tata= await addToWishlist(ata)
+       if(tata){
+        setCartNumber(!cartNumber)
+        swal("Added to Cart")
+        
+        
+       }
+      }else{
+       swal("Login first")
+       navigate('/login')
+      }
+      
+        
+     }
     const fn=(data)=>{
         var str_array =data.uploadImages.split(',');
 
@@ -98,37 +122,22 @@ for(var i = 0; i < str_array.length; i++) {
     useEffect(() => {
       window.scrollTo(0, 0)
     }, [])
-const [quant,setQuant]= useState(1)
-    const wishlist=async(data)=>{
-        if(userData && userInfo){
-          const ata={
-            productId:data,
-            userId:userData,
-            quantity:quant,
-            name:post.name,
-            uploadImages:post.uploadImages,
-            price:post.price*quant
-          }
-         const tata= await addToWishlist(ata)
-         if(tata){
-          swal("Added to Cart")
-          navigate("/storeCart")
-          
-         }
-        }else{
-         swal("Login first")
-         navigate('/login')
-        }
-        
-          
-       }
+
+   
   
-  
+
   return (
     <>
     <div>
-    <MediaNavbar />
+    {cartNumber && <>
+      <MediaNavbar />
      <Navbar />
+    </>}
+    {!cartNumber && <>
+      <MediaNavbar />
+     <Navbar />
+    </>}
+
      <div className='container-fluid' id='yhio'>
        <div align='right' className='chears'> <img src={chears} alt="" /></div>
         <div className='flex-containenr' style={{}}>
@@ -226,6 +235,7 @@ const [quant,setQuant]= useState(1)
                    <div  align='center' style={{display:'flex',justifyContent:'center'}}>
                    <div className='Addtocart'>
                    <button  onClick={()=>{
+                    setCartNumber(!cartNumber)
                                 wishlist(post._id)
                     }} >
                        Add to cart</button>
