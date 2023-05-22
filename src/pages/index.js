@@ -21,7 +21,7 @@ import MediaImageSlider from '../components/ImageSlider/MediaImageSlider'
 import MediaDealCard from '../components/MediaDealCard/MediaDealCard';
 // import CardCarasouel from '../components/CardCarasouel/CardCarasouel'
 import OurPricesMedia from '../components/OurPrices/OurPricesMedia'
-
+import CookieConsent from "react-cookie-consent";
 
 
 const Home = () => {
@@ -37,6 +37,15 @@ const Home = () => {
     <Navbar />
     <ImageSlider/>
     <MediaImageSlider />
+    <CookieConsent
+      location="bottom"
+  buttonText="Sure man!!"
+  cookieName="myAwesomeCookieName2"
+
+    style={{ background: "#2B373B" }}
+  buttonStyle={{ color: "#4e503b", fontSize: "13px" }}
+  expires={150}
+>This site uses cookies.</CookieConsent>
     <br />
     
     <SuperDeals />

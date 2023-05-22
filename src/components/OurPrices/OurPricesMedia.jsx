@@ -7,7 +7,7 @@ import 'swiper/css/navigation';
 import { useNavigate }  from 'react-router-dom';
 import './OurPricesMedia.css'
 import {EffectCoverflow,Pagination,Navigation} from 'swiper'
-import tick from '../../assets/tick.png'
+import tick from '../../assets/tick.webp'
 
 
 function OurPriceMedia() {

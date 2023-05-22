@@ -1,30 +1,30 @@
 import React, { useEffect, useState } from 'react'
-import product from '../../assets/product.png'
+import product from '../../assets/product_104_11zon.webp'
 import Modal from 'react-modal';
-import animeleg from '../../assets/animeleg.png'
+import animeleg from '../../assets/animeleg.webp'
 import './PageOne.css'
 import { GetToken, CourierServiceability , Tracking_OrderId } from 'shiprocket-api'
 import axios from "axios"
 import { ICountry, IState, ICity } from 'country-state-city'
-import per from '../../assets/per.png'
-import tup from '../../assets/tup.png'
-import jump from '../../assets/jump.png'
-import gikk from '../../assets/gikk.png'
-import jil from '../../assets/jil.png'
-import pip from '../../assets/pip.png'
-import pandit from '../../assets/pandit.png'
-import mediay from '../../assets/mediay.png'
+import per from '../../assets/per.webp'
+import tup from '../../assets/tup.webp'
+import jump from '../../assets/jump.webp'
+import gikk from '../../assets/gikk.webp'
+import jil from '../../assets/jil.webp'
+import pip from '../../assets/pip_98_11zon.webp'
+import pandit from '../../assets/pandit.webp'
+import mediay from '../../assets/mediay.webp'
 
 import { useNavigate, useParams } from 'react-router-dom'
 import { getProduct } from '../../Api/ProductRequest'
 import { createOrder } from '../../Api/OrderRequest'
 import swal from "sweetalert"
 import { Country, State, City }  from 'country-state-city';
-import tick from '../../assets/tick.png'
-import flying from '../../assets/flying.png'
-import back from '../../assets/back.png'
-import crip from '../../assets/crip.png'
-import umi from '../../assets/umi.png'
+import tick from '../../assets/tick.webp'
+import flying from '../../assets/flying.webp'
+import back from '../../assets/back.webp'
+import crip from '../../assets/crip.webp'
+import umi from '../../assets/umi.webp'
 import { getUser } from '../../Api/UserRequest';
 
 const PageOne = () => {
@@ -144,7 +144,7 @@ setimages(arrz)
     async function fetchData() {
       // You can await here
       const {data}=await getProduct(params.id)
- 
+      
       setPost(data)
 
       fn(data)
@@ -382,6 +382,7 @@ setEstimate(response)
                 <hr />
                 <div  className='card'>
                 <h6 style={{padding:'10px',fontSize:'15px',fontWeight:'700'}}>{post.name}</h6>
+                <h6 style={{padding:'10px',fontSize:'15px',fontWeight:'700'}}>Quantity :  {post.price}  *  {params.quantity}</h6>
                 </div>
                 
                 

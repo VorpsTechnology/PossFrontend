@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useNavigate }  from 'react-router-dom';
-import tick from '../../assets/tick.png'
+import tick from '../../assets/tick.webp'
 import './OurPrices.css'
 
 function OurPrices() {
@@ -25,7 +25,7 @@ function OurPrices() {
   <div align='center'  id='pricerow' >
       <div className="col"  >
       <div className='card lg-shadow' id='cardPriceDesktop'>
-        <div align="center" className='headerbook' ><h2>Haircut & Styling</h2></div>
+        <div align="center" className='headerbook' ><h2>Haircut & Stylinggggg</h2></div>
         {/* <div align="center" className='pricebook'> <h2>₹2499.00</h2> </div> */}
         <div className='listst' >
           <ul  style={{listStyle:'none'}} >
@@ -42,7 +42,7 @@ function OurPrices() {
           </ul>
         </div>
         <div align="center" ><div> <button  onClick={()=>{
-          handlebook("Haircut&Styling")
+          navigate("/PurchaseItem/Haircut&Styling")
         }} className='booknowbtn'  >Book now</button> </div></div> 
       </div>
     
@@ -69,7 +69,7 @@ function OurPrices() {
           </ul>
         </div>
         <div align="center" ><div> <button  onClick={()=>{
-          handlebook("Petfullgrooming")
+          navigate("/PurchaseItem/Petfullgrooming")
         }}  className='booknowbtn' >Book now</button> </div></div> 
       </div>
 
@@ -93,12 +93,12 @@ function OurPrices() {
                     <li><h4 style={{fontSize:'18px'}}><img className='ticksize' src={tick} alt="" /><span style={{marginLeft:'20px'}}></span> Ear cleaning or Flushing</h4></li>
           <li><h4 style={{fontSize:'18px'}}><img className='ticksize' src={tick} alt="" /><span style={{marginLeft:'20px'}}></span>Plus Tick Treatment</h4></li>
 
-  
+   
          
           </ul>
         </div>
                 <div align="center" ><div> <button  onClick={()=>{
-          handlebook("Medicatedbath")
+          navigate("/PurchaseItem/Medicatedbath")
         }}  className='booknowbtn'  >Book now</button> </div></div> 
       </div>
       

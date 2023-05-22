@@ -6,7 +6,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { getBlogs } from '../../Api/blogRequest';
 import {EffectCoverflow,Pagination,Navigation} from 'swiper'
-import video from '../../assets/video.png'
+import video from '../../assets/video.webp'
 import Card from '@mui/material/Card';
 
 import CardContent from '@mui/material/CardContent';

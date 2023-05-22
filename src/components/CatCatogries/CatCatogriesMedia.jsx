@@ -1,6 +1,6 @@
 import React from 'react'
-import catone from '../../assets/catone.png'
-import cattwo from '../../assets/cattwo.png'
+import catone from '../../assets/catone.webp'
+import cattwo from '../../assets/cattwo.webp'
 import './CatCatogriesMedia.css'
 import {EffectCoverflow,Pagination,Navigation} from 'swiper'
 import {Swiper,SwiperSlide} from 'swiper/react'
@@ -11,15 +11,15 @@ import 'swiper/css/navigation';
 
 
 
-import catthree from '../../assets/catthree.png'
-import icon from '../../assets/icon.png'
-import catpc1 from '../../assets/catpc1.png'
-import catpc2 from '../../assets/catpc2.png'
-import catpc3 from '../../assets/catpc3.png'
-import catpc4 from '../../assets/catpc4.png'
+import catthree from '../../assets/catthree.webp'
+import icon from '../../assets/icon.webp'
+import catpc1 from '../../assets/catpc1.webp'
+import catpc2 from '../../assets/catpc2.webp'
+import catpc3 from '../../assets/catpc3.webp'
+import catpc4 from '../../assets/catpc4.webp'
 import { useNavigate } from 'react-router-dom';
-import catfour from '../../assets/catfour.png'
-import catseven from '../../assets/catseven.png'
+// import catfour from '../../assets/catfour.png'
+// import catseven from '../../assets/catseven.png'
 
 
 function CatCatogriesMedia() {

@@ -2,9 +2,9 @@ import React ,{useState} from 'react'
 
 import './MediaNavbar.css'
 
-import posslogogif from '../../assets/posslogogif.gif'
+import posslogogif from '../../assets/posslogogif_101_11zon.gif'
 import { Link, useNavigate } from 'react-router-dom'
-import shopingcart from '../../assets/shopingcart.png'
+import shopingcart from '../../assets/shopingcart.webp'
 import { Badge } from '@mui/material'
 import { useEffect } from 'react'
 import { getWishlist } from '../../Api/WishlistRoute'

@@ -83,6 +83,7 @@ function App() {
         
         <Route exact path = '/ProductPurchase/:id' element = { < ProductPurchase /> } /> 
         <Route exact path = '/InstantPurchase/:id/:quantity' element = { < Multistepper /> } />
+        <Route exact path = '/InstantPurchase/all' element = { < Multistepper /> } />
        
          <Route exact path = '/Multistepper/:id' element = { < Multistepper /> } /> 
          <Route exact path = '/ProductPurchase' element = { < ProductPurchase /> } /> 

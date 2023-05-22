@@ -12,6 +12,7 @@ import { useNavigate } from 'react-router-dom';
 const Wishlist = () => {
 
   const userId=localStorage.getItem("userId")
+  const [allCheckOutTotal,setallCheckOutTotal]=useState(0)
     const[users,setUsers]=useState([]);
 const [search,setSearch]=useState("");
 const [filterUsers,setFilteredUsers]=useState([]);
@@ -33,8 +34,8 @@ const handleRemove=async (row)=>{
    
       setUsers(data)
       setFilteredUsers(data.Wishlist.products.reverse())
-   
-      // ...
+     fun()
+    
     }
     fetchData();
   }, [handleRemove]); // Or [] if effect doesn't need props or state
@@ -46,7 +47,16 @@ const handleRemove=async (row)=>{
     setFilteredUsers(result)
   },[search]) 
 
-
+const fun=()=>{
+  var val = filterUsers.reduce(function(previousValue, currentValue) {
+    return {
+      price: parseInt(previousValue.price) + parseInt(currentValue.price),
+     
+    }
+  });
+  setallCheckOutTotal(val.price)
+  console.log("dta",val)
+}
   const fn=(data)=>{
     
     const images=[]
@@ -140,6 +150,10 @@ return `https://drive.google.com/uc?id=${"10uk_BvFXN-tHCfAQNYeNDUg4cNaM5SaX"}`
             <div className='row' id='rowitem'>
                 <h6> + CONTINUE SHOPPING</h6> 
             </div>
+            <div style={{position:"relative",float:"right",margin:"10px"}}> <div><h6>Total:  ₹ {allCheckOutTotal}</h6></div> <div><button onClick={()=>{
+              navigate("/InstantPurchase/all")
+            }} style={{background:"#F3CA6D",color:"black",marginLeft:"5px",padding:"10px",borderRadius:"5px",border:"0px"}}>Checkout </button></div> </div>
+      
             <DataTable 
         
         columns={coloumn} 
@@ -152,8 +166,8 @@ return `https://drive.google.com/uc?id=${"10uk_BvFXN-tHCfAQNYeNDUg4cNaM5SaX"}`
       
         subHeaderAlign="center"
         // data={data}
-      />  
-        </div>
+      /> 
+     </div>
            
         </div>
     </div>

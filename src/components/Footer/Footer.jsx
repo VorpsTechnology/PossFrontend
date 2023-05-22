@@ -1,9 +1,9 @@
 import React from 'react'
-import facebooklink from '../../assets/facebooklink.png'
-import instalink from '../../assets/instalink.png'
+import facebooklink from '../../assets/facebooklink.webp'
+import instalink from '../../assets/instalink.webp'
 
-import poss_two from '../../assets/poss_two.png'
-import whatsupicon from '../../assets/whatsupicon.png'
+import poss_two from '../../assets/poss_two_100_11zon.webp'
+import whatsupicon from '../../assets/whatsupicon.webp'
 import './Footer.css'
 
 
