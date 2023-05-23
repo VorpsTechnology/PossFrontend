@@ -6,19 +6,19 @@ import './DogCatogries.css'
 
 import CardMedia from '@mui/material/CardMedia';
 
-import container from '../../assets/container.webp'
-import dogfood from '../../assets/dogfood.webp'
-import newcat from '../../assets/newcat.webp'
-import dogimg from '../../assets/dogimg.webp'
-import icon from '../../assets/icon.webp'
+import container from '../../assets/container.png'
+import dogfood from '../../assets/dogfood.png'
+import newcat from '../../assets/newcat.png'
+import dogimg from '../../assets/dogimg.png'
+import icon from '../../assets/icon.png'
 import { useNavigate }  from 'react-router-dom';
-import sec from '../../assets/sec.webp'
-import first from '../../assets/first.webp'
-import third from '../../assets/third.webp'
-import forth from '../../assets/forth.webp'
-import six from '../../assets/six.webp'
-import secmediafoot from '../../assets/secmediafoot.webp'
-import mediafoot from '../../assets/mediafoot.webp'
+import sec from '../../assets/sec.png'
+import first from '../../assets/first.png'
+import third from '../../assets/third.png'
+import forth from '../../assets/forth.png'
+import six from '../../assets/six.png'
+import secmediafoot from '../../assets/secmediafoot.png'
+import mediafoot from '../../assets/mediafoot.png'
 
 
 export default function DogCatogries() {

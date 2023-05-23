@@ -2,8 +2,8 @@ import {React,useState} from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import './Signin.css'
 
-import doganimation from '../../assets/doganimation.webp'
-import sign from '../../assets/sign.webp'
+import doganimation from '../../assets/doganimation.png'
+import sign from '../../assets/sign.png'
 import { Footer } from '../../components/Footer/Footer'
 
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar'
@@ -13,7 +13,7 @@ import {  useNavigate } from 'react-router-dom';
 import "react-toastify/dist/ReactToastify.css";
 import { signUp } from "../../Api/AuthRequest.js";
 import { ToastContainer, toast } from "react-toastify";
-import mediasign from '../../assets/mediasign.webp'
+import mediasign from '../../assets/mediasign.png'
 import {LoginSocialFacebook} from "reactjs-social-login"
 import {FacebookLoginButton} from "react-social-login-buttons"
 

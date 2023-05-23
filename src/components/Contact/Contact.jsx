@@ -1,10 +1,10 @@
 import React from 'react'
 
-import contactusslide from '../../assets/contactusslide.webp'
-import mediafoot from '../../assets/mediafoot.webp'
-import secmediafoot from '../../assets/secmediafoot.webp'
-import phone from "../../assets/phone.webp"
-import float from '../../assets/float.webp'
+import contactusslide from '../../assets/contactusslide.png'
+import mediafoot from '../../assets/mediafoot.png'
+import secmediafoot from '../../assets/secmediafoot.png'
+import phone from "../../assets/phone.png"
+import float from '../../assets/float.png'
 import './Contact.css'
 import { useNavigate } from 'react-router-dom'
 import swal from 'sweetalert'

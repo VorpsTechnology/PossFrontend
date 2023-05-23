@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import user from '../../assets/user.webp'
-import shopingcart from '../../assets/shopingcart.webp'
-import logo from '../../assets/logo.webp'
-import posslogogif from "../../assets/posslogogif_101_11zon.gif"
+import user from '../../assets/user.png'
+import shopingcart from '../../assets/shopingcart.png'
+import logo from '../../assets/logo.png'
+import posslogogif from "../../assets/posslogogif.gif"
 import { useNavigate }  from 'react-router-dom';
 import './Navbar.css'
 import swal from 'sweetalert'

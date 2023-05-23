@@ -1,11 +1,11 @@
 import React from 'react'
 import './Payment.css'
-import product from '../../assets/product_104_11zon.webp'
-import tick from '../../assets/tick.webp'
-import flying from '../../assets/flying.webp'
-import back from '../../assets/back.webp'
-import crip from '../../assets/crip.webp'
-import umi from '../../assets/umi.webp'
+import product from '../../assets/product.png'
+import tick from '../../assets/tick.png'
+import flying from '../../assets/flying.png'
+import back from '../../assets/back.png'
+import crip from '../../assets/crip.png'
+import umi from '../../assets/umi.png'
 
 
 function Payment() {

@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { useNavigate }  from 'react-router-dom';
-import tick from '../../assets/tick.webp'
+import tick from '../../assets/tick.png'
 import './OurPrices.css'
 
 function OurPrices() {

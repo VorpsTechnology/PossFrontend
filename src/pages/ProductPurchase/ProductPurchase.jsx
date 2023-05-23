@@ -1,13 +1,13 @@
 import React ,{useEffect, useState} from 'react'
 import Navbar from '../../components/Navbar/Navbar'
-import instant from '../../assets/instant.webp'
-import certified from '../../assets/certified.webp'
-import shipping from '../../assets/shipping.webp'
-import chat from '../../assets/chat.webp'
-import hey from '../../assets/hey.webp'
+import instant from '../../assets/instant.png'
+import certified from '../../assets/certified.png'
+import shipping from '../../assets/shipping.png'
+import chat from '../../assets/chat.png'
+import hey from '../../assets/hey.png'
 // import product from '../../assets/product.png'
-import downarrow from '../../assets/downarrow.webp'
-import back from '../../assets/back.webp'
+import downarrow from '../../assets/downarrow.png'
+import back from '../../assets/back.png'
 import './ProductPurchase.css'
 import 'bootstrap/dist/css/bootstrap.css';
 // import Tabs from 'react-bootstrap/Tabs';
@@ -24,11 +24,11 @@ import { Footer } from '../../components/Footer/Footer';
 
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar'
 import MediaFooter from '../../components/Footer/MediaFooter'
-import chears from '../../assets/chears.webp'
+import chears from '../../assets/chears.png'
 import ProductCard from '../ProductCard/ProductCard'
 
-import po from '../../assets/po_99_11zon.webp'
-import lo from '../../assets/lo.webp'
+import po from '../../assets/po.png'
+import lo from '../../assets/lo.png'
 import { getProduct } from '../../Api/ProductRequest'
 
 import swal from "sweetalert"

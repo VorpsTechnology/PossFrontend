@@ -8,8 +8,8 @@ import './PurchaseItem.css'
 import swal from 'sweetalert';
 import {Footer } from '../../components/Footer/Footer'
 import { useNavigate, useParams} from "react-router-dom";
-import phone from "../../assets/phone.webp"
-import back from '../../assets/back.webp'
+import phone from "../../assets/phone.png"
+import back from '../../assets/back.png'
 import MediaFooter from '../../components/Footer/MediaFooter';
 import MediaNavbar from '../../components/MediaNavbar/MediaNavbar';
 import { createBooking } from '../../Api/BookingRequest';

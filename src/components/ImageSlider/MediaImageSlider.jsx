@@ -1,8 +1,8 @@
 import React from 'react'
 
-import mediaslideone from '../../assets/mediaslideone.webp'
-import mediaslidetwo from '../../assets/mediaslidetwo.webp'
-import mediaslidethree from '../../assets/mediaslidethree.webp'
+import mediaslideone from '../../assets/mediaslideone.png'
+import mediaslidetwo from '../../assets/mediaslidetwo.png'
+import mediaslidethree from '../../assets/mediaslidethree.png'
 import './ImageSlider.css'
 
 import { useNavigate } from 'react-router-dom'

@@ -1,13 +1,13 @@
 import React ,{useRef, useState} from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import './ProductPage.css'
-import user from '../../assets/user.webp'
-import shopingcart from '../../assets/shopingcart.webp'
-import logo from '../../assets/logo.webp'
+import user from '../../assets/user.png'
+import shopingcart from '../../assets/shopingcart.png'
+import logo from '../../assets/logo.png'
 
-import filter from '../../assets/filter.webp'
-import print from '../../assets/print_103_11zon.webp'
-import posslogogif from "../../assets/posslogogif_101_11zon.gif"
+import filter from '../../assets/filter.png'
+import print from '../../assets/print.png'
+import posslogogif from "../../assets/posslogogif.gif"
 import { useEffect } from "react";
 import { getAdminProducts, getAllProducts, getbrandCategory, getpetCategory, gettypeCategory, searchInput } from "../../Api/ProductRequest.js";
 

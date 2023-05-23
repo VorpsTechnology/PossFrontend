@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import './Login.css'
 
-import flyingjat from '../../assets/flyingjat.webp'
+import flyingjat from '../../assets/flyingjat.png'
 import { Footer } from '../../components/Footer/Footer'
 
 import MediaFooter from '../../components/Footer/MediaFooter'
