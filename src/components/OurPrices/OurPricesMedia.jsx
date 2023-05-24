@@ -110,7 +110,9 @@ function OurPriceMedia() {
             <li ><h4><img src={tick} alt="" /><span  style={{marginLeft:'20px'}}>Spritz of Perfume Dry</span></h4></li> */}
           </ul>
         </div>
-        <div align="center" ><div> <button onClick={handlebook} className='booknowbtn'  >Book now</button> </div></div> 
+        <div align="center" ><div> <button  onClick={()=>{
+          navigate("/PurchaseItem/Haircut&Styling")
+        }} className='booknowbtn'  >Book now</button> </div></div> 
       </div>   
         </div>
        </SwiperSlide>
@@ -192,7 +194,9 @@ function OurPriceMedia() {
         </li>
           </ul>
         </div>
-        <div align="center" ><div> <button onClick={handlebook} className='booknowbtn'  >Book now</button> </div></div> 
+        <div align="center" ><div> <button onClick={()=>{
+          navigate("/PurchaseItem/Petfullgrooming")
+        }} className='booknowbtn'  >Book now</button> </div></div> 
       </div>  
         </div>
        </SwiperSlide>
@@ -271,7 +275,9 @@ function OurPriceMedia() {
           </ul>
 
         </div>
-         <div align="center" ><div> <button onClick={handlebook} className='booknowbtn'  >Book now</button> </div></div> 
+         <div align="center" ><div> <button  onClick={()=>{
+          navigate("/PurchaseItem/Medicatedbath")
+        }} className='booknowbtn'  >Book now</button> </div></div> 
       </div>
         </div>
        </SwiperSlide>
