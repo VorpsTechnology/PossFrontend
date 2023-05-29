@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import product from '../../assets/product.png'
+import product from '../../assets/product.webp'
 import Modal from 'react-modal';
-import animeleg from '../../assets/animeleg.png'
+import animeleg from '../../assets/animeleg.webp'
 import './PageOne.css'
 import { GetToken, CourierServiceability , Tracking_OrderId } from 'shiprocket-api'
 import axios from "axios"
 import { ICountry, IState, ICity } from 'country-state-city'
-import per from '../../assets/per.png'
-import tup from '../../assets/tup.png'
-import jump from '../../assets/jump.png'
-import gikk from '../../assets/gikk.png'
-import jil from '../../assets/jil.png'
-import pip from '../../assets/pip.png'
-import pandit from '../../assets/pandit.png'
+import per from '../../assets/per.webp'
+import tup from '../../assets/tup.webp'
+import jump from '../../assets/jump.webp'
+import gikk from '../../assets/gikk.webp'
+import jil from '../../assets/jil.webp'
+import pip from '../../assets/pip.webp'
+import pandit from '../../assets/pandit.webp'
 import mediay from '../../assets/mediay.png'
 
 import { useNavigate, useParams } from 'react-router-dom'
@@ -20,11 +20,11 @@ import { getProduct } from '../../Api/ProductRequest'
 import { createOrder } from '../../Api/OrderRequest'
 import swal from "sweetalert"
 import { Country, State, City }  from 'country-state-city';
-import tick from '../../assets/tick.png'
-import flying from '../../assets/flying.png'
-import back from '../../assets/back.png'
-import crip from '../../assets/crip.png'
-import umi from '../../assets/umi.png'
+import tick from '../../assets/tick.webp'
+import flying from '../../assets/flying.webp'
+import back from '../../assets/back.webp'
+import crip from '../../assets/crip.webp'
+import umi from '../../assets/umi.webp'
 import { getUser } from '../../Api/UserRequest';
 
 const PageOne = () => {
@@ -665,7 +665,7 @@ setEstimate(response)
         </div>
       
     </div>
-{/* <img style={{width:"4rem",height:"4rem"}} src="https://thumbs.dreamstime.com/b/ecommerce-icon-elegant-yellow-round-button-ecommerce-icon-isolated-elegant-yellow-round-button-abstract-illustration-105993111.jpg" alt="noimage"  onClick={() => setVisible((visible)=>!visible)}/> */}
+{/* <img style={{width:"4rem",height:"4rem"}} src="https://thumbs.dreamstime.com/b/ecommerce-icon-elegant-yellow-round-button-ecommerce-icon-isolated-elegant-yellow-round-button-abstract-illustration-105993111.webp" alt="noimage"  onClick={() => setVisible((visible)=>!visible)}/> */}
   </div>
  
 

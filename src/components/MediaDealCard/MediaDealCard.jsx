@@ -7,12 +7,12 @@ import 'swiper/css/navigation';
 
 import {EffectCoverflow,Pagination,Navigation} from 'swiper'
 
-import foodv from '../../assets/foodv.png'
-import grooming from '../../assets/grooming.png'
-import essentials from '../../assets/essentials.png'
-import DogToys from '../../assets/DogToys.png'
-import treak from '../../assets/treak.png'
-import bed from '../../assets/bed.png'
+import foodv from '../../assets/foodv.webp'
+import grooming from '../../assets/grooming.webp'
+import essentials from '../../assets/essentials.webp'
+import DogToys from '../../assets/DogToys.webp'
+import treak from '../../assets/treak.webp'
+import bed from '../../assets/bed.webp'
 import './MediaDealCard.css'
 import { useNavigate } from 'react-router-dom';
 

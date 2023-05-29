@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import user from '../../assets/user.png'
-import shopingcart from '../../assets/shopingcart.png'
-import logo from '../../assets/logo.png'
+import user from '../../assets/user.webp'
+import shopingcart from '../../assets/shopingcart.webp'
+import logo from '../../assets/logo.webp'
 import posslogogif from "../../assets/posslogogif.gif"
 import { useNavigate }  from 'react-router-dom';
 import './Navbar.css'

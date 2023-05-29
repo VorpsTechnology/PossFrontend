@@ -1,6 +1,6 @@
 import React from 'react'
-import ssone from '../../assets/ssone.png'
-import sstwo from '../../assets/sstwo.png'
+import ssone from '../../assets/ssone.webp'
+import sstwo from '../../assets/sstwo.webp'
 import './MediaBrand.css'
 
 function MediaBrand() {

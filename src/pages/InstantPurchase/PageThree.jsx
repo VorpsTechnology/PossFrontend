@@ -1,12 +1,12 @@
 import React from 'react'
-import product from '../../assets/product.png'
+import product from '../../assets/product.webp'
 import './PageThree.css'
 import { useNavigate }  from 'react-router-dom';
 
-import jump from '../../assets/jump.png'
-import gikk from '../../assets/gikk.png'
-import jil from '../../assets/jil.png'
-import pip from '../../assets/pip.png'
+import jump from '../../assets/jump.webp'
+import gikk from '../../assets/gikk.webp'
+import jil from '../../assets/jil.webp'
+import pip from '../../assets/pip.webp'
 
 
 

@@ -6,7 +6,7 @@ import ReactToPrint from "react-to-print";
 
 import { useNavigate, useParams } from 'react-router-dom'
 import { getOrd } from '../../Api/OrderRequest'
-import logo from "../../assets/logo.png"
+import logo from "../../assets/logo.webp"
 import { getProduct } from '../../Api/ProductRequest'
 function Invoice() {
 	let componentRef = useRef();

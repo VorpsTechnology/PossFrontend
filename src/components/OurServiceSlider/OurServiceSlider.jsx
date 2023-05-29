@@ -1,7 +1,7 @@
 import React  from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css"
-import video from '../../assets/video.png'
+import video from '../../assets/video.webp'
 import Card from '@mui/material/Card';
 
 import CardContent from '@mui/material/CardContent';
