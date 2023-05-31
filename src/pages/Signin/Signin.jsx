@@ -184,7 +184,7 @@ onChange={handleChange}
  
     
         <div className="flexcontainer3" style={{display:'flex',justifyContent:'center',padding:'40px'}}>
-          <div className='flexleft'>
+          <div className='flexleft' style={{zIndex:0}}>
 
           <LoginSocialFacebook
                                appId='716781016838370'
@@ -201,7 +201,7 @@ onChange={handleChange}
                                >
 
 
-                               <FacebookLoginButton  style={{height:"36px"}}/>
+                               <FacebookLoginButton  style={{height:"36px", zndex:0 }}/>
                                </LoginSocialFacebook>
           </div>
           <div className='flexright'>

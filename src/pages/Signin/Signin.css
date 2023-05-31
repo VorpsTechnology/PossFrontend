@@ -105,6 +105,9 @@ width:300px;
 
 #mediaanimation{
     display: none;
+    width: fit-content;
+    z-index: 0;
+    opacity: 40%;
 }
 @media only screen and (max-width: 600px) {
 .signimg{
