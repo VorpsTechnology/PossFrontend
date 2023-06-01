@@ -119,7 +119,7 @@ onChange={handleChange}
         <div><button  className='Accountbtn'>Login</button> </div>
        
       
-        <div className="flexcontainer3" style={{display:'flex',justifyContent:'center',padding:'40px'}}>
+        <div className="flexcontainer3" >
 
           <div className='flexleft'>
          <a style={{color:"red",cursor:"pointer"}} onClick={()=>{

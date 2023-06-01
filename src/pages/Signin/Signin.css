@@ -106,8 +106,12 @@ width:300px;
 #mediaanimation{
     display: none;
     width: fit-content;
-    z-index: 0;
+    z-index: 1000;
     opacity: 40%;
+}
+
+.flexcontainer3{
+    display:'flex';justify-content:center;padding:40px;
 }
 @media only screen and (max-width: 600px) {
 .signimg{
@@ -184,9 +188,118 @@ width:300px;
     padding: 0px 10px 0px 10px;
     display: inline;
    }
-    
-   
+   .flexcontainer3{
+    display:'flex';justify-content:center;padding:40px;
+}
    
 
         
+    }
+
+@media only screen and (max-width: 300px){
+    .inputarea{
+        background-color: rgba(255, 255, 255, 1);
+        border: 1.8793px solid #EAEAEA;
+        border-radius: 5.63791px;
+        padding: 7px;
+    width:200px;
+        border-color: transparent;
+        border-radius: 5px;
+        outline-color: #F2C879;
+        box-shadow: 3px 4px 5px rgba(230, 235, 229, 1);
+        margin:10px
+        
+        
+    }
+    .flexcontainer3{
+        display:inline
+    }
+    #mediaanimation{
+        display: block;
+        bottom: 50px;
+       
+       
+    }
+    }
+
+    @media only screen and (min-width:540px) and (max-width:912px){
+        .signimg{
+            display: none;
+        }
+        #mediaanimation{
+            display: block;
+            bottom: 50px;
+            transform: translateY(-130px);
+           
+        }
+        #col6{
+            width:100%
+        }
+        .dangle{
+            display:inline-table;
+            justify-content:center ;
+        }
+        .sname4{
+            margin-right:170px; 
+           margin-top: 20px;
+        }
+        
+        
+        
+        .createbtn{
+            background-color: #F2C879;
+            border-color: transparent;
+            font-size: 20px;
+            font-weight: bolder;
+            color:'black';
+            border-radius: 20px;
+            padding: 10px;
+            width:180px;
+            margin-top:40px;
+            margin-bottom: 30px;
+        
+        }
+        .loginheader h4{
+            color:'rgba(0, 0, 0, 1)';
+            font-weight:800;
+            font-size: 30px;
+            line-height: 50px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .fname{
+            margin: 10px 10px 10px 10px;
+            justify-content: left;
+            margin-right:250px;
+        }
+        .sname{
+            margin: 20px 10px 10px 10px;
+            margin-right:150px;
+        }
+        
+        .fname2{
+            margin: 10px 10px 10px 10px;
+            justify-content: left;
+            margin-right:250px;   
+        }
+        .doganimation{
+            display: none;
+        }
+        #upperrow{
+            margin-top:5px;
+            padding: 0px 10px 0px 10px;
+            display: inline;
+           }
+        
+           #lowerrow{
+            margin-top:5px;
+            padding: 0px 10px 0px 10px;
+            display: inline;
+           }
+           .flexcontainer3{
+            display:'flex';justify-content:center;padding:40px;
+        }
+           
+          
     }

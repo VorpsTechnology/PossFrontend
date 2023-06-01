@@ -183,10 +183,10 @@ onChange={handleChange}
       </div>
  
     
-        <div className="flexcontainer3" style={{display:'flex',justifyContent:'center',padding:'40px'}}>
+        <div className="flexcontainer3" >
           <div className='flexleft' style={{zIndex:0}}>
 
-          <LoginSocialFacebook
+          <LoginSocialFacebook width='30px'
                                appId='716781016838370'
                                onResolve={(response)=>{
                                 console.log(response)
@@ -225,10 +225,10 @@ onChange={handleChange}
     
       </div>
       </form>
-      <div align='right'  className='container' style={{float:'right',height:'100%'}} id='mediaanimation'>
+      {/* <div align='right'  className='container' style={{float:'right',height:'100%'}} id='mediaanimation'>
 
         <img src={mediasign} alt="" />
-        </div> 
+        </div>  */}
   
       <ToastContainer />
       <div className='signimg'><img src={sign} alt="" /></div>
