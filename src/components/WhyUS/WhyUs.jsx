@@ -40,12 +40,13 @@ function WhyUs() {
           </div>
 
           <div className='divone'>
-            <p  style={{backgroundColor:'white',color:'black',fontWeight:'500',fontSize:'18px'}}>
+            <div style={{backgroundColor:'white',color:'black',fontWeight:'500',fontSize:'18px'}}>
             From grooming and pampering to helping you buy the best products for your pets, consider Poss as your one-stop destination for all-things-pets.
              <br /> <br /> We understand what a pet parent truly wants - to have their pets lead a life brimming with health and happiness - and are passionate about making that possible.
 
- <br /> <br /> As pet parents ourselves, we consider pets as family and are excited about connecting pet parents to the right pet care professionals so that your best buddies can get lifetime access to cuddles, walkies, scritches, playtime, and more!
-            </p>
+ <br /> <br /> As pet parents ourselves, we consider pets as family and are excited about connecting pet parents to the right pet care professionals so that your best buddies can get lifetime
+  access to cuddles, walkies, scritches, playtime, and more!
+            </div>
           </div>
        
        
@@ -53,7 +54,7 @@ function WhyUs() {
         <div className='videodiv' style={{backgroundColor:'white'}} >
         <Carousel responsive={responsive}>
             <div>
-            <video  height="400" style={{width:'100%'}}  controls autoplay >
+            <video  height="400" style={{width:'100%'}}  controls  >
                     <source src='Videos/possk.mp4' />
                     " Your browser does not support the video tag."
                 </video> 
@@ -71,7 +72,7 @@ function WhyUs() {
                 </video> 
             </div>
             <div>
-            <video  height="400" style={{width:'100%'}} controls autoplay >
+            <video  height="400" style={{width:'100%'}} controls  >
                     <source src='Videos/possn.mp4' />
                     " Your browser does not support the video tag."
                 </video> 

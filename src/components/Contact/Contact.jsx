@@ -146,7 +146,7 @@ const navigate=useNavigate()
                   <div className="col-sm-12 mb-3" style={{backgroundColor:'white'}}>
                     <div className="form-group" style={{backgroundColor:'white'}}>
                       <label className="required-field" htmlFor="message" style={{backgroundColor:'white',fontWeight:'800',fontSize:'15px'}}>How can we help? </label>
-                      <textarea style={{backgroundColor:'white',resize: "none "}} className="form-control" id="message"  onChange={handleChange} name='message' value={address.message} rows={4} placeholder="Your Query" defaultValue={""} />
+                      <textarea style={{backgroundColor:'white',resize: "none "}} className="form-control" id="message"  onChange={handleChange} name='message' value={address.message} rows={4} placeholder="Your Query"  />
                     </div>
                   </div>
                   <div className="col-sm-12 mb-3" style={{backgroundColor:'white'}}>

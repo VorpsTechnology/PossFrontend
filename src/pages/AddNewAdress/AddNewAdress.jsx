@@ -89,7 +89,7 @@ function AddNewAdress() {
         
             <div className='container' id='container' >
             <h4 style={{marginTop:'20px',marginBottom:'20px'}}>Add new adress</h4>
-            <p>We need an address where we could deliver products.</p>
+            <div>We need an address where we could deliver products.</div>
               <form onSubmit={handleSubmit}>
               <div>
                 <div className='flexk' style={{display:'inline'}}>

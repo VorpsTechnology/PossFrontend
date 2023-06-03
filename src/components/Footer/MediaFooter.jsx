@@ -11,12 +11,12 @@ function MediaFooter() {
    <div align='center'>
  
   <div style={{margin:'0px 0px 0px 0px'}}><img style={{width:'70px',height:'70px'}} src={poss_two} alt="" /></div> 
-  <div className='instalinks' style={{display:'flex',justifyContent:'center'}}>
-            <div><button style={{backgroundColor:'transparent',borderColor:'transparent'}}><img src={facebooklink} alt="" /></button></div>
-            <div><button style={{backgroundColor:'transparent',borderColor:'transparent'}}><img src={instalink} alt="" /></button></div>
+  <div className='instalinks' >
+            <div><button className='facebtn'><img src={facebooklink} alt="" /></button></div>
+            <div><button className='facebtn' ><img src={instalink} alt="" /></button></div>
       </div>
       <div className='row'>
-  <p className="pt-2" >
+  <div className="pt-2" >
                      <div style={{marginTop:'2px'}}><a href="/ContactUs" style={{textDecoration:'none',color:'black'}}> <h5 style={{fontWeight:'bold'}}>Contact Us</h5> </a></div> 
                     <div style={{marginTop:'10px'}}><a href="/AboutUs" style={{textDecoration:'none',color:'black'}}> <h5 style={{fontWeight:'bold'}}>About Us</h5> </a></div>  
                     
@@ -27,14 +27,14 @@ function MediaFooter() {
 
 
                       
-                    </p>
-                    <p className="pt-2" >
+                    </div>
+                    <div className="pt-2" >
                     {/* <h5  href="/Contact" style={{fontWeight:'bold'}}>Contact Us</h5>
                       <h5  href="/AboutUs" style={{fontWeight:'bold'}}>About Us</h5> */}
                       
                      
                    
-   </p>
+   </div>
   </div>
         <div style={{display:'inline'}}>
         <h4 className='foottext'>© 2023 Poss India Private Limited. All Rights Reserved.</h4>

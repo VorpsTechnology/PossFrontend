@@ -15,6 +15,7 @@ import mpets from '../../assets/mpets.webp'
 import drools from '../../assets/drools.webp'
 import fidele from '../../assets/fidele.webp'
 import viva from '../../assets/viva.webp'
+import { memo } from "react";
 
 const Brands = () => {
   return (
@@ -150,4 +151,4 @@ const Brands = () => {
   )
 }
 
-export default Brands
+export default memo(Brands) 

@@ -82,12 +82,12 @@ function handleProduct(data){
   </button>
   <li className={isMobile?'nav-links-mobile':'nav-links'}  onClick={()=> setIsMobile(false)}>
         
-       <ul  style={{display:'flex',textDecoration:'none',padding:'10px'}}>
+       <li  style={{display:'flex',textDecoration:'none',padding:'10px'}}>
         <li style={{listStyle:'none'}}>
         <Badge badgeContent={cartNumber} color="primary">
      <img onClick={()=>{
                 navigate("/storeCart")
-              }} src={shopingcart} style={{width:"20px"}} alt="" />
+              }} src={shopingcart} className='imagecart 'alt="" />
 </Badge>
           
         </li>
@@ -96,7 +96,7 @@ function handleProduct(data){
           </Link>
           </li>
     
-       </ul>
+       </li>
         <li style={{margin:'0'}}>
         <button
     className="dropdown-toggle"
@@ -107,7 +107,7 @@ function handleProduct(data){
          Dogs
     <span className="caret" />
   </button>
-  <ul className="dropdown-menu" role="menu" aria-labelledby="menu1">
+  <li className="dropdown-menu" role="menu" aria-labelledby="menu1">
     <li role="presentation" id='listmo' >
       <a role="menuitem" tabIndex={-1}  onClick={()=>{
                 handleProduct({
@@ -190,7 +190,7 @@ function handleProduct(data){
 
 
  
-  </ul>
+  </li>
 </li>
         
 <li>
@@ -203,7 +203,7 @@ function handleProduct(data){
          Cats
     <span className="caret" />
   </button>
-  <ul className="dropdown-menu" role="menu" aria-labelledby="menu1">
+  <li className="dropdown-menu" role="menu" aria-labelledby="menu1">
     <li role="presentation" id='listmo'>
       <a role="menuitem" tabIndex={-1}  onClick={()=>{
                 handleProduct({
@@ -280,7 +280,7 @@ function handleProduct(data){
 
 
  
-  </ul>
+  </li>
 </li>
 
 <li>
@@ -296,7 +296,7 @@ function handleProduct(data){
          Animals
     <span className="caret" />
   </button>
-  <ul className="dropdown-menu" role="menu" aria-labelledby="menu1">
+  <li className="dropdown-menu" role="menu" aria-labelledby="menu1">
     <li role="presentation" id='listmo' >
       <a role="menuitem" tabIndex={-1} onClick={()=>{
                 handleProduct({
@@ -363,7 +363,7 @@ function handleProduct(data){
 
 
  
-  </ul>
+  </li>
 </li>
      
         <li style={{ margin: '20px 10px'}}><Link to="/" className='home'>Contact

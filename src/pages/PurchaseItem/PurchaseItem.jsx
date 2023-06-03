@@ -279,7 +279,7 @@ function PurchaseItem() {
       >
     <button className='paybtn2' id='paybtn2' 
                
-               > <span style={{marginRight:'15px'}}> <img src={phone} alt="" /> </span>Request Callback</button>
+               > <span class='span' > <img src={phone} alt="" /> </span>Request Callback</button>
       </a>
                 
 

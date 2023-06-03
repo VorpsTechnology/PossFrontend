@@ -38,8 +38,8 @@ const Account = () => {
             <div className='col-10' id='colid2'>
                 <div className='container' id='container'>
                 <h1 className='manageaccount'>Manage My Account</h1>
-                <p className='para'>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.
-                Select a link below to view or edit information.</p>
+                <div className='para'>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.
+                Select a link below to view or edit information.</div>
                 <div style={{padding:'10px'}}>
                     <div className='' >
                         <div className=''>

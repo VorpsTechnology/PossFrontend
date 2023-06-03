@@ -5,19 +5,12 @@ import certified from '../../assets/certified.webp'
 import shipping from '../../assets/shipping.webp'
 import chat from '../../assets/chat.webp'
 import hey from '../../assets/hey.png'
-// import product from '../../assets/product.webp'
+
 import downarrow from '../../assets/downarrow.webp'
 import back from '../../assets/back.webp'
 import './ProductPurchase.css'
 import 'bootstrap/dist/css/bootstrap.css';
-// import Tabs from 'react-bootstrap/Tabs';
-// import Tab from 'react-bootstrap/Tab';
-// import Box from '@mui/material/Box';
-// import Rating from '@mui/material/Rating';
-// import StarIcon from '@mui/icons-material/Star';
-// import cart from '../../assets/cart.webp';
-// import dogproduct from '../../assets/dogproduct.webp'
-// import purchase from '../../assets/purchase.webp'
+
 import { useNavigate, useParams }  from 'react-router-dom';
 import { Footer } from '../../components/Footer/Footer';
 
@@ -148,20 +141,20 @@ for(var i = 0; i < str_array.length; i++) {
                     <div  align="center" className='col-3'>
                     
                             <div ><img src={instant} alt="" /></div>
-                            <div><p >Speedy Deliveries</p></div>
+                            <div><div >Speedy Deliveries</div></div>
                         </div>
                         <div align="center" className='col-3'>
                         
                             <div ><img src={certified} alt="" /></div>
-                            <div><p>Amazing Value</p></div>
+                            <div><div>Amazing Value</div></div>
                     </div>
                         <div align="center" className='col-3'>
                                 <div><img src={shipping} alt="" /></div>
-                                <div><p>Free Shipping </p></div>
+                                <div><div>Free Shipping </div></div>
                         </div>
                         <div align="center" className='col-3'>
                         <div><img src={chat} alt="" /></div>
-                        <div><p>Chat with us</p></div></div>
+                        <div><div>Chat with us</div></div></div>
                     </div>
                </div>
                 </div>
@@ -185,17 +178,17 @@ for(var i = 0; i < str_array.length; i++) {
                             "https://drive.google.com/uc?id="+ images[preview]:"no image"} alt="" />
                      </div>
                   <div className='ulcard' align='center'>
-                  <ul align='center' class="preview-thumbnail nav nav-tabs" >
-                           <li class="active"><a href data-target="#pic-1" data-toggle="tab"><div className='card' style={{padding:'20px'}}><img onClick={()=>{
+                  <ul align='center' className="preview-thumbnail nav nav-tabs" >
+                           <li className="active"><a href='true' data-target="#pic-1" data-toggle="tab"><div className='card' style={{padding:'20px'}}><img onClick={()=>{
                             setPreview(1)
                            }} src={`https://drive.google.com/uc?id=${images[1]}`} style={{width:"6rem",height:"3rem"}} /></div></a></li>
-                           <li><a href data-target="#pic-2" data-toggle="tab"> <div className='card' style={{padding:'20px'}}><img onClick={()=>{
+                           <li><a href='true' data-target="#pic-2" data-toggle="tab"> <div className='card' style={{padding:'20px'}}><img onClick={()=>{
                             setPreview(2)
                            }}src={`https://drive.google.com/uc?id=${images[2]}`} style={{width:"6rem",height:"3rem"}}/></div> </a></li>
-                           <li><a href data-target="#pic-3" data-toggle="tab"><div className='card' style={{padding:'20px'}}><img onClick={()=>{
+                           <li><a href='true' data-target="#pic-3" data-toggle="tab"><div className='card' style={{padding:'20px'}}><img onClick={()=>{
                             setPreview(3)
                            }}src={`https://drive.google.com/uc?id=${images[3]}`} style={{width:"6rem",height:"3rem"}} /></div></a></li>
-                           <li className='onelistotem' ><a href data-target="#pic-4" data-toggle="tab"><div className='card' style={{padding:'20px'}}><img
+                           <li className='onelistotem' ><a href='true' data-target="#pic-4" data-toggle="tab"><div className='card' style={{padding:'20px'}}><img
                            style={{width:"6rem",height:"3rem"}}
                            onClick={()=>{
                             setPreview(4)
@@ -252,18 +245,18 @@ for(var i = 0; i < str_array.length; i++) {
                    </div>
                    <div style={{marginTop:'40px'}}> 
                   <div>
-                    <button className='togglebtn' data-toggle="collapse" data-target="#demo">Description <span> <p  style={{float:'right'}}> <img src={downarrow} alt="" /></p></span></button>
+                    <button className='togglebtn' data-toggle="collapse" data-target="#demo">Description <span> <div  style={{float:'right'}}> <img src={downarrow} alt="" /></div></span></button>
 
-                       <div  id="demo" class="collapse">
+                       <div  id="demo" className="collapse">
                       {post.desc}
                        </div>
                    </div>
                    <hr className='titlem'  />
                    <div>
 
-                   <button className='togglebtn' data-toggle="collapse" data-target="#submenu1">Addition information <span> <p  style={{float:'right'}}> <img src={downarrow} alt="" /></p></span></button>
+                   <button className='togglebtn' data-toggle="collapse" data-target="#submenu1">Addition information <span> <div  style={{float:'right'}}> <img src={downarrow} alt="" /></div></span></button>
 
-                       <div id="submenu1" class="collapse">
+                       <div id="submenu1" className="collapse">
                        {post.typeCatagory}
                        {post.brandCategory}
                       {post.variantType}
@@ -297,20 +290,20 @@ for(var i = 0; i < str_array.length; i++) {
                     <div  align="center" className='col-3'>
                     
                             <div className='pyrchase' ><img src={instant} alt="" /></div>
-                            <div><p style={{fontSize:'12px'}}>Speedy Deliveries</p></div>
+                            <div><div style={{fontSize:'12px'}}>Speedy Deliveries</div></div>
                         </div>
                         <div align="center" className='col-3'>
                         
                             <div className='pyrchase' ><img src={certified} alt="" /></div>
-                            <div><p  style={{fontSize:'12px'}}>Amazing Value</p></div>
+                            <div><div  style={{fontSize:'12px'}}>Amazing Value</div></div>
                     </div>
                         <div align="center" className='col-3'>
                                 <div className='pyrchase'><img src={shipping} alt="" /></div>
-                                <div><p  style={{fontSize:'12px'}}>Free Shipping </p></div>
+                                <div><div  style={{fontSize:'12px'}}>Free Shipping </div></div>
                         </div>
                         <div align="center" className='col-3'>
                         <div className='pyrchase'><img src={chat} alt="" /></div>
-                        <div><p  style={{fontSize:'12px'}}>Chat with us</p></div></div>
+                        <div><div  style={{fontSize:'12px'}}>Chat with us</div></div></div>
                     </div>
      </div>
      

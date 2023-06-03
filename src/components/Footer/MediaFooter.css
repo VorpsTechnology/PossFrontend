@@ -26,6 +26,11 @@
       }
       .instalinks{
         padding: 40px;
+        display:flex;justify-content:center
+      }
+      .facebtn{
+        background-color: transparent;
+        border-color:transparent;
       }
     
 }

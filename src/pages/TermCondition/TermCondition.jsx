@@ -11,7 +11,7 @@ function TermCondition() {
         <Navbar />
         <div className='container-fluid'>
            <div align='center'><h4 style={{padding:'40px',fontWeight:'650'}}>Term & Conditions</h4></div> 
-           <div style={{padiing:'40px'}}><p>
+           <div style={{padiing:'40px'}}><div>
            PLEASE READ THESE TERMS OF USE CAREFULLY BEFORE USING possindia.in (‘Website’) & MOBILE APPLICATION – ‘Possindia FOR HAPPY PETS’ (‘App’) TOGETHER AS (‘PLATFORM’). THESE TERMS OF USE (HEREINAFTER ‘Terms of Use’) GOVERN YOUR ACCESS TO AND USE OF THE WEBSITE AND APP. THE WEBSITE AND APP ARE AVAILABLE FOR YOUR USE ONLY ON THE CONDITION THAT YOU AGREE TO THE TERMS OF USE SET FORTH BELOW. IF YOU DO NOT AGREE TO ALL OF THE TERMS OF USE, DO NOT ACCESS OR USE THE PLATFORM. BY IMPLICITLY OR EXPRESSLY ACCEPTING THE TERMS OF USE, YOU ALSO ACCEPT AND AGREE TO BE BOUND BY Poss POLICIES (INCLUDING BUT NOT LIMITED TO PRIVACY POLICY) AS AMENDED FROM TIME TO TIME AND AVAILABLE ON THE PLATFORM. BY ACCESSING OR USING THE PLATFORM, YOU AND THE ENTITY YOU ARE AUTHORISED TO REPRESENT SIGNIFY YOUR AGREEMENT TO BE BOUND BY THE TERMS OF USE.
 YOU ARE RESPONSIBLE TO ENSURE THAT YOUR ACCESS TO THE PLATFORM AND MATERIAL AVAILABLE ON OR THROUGH IT ARE LEGAL IN EACH GURUGRAM,HARYANA  JURISDICTION, IN OR THROUGH WHICH YOU ACCESS OR VIEW THE PLATFORM OR SUCH MATERIAL
 1) Membership/Registration Eligibility
@@ -58,7 +58,7 @@ threatens the unity, integrity, defence, security or sovereignty of India, frien
 shall not be false, inaccurate or misleading;
 shall not, directly or indirectly, offer, attempt to offer, trade or attempt to trade in any item, the dealing of which is prohibited or restricted in any manner under the provisions of any applicable law, rule, regulation or guideline for the time being in force.
 shall not create liability for Us or cause Us to lose (in whole or in part) the services of our internet service provider (“ISPs”) or other suppliers
-            </p></div>
+            </div></div>
         </div>
         <Footer />
 

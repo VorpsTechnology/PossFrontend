@@ -13,6 +13,10 @@
         width: 40px;
         
     }
+
+    .imagecart {
+        width:20px;
+    }
     
     .nav-links{
         display: flex;
@@ -57,7 +61,9 @@
     .nav-links{
         display: none;
     }
-
+    .imagecart {
+        width:20px;
+    }
     .nav-links-mobile{
         position:absolute;
         display: block;
@@ -161,6 +167,9 @@
         height:40px;
         width: 40px;
     }
+    .imagecart {
+        width:20px;
+    }
  }
 
  @media screen and (max-width:380px) {
@@ -180,6 +189,9 @@
     .logo{
         height:40px;
         width: 40px;
+    }
+    .imagecart {
+        width:20px;
     }
  }
 

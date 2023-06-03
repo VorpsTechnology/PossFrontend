@@ -55,7 +55,7 @@ const PageThree = () => {
            <div align='center' style={{marginTop:'50px'}} className='con'>
       <h4 style={{fontWeight:'500px'}}> <b>Your Order will be shipping on(timeline)</b> </h4>
     </div>
-           <div align='left' class="bottomleft"><img style={{height:'300px'}} src={jump} alt="" /></div>  
+           <div align='left' className="bottomleft"><img style={{height:'300px'}} src={jump} alt="" /></div>  
            <div className='bootomright'><img src={gikk} alt="" /></div> 
 
          

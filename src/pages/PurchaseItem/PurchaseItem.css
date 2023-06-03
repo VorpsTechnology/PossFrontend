@@ -12,6 +12,10 @@
     outline: transparent;
 }
 
+.span{
+    margin-right:15px;
+}
+
 .forml{
   justify-content: left;
   margin: 40px;

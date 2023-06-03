@@ -279,9 +279,9 @@ setEstimate(response)
         {billingaddress &&
                                 <div onClick={handleAddress} style={{width:"auto",height:"auto",padding:"5px",backgroundColor:"#F2C879",borderRadius:"20px"}}>
                                  <h6><b>○ Use default address</b></h6>
-                                 <p> Address : { billingaddress.address1}, {billingaddress.city}, {billingaddress.state}, {billingaddress.post}, {billingaddress.country}
+                                 <div> Address : { billingaddress.address1}, {billingaddress.city}, {billingaddress.state}, {billingaddress.post}, {billingaddress.country}
                                 
-                                </p>
+                                </div>
                                 </div>
                            } 
        <div align='left'  style={{height:'0px'}} className='mediay' ><img src={mediay} alt="" /></div>
@@ -526,7 +526,7 @@ setEstimate(response)
            <div align='center' style={{marginTop:'50px'}} className='con'>
       <h4 style={{fontWeight:'500px'}}> <b>Your Order will be shipping on {estimate}</b> </h4>
     </div>
-           <div align='left' class="bottomleft"><img style={{height:'300px'}} src={jump} alt="" /></div>  
+           <div align='left' className="bottomleft"><img style={{height:'300px'}} src={jump} alt="" /></div>  
            <div className='bootomright'><img src={gikk} alt="" /></div> 
 
          

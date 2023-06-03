@@ -3,14 +3,10 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Card from '@mui/material/Card';
 
-
 import CardMedia from '@mui/material/CardMedia';
 
 import './CatCatogries.css'
-import catone from '../../assets/catone.webp'
-import cattwo from '../../assets/cattwo.webp'
 
-import catthree from '../../assets/catthree.webp'
 import icon from '../../assets/icon.webp'
 import catpc1 from '../../assets/catpc1.webp'
 import catpc2 from '../../assets/catpc2.webp'
@@ -18,8 +14,8 @@ import catpc3 from '../../assets/catpc3.webp'
 import catpc4 from '../../assets/catpc4.webp'
 
 import { useNavigate }  from 'react-router-dom';
-import catfour from '../../assets/catfour.webp'
-// import catseven from '../../assets/catseven.webp'
+
+
 
 
 export default function CatCatogries() {
@@ -62,48 +58,48 @@ export default function CatCatogries() {
    <span >
     <h4 align="center">
     <div style={{fontSize:'15px',backgroundColor:'white',fontWeight:'bold',borderRadius:'12px',padding:'5px',outline:'transparent',width:'130px',borderColor:'white',marginRight:'20px'}} className="dropdownbutton">
-        <button className="dropbtn20"><img style={{height:'20px'}} src={icon} alt="" /></button>
+        <button className="dropbtn20"><img  src={icon} alt="" /></button>
         <div className="dropdown-content20">
-        <a className="dropdown-item"    onClick={()=>{
+        <a   href='true'className="dropdown-item"    onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"FOOD"
                 })
               }} >Food </a>
-                <a className="dropdown-item"   onClick={()=>{
+                <a href='true' className="dropdown-item"   onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"TREAT"
                 })
               }} >Treats</a>
-                <a className="dropdown-item"    onClick={()=>{
+                <a href='true' className="dropdown-item"    onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"TOY"
                 })
               }} >Toys </a>
                 
-                <a className="dropdown-item"   onClick={()=>{
+                <a href='true' className="dropdown-item"   onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"APPARELS"
                 })
               }} >Apparels</a>
-                <a className="dropdown-item"    onClick={()=>{
+                <a href='true' className="dropdown-item"    onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"ACCESSORIES"
                 })
               }} >Accessories</a>
                
-                <a className="dropdown-item"    onClick={()=>{
+                <a href='true' className="dropdown-item"    onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"MAT"
                 })
               }} >Bed And Mats</a>
                 
-                <a className="dropdown-item"    onClick={()=>{
+                <a href='true' className="dropdown-item"    onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"HEALTH & HYGIENE"

@@ -47,7 +47,7 @@ const OurServiceSlider = () => {
               <Carousel    align="center"  responsive={responsive}>
               <div >
 
-            <Card class='Slidercard'  align="center" sx={{ borderRadius:'20.1355px' }}>
+            <Card className='Slidercard'  align="center" sx={{ borderRadius:'20.1355px' }}>
               <CardMedia
                 sx={{ height: 270,borderRadius:'20.1355px;' , }}
                 image={video}
@@ -69,7 +69,7 @@ const OurServiceSlider = () => {
             </Card>
             </div>
             <div  >
-            <Card class='Slidercard'  align="center" sx={{ maxWidth: 270,borderRadius:'20px',boxShadow: '0px 0px 21.32px rgba(0, 0, 0, 0.15)',height:'430px' }}>
+            <Card className='Slidercard'  align="center" sx={{ maxWidth: 270,borderRadius:'20px',boxShadow: '0px 0px 21.32px rgba(0, 0, 0, 0.15)',height:'430px' }}>
               <CardMedia
                 sx={{ height: 270 ,borderRadius:'20.1355px;' }}
                 image={video}
@@ -90,7 +90,7 @@ const OurServiceSlider = () => {
             </Card>
             </div>
             <div  >
-            <Card class='Slidercard'  align="center" sx={{maxWidth:270, borderRadius:'20px',boxShadow: '0px 0px 21.32px rgba(0, 0, 0, 0.15)',height:'430px' }}>
+            <Card className='Slidercard'  align="center" sx={{maxWidth:270, borderRadius:'20px',boxShadow: '0px 0px 21.32px rgba(0, 0, 0, 0.15)',height:'430px' }}>
               <CardMedia
                 sx={{ height: 270 ,borderRadius:'20.1355px;' }}
                 image={video}
@@ -111,7 +111,7 @@ const OurServiceSlider = () => {
             </Card>
             </div>
             <div  >   
-              <Card  class='Slidercard'  align="center" sx={{maxWidth:270, borderRadius:'20px',boxShadow: '0px 0px 21.32px rgba(0, 0, 0, 0.15)',height:'430px' }}>
+              <Card  className='Slidercard'  align="center" sx={{maxWidth:270, borderRadius:'20px',boxShadow: '0px 0px 21.32px rgba(0, 0, 0, 0.15)',height:'430px' }}>
               <CardMedia
                 sx={{ height: 270 ,}}
                 image={video}

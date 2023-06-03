@@ -23,7 +23,7 @@ export const Footer = () => {
                 <div className='flexleft' style={{justifyContent:'left'}}>
                   <div className='row'>
                     <div className='col-md-auto'>
-                    <p className="pt-2" >
+                    <div className="pt-2" >
                      <div style={{marginTop:'2px'}}><a href="/ContactUs" style={{textDecoration:'none',color:'black'}}> <h5 style={{fontWeight:'bold'}}>Contact Us</h5> </a></div> 
                     <div style={{marginTop:'10px'}}><a href="/AboutUs" style={{textDecoration:'none',color:'black'}}> <h5 style={{fontWeight:'bold'}}>About Us</h5> </a></div>  
                     
@@ -34,10 +34,10 @@ export const Footer = () => {
 
 
                       
-                    </p>
+                    </div>
                     </div>
                     <div className='col-md-auto'>
-                    <p className="pt-2" >
+                    <div className="pt-2" >
 
                       
                     
@@ -48,7 +48,7 @@ export const Footer = () => {
                         navigate("/Account")
                       }}>My Account</a></h5> */}
                    
-                    </p>
+                    </div>
                     </div>
                     </div> 
                 </div>
@@ -58,9 +58,9 @@ export const Footer = () => {
                       <div style={{marginTop:'20px',marginLeft:'200px'}} >
                        <div style={{margin:'0px 0px 20px 0px'}}><img style={{width:'70px',height:'70px'}} src={poss_two} alt="" /></div> 
                         <div><h4 style={{fontWeight:'bold',fontSize:'20px',paddingBottom:'20px',backgroundColor:"white"}}>Follow us</h4></div>
-                    <a href='https://www.facebook.com/possbytherollinggroomers' target="_blank">    <img  src={facebooklink}  alt="" /></a> <span style={{margin:'10px'}} >
+                    <a href='https://www.facebook.com/possbytherollinggroomers' target="_blank" rel='noreferrer'>    <img  src={facebooklink}  alt="" /></a> <span style={{margin:'10px'}} >
                       
-                    <a href='https://www.instagram.com/possindia/' target="_blank"> 
+                    <a href='https://www.instagram.com/possindia/' target="_blank"  rel='noreferrer' > 
                       <img src={instalink}  alt="" />
                       </a>
                       </span></div>
@@ -90,7 +90,7 @@ export const Footer = () => {
         target="_blank"
         rel="noopener noreferrer"
       >
-    <img src={whatsupicon} />
+    <img src={whatsupicon} alt='whatsup' />
       </a>
     </div>
  </div>

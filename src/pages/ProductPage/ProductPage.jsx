@@ -576,7 +576,7 @@ const cart=() => {
 <div className='desktopnavbar' style={{margin:'10px'}}>
     
     <nav id='navbar' className="navbar navbar-expand-lg navbar-light"  >
-      <a   className="navbar-brand"  >
+      <a  href='true'  className="navbar-brand"  >
   <>
  <img onClick={()=>{
   navigate("/")
@@ -591,50 +591,50 @@ const cart=() => {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul id='liskmit'  className="navbar-nav mr-auto">
           <li className="nav-item dropdown">
-            <a   className="nav-link dropdown-toggle" data-toggle="dropdown"  href='/' id="navbarDropdown" role="button"   aria-haspopup="true" aria-expanded="false">
+            <a href='true'  className="nav-link dropdown-toggle" data-toggle="dropdown"  id="navbarDropdown" role="button"   aria-haspopup="true" aria-expanded="false">
               Dogs
             </a>
             <div className="dropdown-menu"  aria-labelledby="navbarDropdown">
-              <a  className="dropdown-item"   onClick={()=>{
+              <a href='true'  className="dropdown-item"   onClick={()=>{
               handleProduct({
                 "petCategoryy":"DOG",
                 "typeCatagoryy":"FOOD"
               })
             }}>Food</a>
-              <a className="dropdown-item"   onClick={()=>{
+              <a href='true' className="dropdown-item"   onClick={()=>{
               handleProduct({
                 "petCategoryy":"DOG",
                 "typeCatagoryy":"TREAT"
               })
             }} >Treats</a>
-              <a className="dropdown-item"  onClick={()=>{
+              <a href='true' className="dropdown-item"  onClick={()=>{
               handleProduct({
                 "petCategoryy":"DOG",
                 "typeCatagoryy":"TOY"
               })
             }} >Toys </a>
              
-              <a className="dropdown-item"   onClick={()=>{
+              <a href='true' className="dropdown-item"   onClick={()=>{
               handleProduct({
                 "petCategoryy":"DOG",
                 "typeCatagoryy":"APPARELS"
               })
             }}  >Apparels</a>
-              <a className="dropdown-item"    onClick={()=>{
+              <a href='true' className="dropdown-item"    onClick={()=>{
               handleProduct({
                 "petCategoryy":"DOG",
                 "typeCatagoryy":"ACCESSORIES"
               })
             }}>Accessories</a>
              
-              <a className="dropdown-item"   onClick={()=>{
+              <a href='true' className="dropdown-item"   onClick={()=>{
               handleProduct({
                 "petCategoryy":"DOG",
                 "typeCatagoryy":"MAT"
               })
             }}  >Bed And Mats</a>
           
-              <a className="dropdown-item"   onClick={()=>{
+              <a href='true' className="dropdown-item"   onClick={()=>{
               handleProduct({
                 "petCategoryy":"DOG",
                 "typeCatagoryy":"HEALTH & HYGIENE"
@@ -649,46 +649,46 @@ const cart=() => {
               Cats
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a className="dropdown-item"    onClick={()=>{
+            <a href='true' className="dropdown-item"    onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
                 "typeCatagoryy":"FOOD"
               })
             }} >Food </a>
-              <a className="dropdown-item"   onClick={()=>{
+              <a  href='true' className="dropdown-item"   onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
                 "typeCatagoryy":"TREAT"
               })
             }} >Treats</a>
-              <a className="dropdown-item"    onClick={()=>{
+              <a href='true' className="dropdown-item"    onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
                 "typeCatagoryy":"TOY"
               })
             }} >Toys </a>
               
-              <a className="dropdown-item"   onClick={()=>{
+              <a  href='true' className="dropdown-item"   onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
                 "typeCatagoryy":"APPARELS"
               })
             }} >Apparels</a>
-              <a className="dropdown-item"    onClick={()=>{
+              <a href='true' className="dropdown-item"    onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
                 "typeCatagoryy":"ACCESSORIES"
               })
             }} >Accessories</a>
              
-              <a className="dropdown-item"    onClick={()=>{
+              <a href='true' className="dropdown-item"    onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
                 "typeCatagoryy":"MAT"
               })
             }} >Bed And Mats</a>
               
-              <a className="dropdown-item"    onClick={()=>{
+              <a href='true' className="dropdown-item"    onClick={()=>{
               handleProduct({
                 "petCategoryy":"CAT",
                 "typeCatagoryy":"HEALTH & HYGIENE"
@@ -703,36 +703,36 @@ const cart=() => {
               Other Animals
             </a>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a className="dropdown-item"     onClick={()=>{
+            <a  href='true' className="dropdown-item"     onClick={()=>{
               handleProduct({
                 "petCategoryy":"BIRD"
               })
             }}>BIRD </a>
-              <a className="dropdown-item"   onClick={()=>{
+              <a href='true' className="dropdown-item"   onClick={()=>{
               handleProduct({
                 "petCategoryy":"TURTLE"
               })
             }} >TURTLE</a>
-              <a className="dropdown-item"   onClick={()=>{
+              <a href='true' className="dropdown-item"   onClick={()=>{
               handleProduct({
                 "petCategoryy":"FISH"
                
               })
             }} >FISH </a>
               
-              <a className="dropdown-item" 
+              <a href='true' className="dropdown-item" 
                 onClick={()=>{
                   handleProduct({
                     "petCategoryy":"GUINEA PIG"
                   })
                 }}
               >GUINEA PIG</a>
-              <a className="dropdown-item"   onClick={()=>{
+              <a href='true' className="dropdown-item"   onClick={()=>{
               handleProduct({
                 "petCategoryy":"HAMSTER"
               })
             }} >HAMSTER</a>
-              <a className="dropdown-item" 
+              <a href='true' className="dropdown-item" 
                 onClick={()=>{
                   handleProduct({
                     "petCategoryy":"RABBIT"
@@ -769,12 +769,12 @@ const cart=() => {
         <form id='serachbar' className="form-inline my-2 my-lg-0" onSubmit={handleSearchInput}>
          <div > <input value={searchText } onChange={handleChange} style={{width:'240px',padding:'20px',backgroundColor:'white',fontSize:'15px'}} className="form-control mr-sm-2" type="text" placeholder="Search your query here" name='searchText' aria-label="Search" /><span>
           
-          <button type="submit" style={{backgroundColor:'transparent',borderColor:'transparent',marginLeft:"5px"}}><i class="fa fa-search" aria-hidden="true"></i></button></span>
+          <button type="submit" style={{backgroundColor:'transparent',borderColor:'transparent',marginLeft:"5px"}}><i className="fa fa-search" aria-hidden="true"></i></button></span>
 </div>
         </form>
         <ul  className='liskmin'>
         <li   className="nav-item">
-      <a > <Badge badgeContent={cartNumber} color="primary">
+      <a href='true' > <Badge badgeContent={cartNumber} color="primary">
      <img onClick={()=>{
                 navigate("/storeCart")
               }} src={shopingcart} style={{width:"20px"}} alt="" />
@@ -788,12 +788,12 @@ const cart=() => {
             </a>
             <div className="dropdown-menu" style={{marginLeft:'-80px'}} aria-labelledby="navbarDropdown">
           {userInfo ? <>
-            <a  className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}} onClick={()=>{
+            <a  href='true' className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}} onClick={()=>{
            
             navigate("/Account")
           }}> MY ACCOUNT </button> </a>
           
-             <a  className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}} onClick={()=>{
+             <a href='true' className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}} onClick={()=>{
             swal("Do You Want To Logout")
             
             localStorage.removeItem("userInfo")
@@ -801,8 +801,8 @@ const cart=() => {
             navigate("/")
           }}> LOGOUT </button> </a></>
            : <>
-          <a  className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}} onClick={handleClick}> Sign Up </button> </a>
-              <a  className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}}  onClick={handleLogin} >Login</button> </a>
+          <a  href='true' className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}} onClick={handleClick}> Sign Up </button> </a>
+              <a href='true'  className="dropdown-item" > <button style={{backgroundColor:'transparent',borderColor:'transparent',fontSize:'15px',fontWeight:'650'}}  onClick={handleLogin} >Login</button> </a>
 
           </>}
             </div>
@@ -831,7 +831,7 @@ const cart=() => {
      
       
      <div> <input  name='searchText'  type="text"  style={{width:'80%'}} placeholder="Search.." value={searchText } onChange={handleChange}  />  
-      <span> <button type="submit" style={{marginLeft:"5px",backgroundColor:'transparent',borderColor:'transparent',marginLeft:"2px"}}><i class="fa fa-search" aria-hidden="true"></i></button>
+      <span> <button type="submit" style={{marginLeft:"5px",backgroundColor:'transparent',borderColor:'transparent',marginLeft:"2px"}}><i className="fa fa-search" aria-hidden="true"></i></button>
 </span>
 </div>
     </form>
@@ -851,7 +851,7 @@ const cart=() => {
   <li className={isMobile?'nav-links-mobile':'nav-links'}  onClick={()=> setIsMobile(false)}>
         
        <ul  style={{display:'flex',textDecoration:'none',padding:'10px'}}>
-        <li style={{listStyle:'none'}}>  <a > <Badge badgeContent={cartNumber} color="primary">
+        <li style={{listStyle:'none'}}>  <a href='true' > <Badge badgeContent={cartNumber} color="primary">
      <img onClick={()=>{
                 navigate("/storeCart")
               }} src={shopingcart} style={{width:"20px"}} alt="" />
@@ -875,7 +875,7 @@ const cart=() => {
   </button>
   <ul className="dropdown-menu" role="menu" aria-labelledby="menu1">
     <li role="presentation" id='listmo' >
-      <a role="menuitem" tabIndex={-1}  onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1}  onClick={()=>{
                 handleProduct({
                   "petCategoryy":"DOG",
                   "typeCatagoryy":"FOOD"
@@ -885,7 +885,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} 
+      <a href='true' role="menuitem" tabIndex={-1} 
        onClick={()=>{
         handleProduct({
           "petCategoryy":"DOG",
@@ -896,7 +896,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} 
+      <a href='true' role="menuitem" tabIndex={-1} 
        onClick={()=>{
         handleProduct({
           "petCategoryy":"DOG",
@@ -907,7 +907,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} 
+      <a href='true' role="menuitem" tabIndex={-1} 
       
       onClick={()=>{
         handleProduct({
@@ -919,7 +919,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} 
+      <a href='true'  role="menuitem" tabIndex={-1} 
        onClick={()=>{
         handleProduct({
           "petCategoryy":"DOG",
@@ -931,7 +931,7 @@ const cart=() => {
     </li>
     
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} 
+      <a href='true' role="menuitem" tabIndex={-1} 
        onClick={()=>{
         handleProduct({
           "petCategoryy":"DOG",
@@ -943,7 +943,7 @@ const cart=() => {
     </li>
    
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} 
+      <a href='true' role="menuitem" tabIndex={-1} 
        onClick={()=>{
         handleProduct({
           "petCategoryy":"DOG",
@@ -971,7 +971,7 @@ const cart=() => {
   </button>
   <ul className="dropdown-menu" role="menu" aria-labelledby="menu1">
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1}  onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1}  onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"FOOD"
@@ -981,7 +981,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1} onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"TREAT"
@@ -991,7 +991,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} 
+      <a href='true' role="menuitem" tabIndex={-1} 
       onClick={()=>{
         handleProduct({
           "petCategoryy":"CAT",
@@ -1002,7 +1002,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1} onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"APPARELS"
@@ -1012,7 +1012,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1} onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"ACCESSORIES"
@@ -1023,7 +1023,7 @@ const cart=() => {
     </li>
    
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1} onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"MAT"
@@ -1034,7 +1034,7 @@ const cart=() => {
     </li>
    
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1} onClick={()=>{
                 handleProduct({
                   "petCategoryy":"CAT",
                   "typeCatagoryy":"HEALTH & HYGIENE"
@@ -1064,7 +1064,7 @@ const cart=() => {
   </button>
   <ul className="dropdown-menu" role="menu" aria-labelledby="menu1">
     <li role="presentation" id='listmo' >
-      <a role="menuitem" tabIndex={-1} onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1} onClick={()=>{
                 handleProduct({
                   "petCategoryy":"RABBIT",
                   "typeCatagoryy":"FOOD"
@@ -1074,7 +1074,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1} onClick={()=>{
                 handleProduct({
                   "petCategoryy":"HAMSTER",
                   "typeCatagoryy":"FOOD"
@@ -1084,7 +1084,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1}onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1}onClick={()=>{
                 handleProduct({
                   "petCategoryy":"GUINEA PIG",
                   "typeCatagoryy":"FOOD"
@@ -1094,7 +1094,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1} onClick={()=>{
                 handleProduct({
                   "petCategoryy":"BIRD",
                   "typeCatagoryy":"FOOD"
@@ -1104,7 +1104,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1} onClick={()=>{
                 handleProduct({
                   "petCategoryy":"TURTLE",
                   "typeCatagoryy":"FOOD"
@@ -1114,7 +1114,7 @@ const cart=() => {
       </a>
     </li>
     <li role="presentation" id='listmo'>
-      <a role="menuitem" tabIndex={-1} onClick={()=>{
+      <a href='true' role="menuitem" tabIndex={-1} onClick={()=>{
                 handleProduct({
                   "petCategoryy":"FISH",
                   "typeCatagoryy":"FOOD"
@@ -1179,39 +1179,39 @@ const cart=() => {
     <div className='flexit1'>
       <div style={{display:'flex'}}>
       <div >
-      <a  style={{width:"auto",height:"2rem"}}  className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a href='true'  style={{width:"auto",height:"2rem"}}  className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Pet
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
              
-              <a className="dropdown-item"     onClick={()=>{
+              <a href='true' className="dropdown-item"     onClick={()=>{
                 handlePet( "DOG")
               }}>DOG</a>
-               <a className="dropdown-item"     onClick={()=>{
+               <a href='true' className="dropdown-item"     onClick={()=>{
                 handlePet( "CAT")
               }}>CAT</a>
-              <a className="dropdown-item"     onClick={()=>{
+              <a href='true' className="dropdown-item"     onClick={()=>{
                 handlePet( "BIRD")
               }}>BIRD </a>
-                <a className="dropdown-item"   onClick={()=>{
+                <a href='true' className="dropdown-item"   onClick={()=>{
                   handlePet( "TURTLE")
               
               }} >TURTLE</a>
-                <a className="dropdown-item"   onClick={()=>{
+                <a href='true' className="dropdown-item"   onClick={()=>{
                   handlePet( "FISH")
               }} >FISH </a>
                 
-                <a className="dropdown-item" 
+                <a href='true' className="dropdown-item" 
                   onClick={()=>{
                     handlePet( "GUINEA PIG")
                    
                   }}
                 >GUINEA PIG</a>
-                <a className="dropdown-item"   onClick={()=>{
+                <a href='true' className="dropdown-item"   onClick={()=>{
                   handlePet( "HAMSTER")
               
               }} >HAMSTER</a>
-                <a className="dropdown-item" 
+                <a href='true' className="dropdown-item" 
                   onClick={()=>{
                     handlePet( "RABBIT")
                    
@@ -1224,35 +1224,35 @@ const cart=() => {
     
         </div>
       <div className='commm'>
-               <a  style={{width:"auto",height:"2rem"}}     className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <a href='true'  style={{width:"auto",height:"2rem"}}     className="selectbox nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                  Type
               </a>
               <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               
-               <a className="dropdown-item"     onClick={()=>{
+               <a href='true' className="dropdown-item"     onClick={()=>{
                handletype("FOOD")
               }}>FOOD </a>
-                <a className="dropdown-item"   onClick={()=>{
+                <a href='true' className="dropdown-item"   onClick={()=>{
                  handletype("TOY")
               }} >TOY</a>
-                <a className="dropdown-item"   onClick={()=>{
+                <a href='true' className="dropdown-item"   onClick={()=>{
                   handletype("TREAT")
               }} >TREAT</a>
                 
-                <a className="dropdown-item" 
+                <a href='true' className="dropdown-item" 
                   onClick={()=>{
                     handletype("APPARELS")
                   }}
                 >APPARELS</a>
-                <a className="dropdown-item"   onClick={()=>{
+                <a href='true' className="dropdown-item"   onClick={()=>{
                  handletype("ACCESSORIES")
               }} >ACCESSORIES</a>
-                <a className="dropdown-item" 
+                <a href='true' className="dropdown-item" 
                   onClick={()=>{
                     handletype("HEALTH & HYGIENE")
                   }}
                 >HEALTH & HYGIENE </a>
-                 <a className="dropdown-item" 
+                 <a href='true' className="dropdown-item" 
                   onClick={()=>{
                     handletype("BEDS")
                   }}
@@ -1304,10 +1304,10 @@ const cart=() => {
           </div>
         <div  className="sidenav" id='sidebar' >
         
-          <div id="close" onClick={shrink}><i class="fa fa-times" aria-hidden="true" style={{fontSize:'20px'}}></i></div>
+          <div id="close" onClick={shrink}><i className="fa fa-times" aria-hidden="true" style={{fontSize:'20px'}}></i></div>
     <header className="card-header" style={{backgroundColor:'transparent'}}>
-    <a
-      href
+    <a href='true'
+      
       data-toggle="collapse"
       data-target="#collapse_9"
       aria-expanded="false"
@@ -1323,43 +1323,43 @@ const cart=() => {
       <ul align='left' className="list-menu">
     
         <li>
-          <a onClick={()=>{
+          <a href='true' onClick={()=>{
              handlePet("DOG")
           }}>Dogs</a>
         </li>
         <li>
-          <a onClick={()=>{
+          <a href='true' onClick={()=>{
              handlePet("CAT")
           }}>Cats </a>
         </li>
         <li>
-          <a onClick={()=>{
+          <a href='true' onClick={()=>{
            handlePet("RABBIT")
           }}>Rabbit</a>
         </li>
         <li>
-          <a onClick={()=>{
+          <a href='true' onClick={()=>{
             handlePet("TURTLE")
           }}>Turtle</a>
         </li>
 
         <li>
-          <a onClick={()=>{
+          <a href='true' onClick={()=>{
             handlePet("GUINEA PIG")
           }}>Guinea Pigs</a>
         </li>
         <li>
-          <a onClick={()=>{
+          <a href='true' onClick={()=>{
            handlePet("BIRD")
           }}>Birds</a>
         </li>
         <li>
-          <a onClick={()=>{
+          <a href='true' onClick={()=>{
           handlePet("FISH")
           }}>Fish</a>
         </li>
         <li>
-          <a onClick={()=>{
+          <a href='true' onClick={()=>{
          handlePet("HAMSTER")
           }}>Hamster</a>
         </li>
@@ -1370,8 +1370,8 @@ const cart=() => {
     {/* card-body.// */}
   </div>
   <header className="card-header" style={{backgroundColor:'transparent'}}>
-    <a
-      href
+    <a href='true'
+    
       data-toggle="collapse"
       data-target="#collapse_13"
       aria-expanded="false"
@@ -1390,7 +1390,7 @@ const cart=() => {
       <ul align='left' className="list-menu">
     {brand &&brand .length>0 && brand.map((e)=>(
    <li>
-   <a onClick={()=>{
+   <a href='true' onClick={()=>{
       handleBrand(e)
    }}>{e}</a>
  </li>
@@ -1411,7 +1411,7 @@ const cart=() => {
 
   {/* brand ends here */}
     {/* <header className="card-header" style={{backgroundColor:'transparent'}}>
-    <a
+    <a 
       href
       data-toggle="collapse"
       data-target="#collapse_90"
@@ -1542,7 +1542,7 @@ const cart=() => {
   </div>
     <header className="card-header" style={{backgroundColor:'transparent'}}>
     <a
-      href
+      href='true'
       data-toggle="collapse"
       data-target="#collapse_900"
       aria-expanded="false"
@@ -1632,7 +1632,7 @@ const cart=() => {
   color="#1BB5C0"
   ariaLabel="circles-loading"
   wrapperStyle={{}}
-  wrapperClass=""
+  wrapperclassName=""
   visible={loading}
 />
 
@@ -1660,8 +1660,8 @@ const cart=() => {
             src={src(ele.uploadImages)} alt=""  /></div>
             
             <div  style={{paddingTop:'4px'}} align="center" >
-            <p className='brand'>{ele.brandCategory}</p>
-               <b><p style={{fontSize:'12px'}} >{ele.name.slice(0,30)+'....'}</p></b> 
+            <div className='brand'>{ele.brandCategory}</div>
+               <b><div style={{fontSize:'12px'}} >{ele.name.slice(0,30)+'....'}</div></b> 
                 <h6 style={{paddingTop:'2px',fontSize:'15px'}}><s>₹ {ele.maxPrice} </s>  - <b>  ₹{ele.price}</b> </h6>
             </div>
 

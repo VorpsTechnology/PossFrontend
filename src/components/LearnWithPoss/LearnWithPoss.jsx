@@ -25,8 +25,8 @@ function LearnWithPoss() {
           
      <div align='left' className='content'>
       <div style={{marginTop:'10px'}}><h4>Heading</h4></div>
-      <div><p>1
-To increase the size of the rating icons, we can use font-size. Using height and width will not work as it increases the size of the container they're in.</p></div>
+      <div><div>1
+To increase the size of the rating icons, we can use font-size. Using height and width will not work as it increases the size of the container they're in.</div></div>
      </div>
     <div align="center" className='Learnmore' style={{paddingTop:'20px'}} ><button >Read more</button></div>
         </div>
@@ -38,9 +38,9 @@ To increase the size of the rating icons, we can use font-size. Using height and
             
        <div align='left' className='content'>
       <div style={{marginTop:'10px'}}><h4>Heading</h4></div>
-      <div><p>1
+      <div><div>1
         To increase the size of the rating icons, we can use font-size. Using height and width
-        will not work as it increases the size of the container they're in.</p></div>
+        will not work as it increases the size of the container they're in.</div></div>
      </div>
     <div align="center" className='Learnmore'  style={{paddingTop:'20px'}} ><button>Read more</button></div>
         </div>
@@ -51,8 +51,8 @@ To increase the size of the rating icons, we can use font-size. Using height and
        </div>
        <div align='left' className='content'>
       <div style={{marginTop:'10px'}}><h4>Heading</h4></div>
-      <div><p>1
-To increase the size of the rating icons, we can use font-size. Using height and width will not work as it increases the size of the container they're in.</p></div>
+      <div><div>1
+To increase the size of the rating icons, we can use font-size. Using height and width will not work as it increases the size of the container they're in.</div></div>
      </div>
     <div align="center" className='Learnmore' style={{paddingTop:'20px'}}><button >Read more</button></div>
         </div>

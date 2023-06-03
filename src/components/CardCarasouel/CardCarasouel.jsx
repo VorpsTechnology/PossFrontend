@@ -79,7 +79,7 @@ function CardCarasouel() {
          <SwiperSlide sx={{}}>
           
          <div>
-         <Card class='Slidercard'  align="center" sx={{ borderRadius:'20.1355px' }}>
+         <Card className='Slidercard'  align="center" sx={{ borderRadius:'20.1355px' }}>
               <CardMedia
                 sx={{ height: 250,borderRadius:'20.1355px;' , }}
                 image={ele.image}
